@@ -1,0 +1,8 @@
+.main-footer {
+  padding-top: 70px;
+  background-color: #30333A;
+  color: #92959B; }
+  .main-footer a:not(.btn) {
+    color: rgba(255, 255, 255, 0.6); }
+    .main-footer a:not(.btn):hover {
+      color: #fff; }

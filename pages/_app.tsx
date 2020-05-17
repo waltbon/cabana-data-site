@@ -21,16 +21,4 @@ class CabanaDataSoftwareApp extends App {
     }
 }
 
-CabanaDataSoftwareApp.getInitialProps = async ({ Component, ctx }): Promise<IPageGlobalProps> => {
-    let pageProps: IAppInitialGlobalProps = {
-        seo: {} as any
-    };
-
-    if (Component.getInitialProps) {
-        pageProps = await Component.getInitialProps(ctx) as IAppInitialGlobalProps;
-    }
-
-    return { pageProps };
-}
-
 export default CabanaDataSoftwareApp

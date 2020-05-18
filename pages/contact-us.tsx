@@ -86,4 +86,10 @@ const ContactUsPage: NextPage<Props> = ({ }) => {
     )
 }
 
+ContactUsPage.getInitialProps = async (): Promise<any> => {
+    return {
+
+    }
+}
+
 export default ContactUsPage;

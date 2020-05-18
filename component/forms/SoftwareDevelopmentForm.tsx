@@ -111,7 +111,7 @@ export default class extends React.Component<Props, IState> {
                                             <div key={pt.value} className="fancy-box fancy-box-overlay shadowed scheme-light border-radius-3">
                                                 <div className="cb-img-container border-radius-3">
                                                     <figure className="fancy-box-image border-radius-3" style={{ backgroundImage: `url(${pt.image.url})` }} data-liquid-blur="false" data-blur-options="{imgSrc:'backgroundImage', radius: 30, blurHandlerOn: 'static' }">
-                                                        <img className="invisible" src='/assets/img/misc/shapes.jpg' crossOrigin="anonymous" alt={pt.image.alt} />
+                                                        <img className="invisible" src='/assets/img/misc/shapes.jpg' alt={pt.image.alt} />
                                                     </figure>
                                                 </div>{/* /.cb-img-container */}
                                                 <span className="cb-overlay bg-gradient-secondary-br opacity-02" ></span>

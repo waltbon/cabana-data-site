@@ -87,7 +87,7 @@ const IndexPage: NextPage<Props> = ({ homePage, allPartners, allTestimonials, so
                         return (
                           <div key={partner.id} className="lqd-column carousel-item col-md-2 col-sm-3 col-xs-4">
                             <figure className="text-center opacity-02 reset-opacity-onhover">
-                              <img crossOrigin='anonymous' className="mr-8 mt-10 w-60" src={partner.logo.url} alt={partner.logo.alt} />
+                              <img className="mr-8 mt-10 w-60" src={partner.logo.url} alt={partner.logo.alt} />
                             </figure>
                           </div>
                         )

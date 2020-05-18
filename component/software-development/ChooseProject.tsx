@@ -60,7 +60,7 @@ export default class extends React.Component<Props, State> {
                                     <div className="fancy-box-contents border-radius-5" data-stacking-factor="0.5">
                                         <div className="cb-img-container border-radius-5">
                                             <figure className="fancy-box-image border-radius-5 loaded" data-responsive-bg="true">
-                                                <img crossOrigin="anonymous" className="" src={`${this.state.selected.image.url}?fit=crop&w=500&h=500`} alt={this.state.selected.image.alt} />
+                                                <img className="" src={`${this.state.selected.image.url}?fit=crop&w=500&h=500`} alt={this.state.selected.image.alt} />
                                             </figure>
                                         </div>
                                         <div className="fancy-box-header">

@@ -144,7 +144,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
                                                             <div className="ld-pf-inner">
                                                                 <div className="ld-pf-image" data-blur="true" data-blur-options="{ &quot;hoverTarget&quot;: &quot;.ld-pf-item&quot;, &quot;hoverTargetRelation&quot;: &quot;closest&quot; }">
                                                                     <figure style={{ backgroundImage: `url("${imageUrl}")` }}>
-                                                                        <img crossOrigin="anonymous" src='#' alt={process.image.alt} />
+                                                                        <img src='#' alt={process.image.alt} />
                                                                     </figure>
                                                                 </div>
                                                                 <div className="ld-pf-bg">

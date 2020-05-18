@@ -24,9 +24,9 @@ export default class PersonalSupervisorDocument extends Document<PageLayout> {
                 </Head>
                 <body>
                     <Main />
-                    <NextScript />
                     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossOrigin="anonymous"></script>
                     <script src="/assets/js/theme-vendors.js"></script>
+                    <NextScript />
                 </body>
             </Html>
         );

@@ -3,12 +3,11 @@ import { ThemeProvider } from 'theme-ui';
 import App from 'next/app';
 import React from 'react';
 import theme from '../ui/theme';
-import { IPageGlobalProps, IAppInitialGlobalProps } from '../lib/types/app.global';
-declare var jQuery: any;
+import Head from 'next/head';
 
 class CabanaDataSoftwareApp extends App {
     componentDidMount() {
-        jQuery.fn.__jqthings();
+        require('../public/assets/js/theme.min.js');
     }
 
     render() {

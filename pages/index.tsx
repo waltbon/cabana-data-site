@@ -8,11 +8,13 @@ import HomeIntro from '../component/home/HomeIntro';
 import HomeOurSkills from '../component/home/HomeOurSkills';
 import HomeProcess from '../component/home/HomeProcess';
 import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
+import Meta from '../component/layout/Meta';
 
 interface Props extends ILayoutPageProps, IHomePage { }
 const IndexPage: NextPage<Props> = ({ homePage, allPartners, allTestimonials, softwareDevelopmentPage }) => {
   return (
     <PageLayout seo={homePage.seo}>
+      <Meta title={homePage.seo.title} description={homePage.seo.description} ></Meta>
       <main className="content" id="content">
         <HomeHeader background={homePage.backgroundImage} title={homePage.title} subtitle={homePage.subtitle} />
         <HomeIntro services={homePage.services} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />
@@ -85,7 +87,7 @@ const IndexPage: NextPage<Props> = ({ homePage, allPartners, allTestimonials, so
                         return (
                           <div key={partner.id} className="lqd-column carousel-item col-md-2 col-sm-3 col-xs-4">
                             <figure className="text-center opacity-02 reset-opacity-onhover">
-                              <img className="mr-8 mt-10 w-60" src={partner.logo.url} alt={partner.logo.alt} />
+                              <img crossOrigin='anonymous' className="mr-8 mt-10 w-60" src={partner.logo.url} alt={partner.logo.alt} />
                             </figure>
                           </div>
                         )

@@ -12,7 +12,7 @@ export default class extends React.Component<{
         const columnOne = this.props.services.filter(s => s.column === 1);
         const columnTwo = this.props.services.filter(s => s.column === 2);
         return (
-            <section className="vc_row pt-90 pb-90 bg-no-repeat" id="about-us" style={{ backgroundImage: 'url(./assets/demo/bg/bg-77.svg)', backgroundPosition: '500% 0%' }}>
+            <section className="vc_row pt-90 pb-90 bg-no-repeat" id="about-us" style={{ backgroundImage: 'url(/assets/img/misc/bg-77.svg)', backgroundPosition: '10% 20%' }}>
                 <div className="container">
                     <div className="row d-flex flex-wrap align-items-center">
                         <div className="lqd-column col-md-5 mb-30 ca-initvalues-applied lqd-animations-done" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;, &quot;animationTarget&quot;:&quot;all-childs&quot;, &quot;duration&quot;:&quot;1600&quot;, &quot;delay&quot;:&quot;160&quot;, &quot;easing&quot;:&quot;easeOutQuint&quot;, &quot;direction&quot;:&quot;forward&quot;, &quot;initValues&quot;:{&quot;translateY&quot;:30, &quot;opacity&quot;:0}, &quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;:1}}">
@@ -22,7 +22,7 @@ export default class extends React.Component<{
                             </header>
                             <p className="font-size-18 lh-15 mb-4 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description1}</p>
                             <p className="font-size-18 lh-15 mb-55 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description2}</p>
-                        </div>{/* /.lqd-column col-md-5*/}
+                        </div>
 
                         <div className="lqd-column col-md-3 col-md-offset-1">
                             <div className="ld-parallax-wrap parallax-applied">
@@ -33,8 +33,8 @@ export default class extends React.Component<{
                                         shortDescription={item.service.shortDescription} imageSvg={item.imageSvg} />)
                                     }
                                 </div>
-                            </div>{/* /.lqd-column-inner*/}
-                        </div>{/* /.lqd-column col-md-3*/}
+                            </div>
+                        </div>
                         <div className="lqd-column col-md-3">
                             <div className="ld-parallax-wrap parallax-applied">
                                 <div className="lqd-column-inner will-change" data-parallax="true" data-parallax-from="{&quot;translateY&quot;:50}" data-parallax-to="{&quot;translateY&quot;:-130}" data-parallax-options="{&quot;duration&quot;:&quot;2000&quot;, &quot;easing&quot;:&quot;linear&quot;, &quot;reverse&quot;:true, &quot;triggerHook&quot;:&quot;onEnter&quot;, &quot;overflowHidden&quot;: false}" style={{ transform: 'translateY(17.2807373046875px)' }}>
@@ -44,10 +44,10 @@ export default class extends React.Component<{
                                         shortDescription={item.service.shortDescription} imageSvg={item.imageSvg} />)
                                     }
                                 </div>
-                            </div>{/* /.lqd-column-inner*/}
-                        </div>{/* /.lqd-column col-md-3*/}
-                    </div>{/* /.row*/}
-                </div>{/* /.container*/}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
 

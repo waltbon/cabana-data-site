@@ -60,31 +60,29 @@ export default class extends React.Component<Props, State> {
                                     <div className="fancy-box-contents border-radius-5" data-stacking-factor="0.5">
                                         <div className="cb-img-container border-radius-5">
                                             <figure className="fancy-box-image border-radius-5 loaded" data-responsive-bg="true">
-                                                <img className="" src={`${this.state.selected.image.url}?fit=crop&w=500&h=500`} alt={this.state.selected.image.alt} />
+                                                <img crossOrigin="anonymous" className="" src={`${this.state.selected.image.url}?fit=crop&w=500&h=500`} alt={this.state.selected.image.alt} />
                                             </figure>
-                                        </div>{/* /.cb-img-container */}
+                                        </div>
                                         <div className="fancy-box-header">
                                             <span className="ld-cb-icon"><i className="icon-weather_cloud_lightning" /></span> <span className="ld-cb-cat font-weight-medium text-uppercase ltr-sp-15">
                                                 {this.state.selected.helpDescription}
                                             </span>
                                             <h3>{this.state.selected.name}</h3>
-                                        </div>{/* /.fancy-box-header */}
-                                    </div>{/* /.fancy-box-contents */}
-                                </div>{/* /.fancy-box */}
+                                        </div>
+                                    </div>
+                                </div>
                                 <div className="row">
                                     <div className="col-12 pt-10">
-                                        <p>
-                                            <div dangerouslySetInnerHTML={{ __html: this.state.selected.description }}></div>
-                                        </p>
+                                        <div dangerouslySetInnerHTML={{ __html: this.state.selected.description }}></div>
                                     </div>
                                 </div>
                             </div>{/* /.tab-pane */}
                             <div className="row text-center mt-30">
-                                <p>Hablemos sobre sus ideas</p>
+                                <p>Hablemos sobre sus proyectos</p>
                                 <div className="row">
-                                    <a className="btn btn-primary border-thin mt-20" href="/contact">
+                                    <a className="btn btn-primary border-thin mt-20" href="/contact-us">
                                         <span className="btn-txt">
-                                            Consultar
+                                            Contáctenos
                                         </span>
                                     </a>
                                 </div>

@@ -14,7 +14,7 @@ export default class extends React.Component<Props> {
                 <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #${gradColor} 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
                 <header className="main-header main-header-overlay bb-fade-black-005" data-sticky-header="true" style={{backgroundColor: 'transparent'}}>
                     <div className="mainbar-wrap px-4" style={{backgroundColor: 'transparent !important'}}>
-                        <span className="megamenu-hover-bg"></span>
+                        <div className="megamenu-hover-bg"></div>
                         <div className="container mainbar-container">
                             <div className="mainbar">
                                 <div className="row mainbar-row">

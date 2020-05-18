@@ -7,11 +7,6 @@ import Meta from './Meta';
 export default class PageLayout extends React.Component<ILayoutPageProps> {
     render() {
         return (
-            <>
-            {
-                this.props.seo &&
-                <Meta title={this.props.seo.title} description={this.props.seo.description} ></Meta>
-            }
             <div id="wrap">
                 {
                     !this.props.hideMainHeader &&
@@ -19,7 +14,6 @@ export default class PageLayout extends React.Component<ILayoutPageProps> {
                 }
                 {this.props.children}
                 <Footer></Footer>
-            </div>
-        </>)
+            </div>)
     }
 }

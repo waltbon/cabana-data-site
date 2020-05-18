@@ -9,8 +9,10 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "graphql-request": "^1.8.2",
+    "jquery": "^3.5.1",
     "mailgun-js": "^0.22.0",
     "next": "9.3.5",
     "react": "16.13.1",

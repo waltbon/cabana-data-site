@@ -13,10 +13,9 @@ function formSubmitted() {
 }
 
 const ContactUsPage: NextPage<Props> = ({ }) => {
-    
     return (
         <PageLayout seo={null} hideMainHeader={true}>
-            <HeaderAlternative title='Contáctenos' seo={null} titlebarBackgroundImage='/assets/img/misc/shapes.jpg' />
+        <HeaderAlternative title='Contáctenos' seo={null} titlebarBackgroundImage='/assets/img/misc/shapes.jpg' />
             <main className="content bg-gray" id="content">
                 <section className="vc_row">
                     <div className="container">
@@ -85,6 +84,12 @@ const ContactUsPage: NextPage<Props> = ({ }) => {
             </main>{/* /#content.content*/}
         </PageLayout>
     )
+}
+
+ContactUsPage.getInitialProps = async (): Promise<any> => {
+    return {
+
+    }
 }
 
 export default ContactUsPage;

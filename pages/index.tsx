@@ -8,11 +8,13 @@ import HomeIntro from '../component/home/HomeIntro';
 import HomeOurSkills from '../component/home/HomeOurSkills';
 import HomeProcess from '../component/home/HomeProcess';
 import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
+import Meta from '../component/layout/Meta';
 
 interface Props extends ILayoutPageProps, IHomePage { }
 const IndexPage: NextPage<Props> = ({ homePage, allPartners, allTestimonials, softwareDevelopmentPage }) => {
   return (
     <PageLayout seo={homePage.seo}>
+      <Meta title={homePage.seo.title} description={homePage.seo.description} ></Meta>
       <main className="content" id="content">
         <HomeHeader background={homePage.backgroundImage} title={homePage.title} subtitle={homePage.subtitle} />
         <HomeIntro services={homePage.services} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />

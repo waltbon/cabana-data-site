@@ -32,7 +32,7 @@ interface Props extends ILayoutPageProps {
 const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
     const data = softwareDevelopmentPage;
     return (
-        <PageLayout seo={softwareDevelopmentPage.seo}>
+        <PageLayout url="/e-commerce" seo={softwareDevelopmentPage.seo}>
             
         </PageLayout>
     )

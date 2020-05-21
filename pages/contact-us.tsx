@@ -14,8 +14,8 @@ function formSubmitted() {
 
 const ContactUsPage: NextPage<Props> = ({ }) => {
     return (
-        <PageLayout seo={null} hideMainHeader={true}>
-        <HeaderAlternative title='Contáctenos' seo={null} titlebarBackgroundImage='/assets/img/misc/shapes.jpg' />
+        <PageLayout url="/contact-us" seo={null} hideMainHeader={true}>
+        <HeaderAlternative title='Contáctenos' titlebarBackgroundImage='/assets/img/misc/shapes.jpg' />
             <main className="content bg-gray" id="content">
                 <section className="vc_row">
                     <div className="container">

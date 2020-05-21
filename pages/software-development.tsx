@@ -44,7 +44,7 @@ interface Props extends ILayoutPageProps {
 const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
     const data = softwareDevelopmentPage;
     return (
-        <PageLayout seo={softwareDevelopmentPage.seo}>
+        <PageLayout url="/software-development" seo={softwareDevelopmentPage.seo}>
             <main className="content" id="content">
                 <section className="vc_row fullheight d-flex flex-wrap align-items-center bg-cover bg-center py-6" data-parallax="true" data-parallax-options="{ parallaxBG: true }" data-row-bg={data.background.url} style={{ background: 'linear-gradient(65deg, #2D3252 20%, rgba(137, 135, 226, 0.084) 100%)' }}><span className="row-bg-loader" />
                     <div className="container">

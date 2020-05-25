@@ -8,7 +8,8 @@ export default class extends React.Component<{
 }> {
     render() {
         return (
-            <a className="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-50 pb-40 iconbox-icon-animating" href="/services/apps">
+            <a className="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-50 pb-40 iconbox-icon-animating"
+             href={`/${this.props.slug}`}>
                 <div className="iconbox-icon-wrap">
                     <span className="iconbox-icon-container mb-25">
                     <div dangerouslySetInnerHTML={{__html: this.props.imageSvg}}></div>

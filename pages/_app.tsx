@@ -3,7 +3,6 @@ import { ThemeProvider } from 'theme-ui';
 import App from 'next/app';
 import React from 'react';
 import theme from '../ui/theme';
-import Head from 'next/head';
 
 class CabanaDataSoftwareApp extends App {
     componentDidMount() {

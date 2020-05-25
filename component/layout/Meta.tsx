@@ -5,6 +5,7 @@ interface Props {
     description: string;
     creator?: string;
     imageUrl?: string;
+    ogImageUrl?: string;
     url: string;
     type?: 'article'|'website'
 }
@@ -23,11 +24,8 @@ export default (props: Props) => (
         <meta name="twitter:description" content={props.description} />
         <meta name="twitter:site" content="" />
         <meta name="twitter:creator" content="" />
-        <link rel="icon" type="image/png" href="/static/images/favicon.ico" />
-        <link rel="apple-touch-icon" href="/static/images/favicon.ico" />
-        <link rel="stylesheet" href="" />
-        <meta property="og:image" content={props.imageUrl} />
-        <meta name="twitter:image" content="" />
+        <meta property="og:image" content={props.ogImageUrl} />
+        <meta name="twitter:image" content={props.ogImageUrl} />
         <link rel="canonical" href="" />
     </Head>
 )

@@ -3,18 +3,13 @@ import PageLayout from '../component/layout/PageLayout'
 import { ILayoutPageProps } from '../lib/types/landing-page-props.interface'
 import HeaderAlternative from '../component/layout/HeaderAlternative'
 import ContactForm from '../component/contact/ContactForm'
+import { ISEO } from '../lib/types/cms/models/common/seo.interface'
 
-interface Props extends ILayoutPageProps { 
-x:string;
-}
+interface Props extends ILayoutPageProps { }
 
-function formSubmitted() {
-    alert("okkk")
-}
-
-const ContactUsPage: NextPage<Props> = ({ }) => {
+const ContactUsPage: NextPage<Props> = ({ seo }) => {
     return (
-        <PageLayout url="/contact-us" seo={null} hideMainHeader={true}>
+        <PageLayout url="/contact-us" seo={seo} hideMainHeader={true}>
         <HeaderAlternative title='Contáctenos' titlebarBackgroundImage='/assets/img/misc/shapes.jpg' />
             <main className="content bg-gray" id="content">
                 <section className="vc_row">
@@ -22,10 +17,10 @@ const ContactUsPage: NextPage<Props> = ({ }) => {
                         <div className="row">
                             <div className="lqd-column col-md-8 px-4 pt-45 pb-30 bg-white box-shadow-1 pull-up col-md-offset-2">
                                 <div className="row d-flex flex-wrap align-items-center">
-                                    <div className="lqd-column col-md-6 col-md-offset-1">
+                                    <div className="lqd-column col-md-7 col-md-offset-1">
                                         <header className="fancy-title">
-                                            <h2>Queremos ayudarle</h2>
-                                            <p>Sabemos que es el momento tecnología </p>
+                                            <h2>Hablemos!</h2>
+                                            <p>Es el momento de crear soluciones de software potenciadas por lo actual y efectivo</p>
                                         </header>{/* /.fancy-title*/}
                                     </div>
                                     <div className="lqd-column col-md-4 hidden-sm hidden-xs text-right">
@@ -44,9 +39,9 @@ const ContactUsPage: NextPage<Props> = ({ }) => {
                                 <div className="row">
                                     <div className="lqd-column col-md-10 col-sm-12 col-md-offset-1">
                                         <div className="contact-form contact-form-inputs-underlined contact-form-button-circle">
-                                            <ContactForm onFormSubmmited={formSubmitted}></ContactForm>
-                                            <div className="contact-form-result hidden" ></div>
+                                            <ContactForm ></ContactForm>
                                         </div>{/* /.contact-form*/}
+                        
                                     </div>{/* /.col-md-10 col-md-offset-1*/}
                                 </div>{/* /.row*/}
                             </div>{/* /.lqd-column col-md-12*/}
@@ -88,7 +83,10 @@ const ContactUsPage: NextPage<Props> = ({ }) => {
 
 ContactUsPage.getInitialProps = async (): Promise<any> => {
     return {
-
+        seo: {
+            title: 'Cabana Data Software | Contátenos',
+            description: 'Queremos poner a su disposición nuestros servicios con lo mejor y acertado para su negocio en cuanto a software a la medida',
+        } as ISEO
     }
 }
 

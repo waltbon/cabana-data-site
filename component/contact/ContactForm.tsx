@@ -63,7 +63,6 @@ export default class extends React.Component<Props, IState> {
         }
 
         await executePost('/api/contact-us', this.state.data);
-        alert('submited');
         this.setState({
             submitted: true
         })

@@ -10,6 +10,7 @@ import HomeOurSkills from '../component/home/HomeOurSkills';
 import HomeProcess from '../component/home/HomeProcess';
 import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
 import { WithTranslation } from 'next-i18next';
+import { getRequestLanguage } from '../lib/language';
 
 interface Props extends ILayoutPageProps, IHomePage, WithTranslation {
 }
@@ -156,7 +157,7 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
 }
 
 IndexPage.getInitialProps = async ({req}): Promise<any> => {
-  const lang = req ? req['language'] : i18n.i18n.language || 'es';
+  const lang = getRequestLanguage(req, i18n.i18n)
   const data = await getHomePageData(lang);
   return {
     ...data,

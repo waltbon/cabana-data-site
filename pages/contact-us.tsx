@@ -4,8 +4,10 @@ import { ILayoutPageProps } from '../lib/types/landing-page-props.interface'
 import HeaderAlternative from '../component/layout/HeaderAlternative'
 import ContactForm from '../component/contact/ContactForm'
 import { ISEO } from '../lib/types/cms/models/common/seo.interface'
+import i18n from './../i18n';
+import { WithTranslation } from 'next-i18next'
 
-interface Props extends ILayoutPageProps { }
+interface Props extends ILayoutPageProps, WithTranslation { }
 
 const ContactUsPage: NextPage<Props> = ({ seo }) => {
     return (
@@ -90,4 +92,4 @@ ContactUsPage.getInitialProps = async (): Promise<any> => {
     }
 }
 
-export default ContactUsPage;
+export default i18n.withTranslation('common')(ContactUsPage);

@@ -36,8 +36,8 @@ export default class extends React.Component<Props, State> {
         return (
             <div className="row">
                 <div className="lqd-column col-md-12 pb-20 text-center">
-                    <h2 className="mt-0 mb-3">Total Design Freedom</h2>
-                    <h6 className="font-size-16 opacity-06">Free lifetime updates, and bonus plugins included in the package!</h6>
+                    <h2 className="mt-0 mb-3">Nuestos servicios</h2>
+                    <h6 className="font-size-16 opacity-06">Conozca nuestros servicios y conversemos sobre sus proyectos!</h6>
                 </div>{/* /.col-md-12 */}
                 <div className="lqd-column col-md-12">
                     <div className="tabs tabs-nav-side tabs-nav-side-alt tabs-nav-side-block">
@@ -56,11 +56,11 @@ export default class extends React.Component<Props, State> {
                         </ul>
                         <div className="tabs-content">
                             <div role="tabpanel" className="tabs-pane fade active in" id="ld-tab-pane-48">
-                                <div className="fancy-box fancy-box-case-study scheme-light" data-hover3d="true" style={{ height: '500px' }}>
+                                <div className="fancy-box fancy-box-case-study scheme-light" data-hover3d="true" style={{ height: '350px', width: 'auto' }}>
                                     <div className="fancy-box-contents border-radius-5" data-stacking-factor="0.5">
                                         <div className="cb-img-container border-radius-5">
                                             <figure className="fancy-box-image border-radius-5 loaded" data-responsive-bg="true">
-                                                <img className="" src={`${this.state.selected.image.url}?fit=crop&w=500&h=500`} alt={this.state.selected.image.alt} />
+                                                <img className="" src={`${this.state.selected.image.url}?fit=crop&h=350`} alt={this.state.selected.image.alt} />
                                             </figure>
                                         </div>
                                         <div className="fancy-box-header">
@@ -73,7 +73,7 @@ export default class extends React.Component<Props, State> {
                                 </div>
                                 <div className="row">
                                     <div className="col-12 pt-10">
-                                        <div dangerouslySetInnerHTML={{ __html: this.state.selected.description }}></div>
+                                        <div className="px-3" dangerouslySetInnerHTML={{ __html: this.state.selected.description }}></div>
                                     </div>
                                 </div>
                             </div>{/* /.tab-pane */}
@@ -82,7 +82,7 @@ export default class extends React.Component<Props, State> {
                                 <div className="row">
                                     <a className="btn btn-primary border-thin mt-20" href="/contact-us">
                                         <span className="btn-txt">
-                                            Contáctenos
+                                            Hablemos
                                         </span>
                                     </a>
                                 </div>

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "ts-node --project tsconfig.server.json server/index.ts",
+    "dev:server": "ts-node --project tsconfig.server.json server/index.ts",
+    "dev": "next dev",
     "build:next": "next build",
     "build:server": "tsc --project tsconfig.server.json",
     "build": "npm run build:next && npm run build:server",
@@ -17,6 +18,7 @@
     "jquery": "^3.5.1",
     "mailgun-js": "^0.22.0",
     "next": "9.3.5",
+    "next-i18next": "^4.4.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-phone-input-2": "^2.13.3",

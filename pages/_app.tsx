@@ -2,6 +2,7 @@ import 'react-phone-input-2/lib/bootstrap.css'
 import { ThemeProvider } from 'theme-ui';
 import App from 'next/app';
 import React from 'react';
+import i18nNext from './../i18n';
 import theme from '../ui/theme';
 
 class CabanaDataSoftwareApp extends App {
@@ -19,4 +20,4 @@ class CabanaDataSoftwareApp extends App {
     }
 }
 
-export default CabanaDataSoftwareApp
+export default i18nNext.appWithTranslation(CabanaDataSoftwareApp)

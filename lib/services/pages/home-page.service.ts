@@ -1,7 +1,8 @@
 import { DatoCMSService } from '../cms/dato-cms.service'
+import { IHomePage } from '../../types/cms/models/home.model';
 
-const HOMEPAGE_QUERY = `query {
-  homePage {
+const HOMEPAGE_QUERY = (lang: string) => `query {
+  homePage(locale: ${lang}) {
     seo {
       title,
       description,
@@ -88,8 +89,8 @@ const HOMEPAGE_QUERY = `query {
   }
 }`;
 
-export const getHomePageData = async () => {
+export const getHomePageData = async (lang: string): Promise<IHomePage> => {
   const cms = new DatoCMSService();
-  const result = await cms.executeQuery({ query: HOMEPAGE_QUERY });
+  const result = await cms.executeQuery<IHomePage>({ query: HOMEPAGE_QUERY(lang) });
   return result;
 }

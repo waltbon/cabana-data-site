@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import i18n from './../i18n';
 import PageLayout from '../component/layout/PageLayout';
 import { ILayoutPageProps } from '../lib/types/landing-page-props.interface';
 import { getHomePageData } from '../lib/services/pages/home-page.service';
@@ -8,10 +9,12 @@ import HomeIntro from '../component/home/HomeIntro';
 import HomeOurSkills from '../component/home/HomeOurSkills';
 import HomeProcess from '../component/home/HomeProcess';
 import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
-import Meta from '../component/layout/Meta';
+import { WithTranslation } from 'next-i18next';
 
-interface Props extends ILayoutPageProps, IHomePage { }
-const IndexPage: NextPage<Props> = ({ homePage, allPartners, allTestimonials, softwareDevelopmentPage }) => {
+interface Props extends ILayoutPageProps, IHomePage, WithTranslation {
+}
+
+const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials, softwareDevelopmentPage }) => {
   return (
     <PageLayout url="/" seo={homePage.seo}>
       <main className="content" id="content">
@@ -152,6 +155,12 @@ const IndexPage: NextPage<Props> = ({ homePage, allPartners, allTestimonials, so
     </PageLayout>)
 }
 
-IndexPage.getInitialProps = async (): Promise<any> => getHomePageData();
-export default IndexPage;
-
+IndexPage.getInitialProps = async ({req}): Promise<any> => {
+  const lang = req ? req['language'] : i18n.i18n.language || 'es';
+  const data = await getHomePageData(lang);
+  return {
+    ...data,
+    namespacesRequired: ['home', 'header', 'common'],
+  }
+}
+export default i18n.withTranslation('home')(IndexPage);

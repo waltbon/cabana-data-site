@@ -5,8 +5,10 @@ import { IImage } from '../lib/types/cms/models/common/image.interface';
 import { DatoCMSService } from '../lib/services/cms/dato-cms.service';
 import { ISEO } from '../lib/types/cms/models/common/seo.interface';
 import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
+import i18n from '../i18n';
+import { WithTranslation } from 'next-i18next';
 
-interface Props extends ILayoutPageProps {
+interface Props extends ILayoutPageProps, WithTranslation {
     softwareDevelopmentPage: {
         headerTitle: string;
         headerSubtitle: string;
@@ -86,7 +88,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
                                     {
                                         Array.isArray(page.tabsInfo) && page.tabsInfo.map(ti => {
                                             const isFirst = page.tabsInfo.indexOf(ti) === 0;
-                                            return (<div className={`accordion-item panel ${isFirst ? 'active' : ''}` }>
+                                            return (<div key={ti.id} className={`accordion-item panel ${isFirst ? 'active' : ''}` }>
                                             <div key={ti.id} className="accordion-heading" role="tab" id={`heading_${ti.id}`}>
                                                 <h4 className="accordion-title font-size-17 lh-15">
                                                     <a data-toggle="collapse" data-parent="#vc_accordion_5c77a7f9d2896" href={`#${ti.id}`} aria-expanded="true" aria-controls={ti.id}>
@@ -248,8 +250,8 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
     )
 }
 
-const QUERY = `query {
-    softwareDevelopmentPage {
+const QUERY = (lang: string) => `query {
+    softwareDevelopmentPage(locale: ${lang}) {
         headerTitle,
         headerSubtitle,
         headerDescription,
@@ -307,10 +309,14 @@ const QUERY = `query {
     }
 }`
 
-Page.getInitialProps = async (): Promise<any> => {
+Page.getInitialProps = async ({req}): Promise<any> => {
+    const lang = req ? req['language'] : i18n.i18n.language || 'es';
     const cms = new DatoCMSService();
-    const result = await cms.executeQuery({ query: QUERY });
-    return result;
+    const result = await cms.executeQuery<any>({ query: QUERY(lang) });
+    return {
+        ...result,
+        namespacesRequired: ['common', 'header', 'footer']
+    };
 }
 
-export default Page;
+export default i18n.withTranslation('common')(Page);

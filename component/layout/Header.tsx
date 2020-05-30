@@ -1,6 +1,8 @@
 import React from 'react';
+import i18n from '../../i18n';
+import { WithTranslation } from 'next-i18next';
 
-export default class extends React.Component<any> {
+class Header extends React.Component<WithTranslation> {
     render() {
         return (
             <header className="main-header main-header-overlay bb-fade-black-005" data-sticky-header="true">
@@ -27,9 +29,9 @@ export default class extends React.Component<any> {
                                                 </span>
                                             </div>
                                             <div className="contents">
-                                                <h3 className="mb-1 font-size-13">Contáctenos</h3>
+                                                <h3 className="mb-1 font-size-13">{this.props.t('menu_lets_talk_title')}</h3>
                                                 <p className="font-size-13 lh-185">
-                                                    <a href="mailto:info@cabanadata.com">info@cabanadata.com</a>
+                                                    <a href="/contact-us">{this.props.t('menu_lets_talk_text')}</a>
                                                 </p>
                                             </div>{/* /.contents*/}
                                         </div>{/* /.iconbox*/}
@@ -45,7 +47,7 @@ export default class extends React.Component<any> {
                                                 <span className="iconbox-icon-container text-secondary"><i className="icon-ion-ios-pin"></i></span>
                                             </div>{/* /.iconbox-icon-wrap*/}
                                             <div className="contents">
-                                                <h3 className="mb-1 font-size-13">¿Dónde estamos?</h3>
+                                                <h3 className="mb-1 font-size-13">{this.props.t('menu_our_location')}</h3>
                                                 <p className="font-size-13 lh-185">Curridabat, Santa Ana. Costa Rica</p>
                                             </div>
                                         </div>
@@ -82,17 +84,27 @@ export default class extends React.Component<any> {
                                 <div className="col">
                                     <div className="collapse navbar-collapse" id="main-header-collapse">
                                         <ul className="main-nav nav align-items-lg-stretch justify-content-lg-left" id="primary-nav" data-submenu-options="{ &quot;toggleType&quot;:&quot;fade&quot;, &quot;handler&quot;:&quot;mouse-in-out&quot; }" data-localscroll="true">
-                                            <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">Home</span></span></a></li>
-                                            <li><a href="#about-us"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">Nuestro Servicio</span></span></a></li>
-                                            <li><a href="#proceso"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">Proceso</span></span></a></li>
-                                            <li className="menu-item-has-children"><a href="#services"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">Categorías</span></span></a>
+                                            <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                {this.props.t('menu_home')}
+                                            </span></span></a></li>
+                                            <li className="menu-item-has-children"><a href="/#services"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                {this.props.t('menu_services')}
+                                            </span></span></a>
                                                 <ul className="nav-item-children">
                                                     <li><a href="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Desarrollo de Software<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                     <li><a href="/services/apps"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Apps Móviles<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                     <li><a href="/services/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">E-Commerce<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Contáctenos</span></span></a></li>
+                                            <li className="is-active"><a href="/software-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                {this.props.t('menu_services_software_dev')}
+                                            </span></span></a></li>
+                                            <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                {this.props.t('menu_blog')}
+                                            </span></span></a></li>
+                                            <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
+                                                {this.props.t('menu:contact')}
+                                            </span></span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -100,19 +112,15 @@ export default class extends React.Component<any> {
                                     <div className="header-module">
                                         <div className="ld-dropdown-menu">
                                             <span className="ld-module-trigger collapsed" role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
-                                                <span className="ld-module-trigger-txt text-uppercase text-white">
-                                                    <img width="14px" style={{ marginRight: '4px', font: 'bold' }} />
-                                                    <i className="fa fa-angle-down" />
+                                                <span className="ld-module-trigger-txt text-white text-small">
+                                                    <button className="btn btn-icon" style={{backgroundColor: "#2D3252"}} type='button' onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es', () => setTimeout(() =>  location.reload(), 400))}>
+                                                        <img src={`/assets/img/locales/${this.props.t('change_language_to')}.svg`} style={{marginRight: '10px'}} width="14px" />
+                                                    <small className="text-white">
+                                                        {this.props.t('change_language_to_text')}
+                                                    </small>
+                                                    </button>
                                                 </span>
                                             </span>
-                                            <div className="ld-module-dropdown left collapse" id="header-dropdown-1" aria-expanded="false" role="tablist">
-                                                <div className="ld-dropdown-menu-content">
-                                                    <ul>
-                                                        <li><a href="/es"> <img src="/assets/img/locales/es.svg" width="14px" style={{ marginRight: '8px' }} />Español</a></li>
-                                                        <li><a href="/en"> <img src="/assets/img/locales/en.svg" width="14px" style={{ marginRight: '8px' }} />English</a></li>
-                                                    </ul>
-                                                </div>{/* /.ld-module-dropdown*/}
-                                            </div>{/* /.ld-dropdown-menu*/}
                                         </div>
                                     </div>
                                 </div>{/* /.col*/}
@@ -123,3 +131,5 @@ export default class extends React.Component<any> {
             </header>)
     }
 }
+
+export default i18n.withTranslation('header')(Header)

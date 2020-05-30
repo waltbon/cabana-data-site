@@ -7,6 +7,7 @@ import { ISEO } from '../lib/types/cms/models/common/seo.interface';
 import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
 import i18n from '../i18n';
 import { WithTranslation } from 'next-i18next';
+import { getRequestLanguage } from '../lib/language';
 
 interface Props extends ILayoutPageProps, WithTranslation {
     softwareDevelopmentPage: {
@@ -310,7 +311,7 @@ const QUERY = (lang: string) => `query {
 }`
 
 Page.getInitialProps = async ({req}): Promise<any> => {
-    const lang = req ? req['language'] : i18n.i18n.language || 'es';
+    const lang = getRequestLanguage(req, i18n.i18n);
     const cms = new DatoCMSService();
     const result = await cms.executeQuery<any>({ query: QUERY(lang) });
     return {

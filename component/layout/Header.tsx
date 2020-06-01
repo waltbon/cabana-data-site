@@ -1,6 +1,7 @@
 import React from 'react';
 import i18n from '../../i18n';
 import { WithTranslation } from 'next-i18next';
+import Router from 'next/router';
 
 class Header extends React.Component<WithTranslation> {
     render() {
@@ -113,7 +114,7 @@ class Header extends React.Component<WithTranslation> {
                                         <div className="ld-dropdown-menu">
                                             <span className="ld-module-trigger collapsed" role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
                                                 <span className="ld-module-trigger-txt text-white text-small">
-                                                    <button className="btn btn-icon" style={{backgroundColor: "#2D3252"}} type='button' onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es', () => setTimeout(() =>  location.reload(), 400))}>
+                                                    <button className="btn btn-icon" style={{backgroundColor: "#2D3252"}} type='button' onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es', () => setTimeout(() =>  {location.href = Router.pathname}, 500))}>
                                                         <img src={`/assets/img/locales/${this.props.t('change_language_to')}.svg`} style={{marginRight: '10px'}} width="14px" />
                                                     <small className="text-white">
                                                         {this.props.t('change_language_to_text')}

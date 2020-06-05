@@ -95,16 +95,14 @@ class Header extends React.Component<WithTranslation> {
                                                     <li><a href="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Desarrollo de Software<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                     <li><a href="/services/apps"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Apps Móviles<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                     <li><a href="/services/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">E-Commerce<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
+                                                    <li><a href="/crm"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">CRM<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                 </ul>
                                             </li>
-                                            <li className="is-active"><a href="/software-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                {this.props.t('menu_services_software_dev')}
-                                            </span></span></a></li>
                                             <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
                                                 {this.props.t('menu_blog')}
                                             </span></span></a></li>
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
-                                                {this.props.t('menu:contact')}
+                                                {this.props.t('menu_contact')}
                                             </span></span></a></li>
                                         </ul>
                                     </div>

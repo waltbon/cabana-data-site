@@ -1,6 +1,4 @@
 export const getRequestLanguage = (req, i18n) => {
-    console.log("req.language", req ? req['language'] : '--')
-    console.log("i18n.language", i18n.language);
     let lang = null;
 
     if (req) {

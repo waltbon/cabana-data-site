@@ -51,7 +51,7 @@ const HOMEPAGE_QUERY = (lang: string) => `query {
       columnOrder
     }
   }
-  allServices {
+  allServices(locale: ${lang}) {
     slug
     title
     shortDescription
@@ -72,7 +72,7 @@ const HOMEPAGE_QUERY = (lang: string) => `query {
       url
     }
   },
-  softwareDevelopmentPage {
+  softwareDevelopmentPage(locale: ${lang}) {
     formTitle,
     formSubtitle,
     projectTypes {

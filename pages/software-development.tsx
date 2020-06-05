@@ -57,6 +57,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
         <PageLayout url="/software-development" seo={softwareDevelopmentPage.seo}>
             <main className="content" id="content">
                 <section className="vc_row fullheight d-flex flex-wrap align-items-center bg-cover bg-center py-6" data-parallax="true" data-parallax-options="{ parallaxBG: true }" data-row-bg={page.background.url} style={{ background: 'linear-gradient(65deg, #2D3252 20%, rgba(137, 135, 226, 0.084) 100%)' }}><span className="row-bg-loader" />
+                <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
                     <div className="container">
                         <div className="row">
                             <div className="lqd-column col-md-7" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;all-childs&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;150&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:91, &quot;opacity&quot;: 0},&quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;: 1}}">

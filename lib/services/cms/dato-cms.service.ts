@@ -1,6 +1,9 @@
 import { GraphQLClient } from 'graphql-request';
 import { CmsService } from './cms-service.abstract';
 
+const IS_PREVIEW = process.env.CMS_PREVIEW === '1';
+const CMS_URL = process.env.CMS_API_BASE_URL;
+
 interface RequestProps {
     query: string;
     variables?: { limit: number };
@@ -15,10 +18,6 @@ export class DatoCMSService extends CmsService  {
     private get generatePublicAuthorization(): string {
         return process.env.CMS_API;
     }
-
-    private get generateBaseUrl(): string {
-        return process.env.CMS_API_BASE_URL;
-    }
  
     async executeQuery<T>(req: RequestProps): Promise<T> {
         const client = this.generateGraphqlClient();
@@ -31,7 +30,8 @@ export class DatoCMSService extends CmsService  {
 
 
     private generateGraphqlClient() {
-        return new GraphQLClient(this.generateBaseUrl, {
+        const url = `${CMS_URL}${IS_PREVIEW ? '/preview':''}`;
+        return new GraphQLClient(url, {
             headers: {
                 authorization: this.generatePublicAuthorization
             }

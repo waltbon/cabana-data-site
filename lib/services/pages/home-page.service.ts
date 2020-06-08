@@ -13,7 +13,7 @@ const HOMEPAGE_QUERY = (lang: string) => `query {
     title,
     subtitle,
     backgroundImage {
-      url,
+      url(imgixParams: {fm: jpg, q: 50, fit: crop, w: 2160, h: 1200}),
       alt
     },
     introTitle,

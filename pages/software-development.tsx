@@ -56,7 +56,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
     return (
         <PageLayout url="/software-development" seo={softwareDevelopmentPage.seo}>
             <main className="content" id="content">
-                <section className="vc_row fullheight d-flex flex-wrap align-items-center bg-cover bg-center py-6" data-parallax="true" data-parallax-options="{ parallaxBG: true }" data-row-bg={page.background.url} style={{ background: 'linear-gradient(65deg, #2D3252 20%, rgba(137, 135, 226, 0.084) 100%)' }}><span className="row-bg-loader" />
+                <section className="vc_row pt-280 d-flex flex-wrap align-items-center bg-cover bg-center pb-200" data-parallax="true" data-parallax-options="{ parallaxBG: true }" data-row-bg={page.background.url} style={{ background: 'linear-gradient(65deg, #2D3252 20%, rgba(137, 135, 226, 0.084) 100%)' }}><span className="row-bg-loader" />
                 <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
                     <div className="container">
                         <div className="row">
@@ -259,7 +259,7 @@ const QUERY = (lang: string) => `query {
         headerDescription,
         tabsHeader
         tabsImage {
-            url,
+            url(imgixParams: {fm: jpg, q: 30}),
             alt
         }
         tabsInfo {
@@ -280,11 +280,11 @@ const QUERY = (lang: string) => `query {
             title,
             description,
             image {
-                url
+                url(imgixParams: {fm: jpg, q: 80})
             }
         },
         background {
-            url
+            url(imgixParams: {fm: jpg, q: 80, fit: crop, w: 2000, h: 800})
         },
         seo {
             title

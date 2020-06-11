@@ -1,13 +1,13 @@
 import { NextPage } from 'next';
-import PageLayout from '../component/layout/PageLayout';
-import { ILayoutPageProps } from '../lib/types/landing-page-props.interface';
-import i18n from '../i18n';
-import { IImage } from '../lib/types/cms/models/common/image.interface';
-import { DatoCMSService } from '../lib/services/cms/dato-cms.service';
-import { ISEO } from '../lib/types/cms/models/common/seo.interface';
+import PageLayout from '../../component/layout/PageLayout';
+import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface';
+import i18n from '../../i18n';
+import { IImage } from '../../lib/types/cms/models/common/image.interface';
+import { DatoCMSService } from '../../lib/services/cms/dato-cms.service';
+import { ISEO } from '../../lib/types/cms/models/common/seo.interface';
 import { WithTranslation } from 'next-i18next';
-import { getRequestLanguage } from '../lib/language';
-import { ISkill } from '../lib/types/cms/models/home.model';
+import { getRequestLanguage } from '../../lib/language';
+import { ISkill } from '../../lib/types/cms/models/home.model';
 
 interface Props extends ILayoutPageProps, WithTranslation {
     crmPage: {

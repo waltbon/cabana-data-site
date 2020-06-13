@@ -98,7 +98,7 @@ class Header extends React.Component<WithTranslation> {
                                                     <li><a href="/crm"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">CRM<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                 </ul>
                                             </li>
-                                            <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                            <li className="is-active"><a href="/blog"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
                                                 {this.props.t('menu_blog')}
                                             </span></span></a></li>
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">

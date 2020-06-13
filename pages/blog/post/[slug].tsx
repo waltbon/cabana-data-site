@@ -13,6 +13,7 @@ const BlogPostPage: NextPage<{ post: IBlogPost }> = ({ post }) => {
             <HeaderAlternativeTransparent />
             <div className="blog-single-cover scheme-light" data-fullheight="true" data-inview="true" data-inview-options="{ &quot;onImagesLoaded&quot;: true }" style={{ backgroundColor: '#666871' }}>
                 <figure className="blog-single-media" data-responsive-bg="true" data-parallax="true" data-parallax-options="{ &quot;parallaxBG&quot;: true, &quot;triggerHook&quot;: &quot;onLeave&quot; }" data-parallax-from="{ &quot;translateY&quot;: &quot;0%&quot; }" data-parallax-to="{ &quot;translateY&quot;: &quot;20%&quot; }">
+            <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
                     <img src={coverImage} alt={post.coverImage.alt} />
                 </figure>
                 <div className="blog-single-details">
@@ -120,8 +121,8 @@ const BlogPostPage: NextPage<{ post: IBlogPost }> = ({ post }) => {
     )
 }
 
-const POST_QUERY = `query {
-    post {
+const POST_QUERY = (slug: string) => `query {
+    post(filter: {slug: {eq: "${slug}"}}) {
         title
         seo {
             title,
@@ -131,7 +132,7 @@ const POST_QUERY = `query {
             }
         }
         coverImage {
-            url
+            url(imgixParams: {fm: jpg, q: 50, fit: crop, w: 1960, h: 960})
             alt
             author
         }
@@ -153,9 +154,11 @@ const POST_QUERY = `query {
     }
 }`
 
-BlogPostPage.getInitialProps = async (): Promise<any> => {
+BlogPostPage.getInitialProps = async ({query}): Promise<any> => {
+    const { slug } = query;
+    console.log("slug", slug)
     const cms = new DatoCMSService();
-    const result = await cms.executeQuery({ query: POST_QUERY });
+    const result = await cms.executeQuery({ query: POST_QUERY(slug as string) });
     return result;
 }
 

@@ -4,7 +4,8 @@ export default class extends React.Component<any> {
     render() {
         return (
             <header className="main-header main-header-overlay" style={{ backgroundColor: 'transparent !important' }} data-react-to-megamenu="true" data-sticky-header="true" data-sticky-options="{ &quot;stickyTrigger&quot;: &quot;first-section&quot; }">
-                <div className="mainbar-wrap" style={{ backgroundColor: 'transparent !important' }}>
+                <div className="mainbar-wrap" >
+                {/* style={{ backgroundColor: 'transparent !important' }} */}
                     <div className="megamenu-hover-bg" />
                     <div className="container mainbar-container">
                         <div className="mainbar">
@@ -33,15 +34,26 @@ export default class extends React.Component<any> {
                                     <div className="collapse navbar-collapse" id="main-header-collapse">
                                         <ul id="primary-nav" className="main-nav nav align-items-lg-stretch justify-content-lg-center" data-submenu-options="{ &quot;toggleType&quot;:&quot;fade&quot;, &quot;handler&quot;:&quot;mouse-in-out&quot; }">
                                             <li>
-                                                <a href="index.html">
+                                                <a href="/">
                                                     <span className="link-icon" />
                                                     <span className="link-txt">
                                                         <span className="link-ext" />
                                                         <span className="txt">
                                                             Home
-                        <span className="submenu-expander">
+                                                            <span className="submenu-expander">
                                                                 <i className="fa fa-angle-down" />
                                                             </span>
+                                                        </span>
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/blog">
+                                                    <span className="link-icon" />
+                                                    <span className="link-txt">
+                                                        <span className="link-ext" />
+                                                        <span className="txt">
+                                                            Blog
                                                         </span>
                                                     </span>
                                                 </a>

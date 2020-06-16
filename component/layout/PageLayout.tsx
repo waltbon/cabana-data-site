@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface';
 import Meta from './Meta';
+import Head from 'next/head';
 
 export default class PageLayout extends React.Component<ILayoutPageProps> {
     render() {
@@ -10,6 +11,9 @@ export default class PageLayout extends React.Component<ILayoutPageProps> {
         // const ogImageUrl = this.props.ima
         return (
             <>
+                <Head>
+                    <meta lang={this.props.lang ? this.props.lang : 'es'}/>
+                </Head>
                 {
                     this.props.seo &&
                     <Meta

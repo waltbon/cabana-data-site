@@ -93,14 +93,13 @@ class Header extends React.Component<WithTranslation> {
                                             </span></span></a>
                                                 <ul className="nav-item-children">
                                                     <li><a href="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Desarrollo de Software<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
-                                                    <li><a href="/services/apps"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Apps Móviles<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
-                                                    <li><a href="/services/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">E-Commerce<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
+                                                    <li><a href="/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">E-Commerce<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                     <li><a href="/crm"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">CRM<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
                                                 </ul>
                                             </li>
-                                            <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                            {/* <li className="is-active"><a href="/blog"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
                                                 {this.props.t('menu_blog')}
-                                            </span></span></a></li>
+                                            </span></span></a></li> */}
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
                                                 {this.props.t('menu_contact')}
                                             </span></span></a></li>

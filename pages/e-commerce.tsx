@@ -7,8 +7,9 @@ import { getRequestLanguage } from '../lib/language';
 import i18n from '../i18n';
 import HeaderAlternativeTransparent from '../component/layout/HeaderAlternativeTransparent';
 import ServiceContactForm from '../component/services/ServiceContactForm';
+import { WithTranslation } from 'next-i18next';
 
-interface Props extends ILayoutPageProps {
+interface Props extends ILayoutPageProps, WithTranslation {
     ecommercePage: {
         title: string;
         sliderTitle: string;
@@ -257,4 +258,4 @@ Page.getInitialProps = async ({req}): Promise<any> => {
     };
 }
 
-export default i18n.withTranslation('common')(Page);;
+export default i18n.withTranslation('common')(Page);

@@ -47,7 +47,7 @@ export default class extends React.Component<any> {
                                                     </span>
                                                 </a>
                                             </li>
-                                            <li>
+                                            {/* <li>
                                                 <a href="/blog">
                                                     <span className="link-icon" />
                                                     <span className="link-txt">
@@ -57,7 +57,7 @@ export default class extends React.Component<any> {
                                                         </span>
                                                     </span>
                                                 </a>
-                                            </li>
+                                            </li> */}
                                         </ul>{/* /#primary-nav  */}
                                     </div>{/* /#main-header-collapse */}
                                 </div>{/* /.col */}

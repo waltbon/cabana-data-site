@@ -3,8 +3,10 @@ import { IImage } from '../common/image.interface';
 
 export interface IBlogPost {
   seo: ISEO;
+  id: string;
   slug: string;
   title: string;
+  intro: string;
   content: string;
   author: IAuthor;
   coverImage: IImage;

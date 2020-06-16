@@ -16,6 +16,10 @@ const HOMEPAGE_QUERY = (lang: string) => `query {
       url(imgixParams: {fm: jpg, q: 50, fit: crop, w: 2160, h: 1200}),
       alt
     },
+    partnersImage {
+      url(imgixParams: {fm: jpg, q: 50, fit: crop, w: 2160, h: 1200}),
+      alt
+    },
     introTitle,
     introDescription,
     introDescriptionSecond,

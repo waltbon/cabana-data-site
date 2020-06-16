@@ -9,6 +9,7 @@ export interface IHomePage {
       title: string;
       subtitle: string;
       backgroundImage: IImage;
+      partnersImage: IImage;
       introTitle: string;
       introDescription: string;
       introDescriptionSecond: string;

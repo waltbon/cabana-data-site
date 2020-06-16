@@ -8,6 +8,7 @@ export default class PersonalSupervisorDocument extends Document<PageLayout> {
     }
 
     render() {
+        const isProduction = process && process.env.NODE_ENV === 'production';
         return (
             <Html>
                 <Head>
@@ -20,14 +21,20 @@ export default class PersonalSupervisorDocument extends Document<PageLayout> {
                     <link rel="stylesheet" type="text/css" href="/assets/css/themes/cabanadata.css" />
                     <link rel='stylesheet' type='text/css' href='/assets/vendors/revolution/css/settings.css' />
                     <script async src="/assets/vendors/modernizr.min.js"></script>
-                    <script id="mcjs" src="/assets/js/mlch.js"></script>
+                    { 
+                        isProduction &&
+                        <script id="mcjs" src="/assets/js/mlch.js"></script>
+                    }
                 </Head>
                 <body>
                     <Main />
                     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossOrigin="anonymous"></script>
                     <script src="/assets/js/theme-vendors.js"></script>
                     <NextScript />
-                    <script src="/static/js/zh.js"></script>
+                    {
+                        isProduction &&
+                        <script src="/static/js/zh.js"></script>
+                    }
                 </body>
             </Html>
         );

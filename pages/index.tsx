@@ -103,7 +103,8 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
           </div>
         </section>
 
-        <section className="vc_row pt-190 pb-150 mt-60 bg-cover" style={{ backgroundImage: 'url(/assets/img/misc/partners.jpg)' }}>
+        <section className="vc_row pt-190 pb-150 mt-60 bg-cover" style={{ backgroundImage: `url(${homePage.partnersImage.url})` }}>
+        <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
           <div className="container">
             <div className="row">
               <div className="lqd-column col-md-10">

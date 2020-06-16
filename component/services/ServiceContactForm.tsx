@@ -9,6 +9,7 @@ interface IState {
         firstname: string;
         lastname: string;
         email: string;
+        phone: string;
         company: string;
         message: string;
     },
@@ -16,6 +17,7 @@ interface IState {
         firstname: string;
         lastname: string;
         email: string;
+        phone: string;
         company: string;
         message: string;
     }
@@ -25,7 +27,7 @@ interface Props {
     service: IServiceModel;
 }
 
-export default class extends React.Component<Props, IState> {
+class ServiceForm extends React.Component<Props, IState> {
     constructor(props) {
         super(props);
 
@@ -36,6 +38,7 @@ export default class extends React.Component<Props, IState> {
                 lastname: '',
                 email: '',
                 company: '',
+                phone: '',
                 message: '',
             },
             errors: {} as any,
@@ -67,7 +70,12 @@ export default class extends React.Component<Props, IState> {
             return;
         }
 
-        await executePost('/api/service', this.state.data);
+        const formData = {
+            ...this.state.data,
+            service: this.props.service
+        }
+
+        await executePost('/api/service', formData);
         this.setState({
             submitted: true
         })
@@ -87,6 +95,14 @@ export default class extends React.Component<Props, IState> {
 
         if (!data.email) {
             errors.email = 'El correo electrónico es requerido';
+        }
+
+        if (!data.phone) {
+            errors.phone = 'El teléfono es requerido';
+        }
+
+        if (!data.company) {
+            errors.company = 'La compañía es requerida';
         }
 
         this.setState({
@@ -111,8 +127,12 @@ export default class extends React.Component<Props, IState> {
                             value={this.state.data.email} placeholder="Correo electrónico" label="Correo electrónico" error={this.state.errors.email} />
                     </div>
                     <div className="col-sm-12">
+                        <FormInput onChange={this.onHandleChange} name="phone" required={true}
+                            value={this.state.data.phone} placeholder="Teléfono" label="Teléfono" error={this.state.errors.phone} />
+                    </div>
+                    <div className="col-sm-12">
                         <FormInput onChange={this.onHandleChange} name="company" required={true}
-                            value={this.state.data.company} placeholder="Company" label="Company" error={this.state.errors.company} />
+                            value={this.state.data.company} placeholder="Compañía" label="Company" error={this.state.errors.company} />
                     </div>
                     <div className="col-md-12">
                         <textarea className="px-4" cols={10} rows={4} name="message" aria-required="true"
@@ -134,3 +154,5 @@ export default class extends React.Component<Props, IState> {
         </>)
     }
 }
+
+export default ServiceForm;

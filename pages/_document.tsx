@@ -17,7 +17,7 @@ export default class PersonalSupervisorDocument extends Document<PageLayout> {
                     <link rel="stylesheet" href="/assets/vendors/liquid-icon/liquid-icon.min.css" />
                     <link rel="stylesheet" href="/assets/vendors/font-awesome/css/font-awesome.min.css" />
                     <link rel="stylesheet" href="/assets/css/theme-vendors.min.css" />
-                    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+                    <link rel="stylesheet" type="text/css" href="/assets/css/theme.css" />
                     <link rel="stylesheet" type="text/css" href="/assets/css/themes/cabanadata.css" />
                     <link rel='stylesheet' type='text/css' href='/assets/vendors/revolution/css/settings.css' />
                     <script async src="/assets/vendors/modernizr.min.js"></script>

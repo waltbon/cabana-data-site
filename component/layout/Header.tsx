@@ -67,7 +67,7 @@ class Header extends React.Component<WithTranslation> {
                                     <div className="navbar-header">
                                         <a className="navbar-brand pt-20 pb-20" href="/" rel="home">
                                             <span className="navbar-brand-inner">
-                                                <img className="logo-sticky" width="140px" src="/assets/img/logo/cabanadata/cd-ho-b.png" alt="Cabana Data Logo" />
+                                                <img className="logo-sticky" width="140px" src="/assets/img/logo/cabanadata/cd-ho-w.png" alt="Cabana Data Logo" />
                                                 <img className="mobile-logo-default" width="140px" src="/assets/img/logo/cabanadata/cd-ho-w.png" alt="Cabana Data Logo Mob" />
                                                 <img className="logo-default" width="140px" src="/assets/img/logo/cabanadata/cd-ho-w.png" alt="Cabana Data Logo Def" />
                                             </span>
@@ -111,12 +111,12 @@ class Header extends React.Component<WithTranslation> {
                                         <div className="ld-dropdown-menu">
                                             <span className="ld-module-trigger collapsed" role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
                                                 <span className="ld-module-trigger-txt text-white text-small">
-                                                    <button className="btn btn-icon" style={{backgroundColor: "#2D3252"}} type='button' onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es', () => setTimeout(() =>  {location.href = Router.pathname}, 500))}>
+                                                    {/* <button className="btn btn-icon" style={{backgroundColor: "#2D3252"}} type='button' onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es', () => setTimeout(() =>  {location.href = Router.pathname}, 500))}>
                                                         <img src={`/assets/img/locales/${this.props.t('change_language_to')}.svg`} style={{marginRight: '10px'}} width="14px" />
                                                     <small className="text-white">
                                                         {this.props.t('change_language_to_text')}
                                                     </small>
-                                                    </button>
+                                                    </button> */}
                                                 </span>
                                             </span>
                                         </div>

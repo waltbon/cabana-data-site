@@ -70,6 +70,13 @@ h6 {
   color: #F66747;
 }
 
+ul.nav.main-nav > li > a {
+  color: #e6e6e6;
+}
+ul.nav.main-nav > li > a:hover {
+  color: white;
+}
+
 .main-header--ligth {
   background-color: transparent;
 }
@@ -102,19 +109,15 @@ h6 {
 }
 
 @media (min-width: 1200px) {
-  .main-header .is-stuck {
-    background: #fff !important;
-  }
-
   .mainbar-wrap.is-stuck .social-icon a,
 .mainbar-wrap.is-stuck .header-module .ld-module-trigger,
 .mainbar-wrap.is-stuck .main-nav > li > a,
 .mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input {
-    color: #424242 !important;
+    color: #f6f6f6 !important;
   }
 
   .mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input {
-    border-color: #424242 !important;
+    border-color: #ebebeb !important;
   }
 }
 .main-footer {

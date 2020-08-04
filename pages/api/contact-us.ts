@@ -24,7 +24,7 @@ async function doPost(body) {
 
     const fullname = `${firstname} ${lastname}`.trim();
     const subject = 'Website contact form - ' + fullname;
-    const content = JSON.stringify(body);
+const content = JSON.stringify(body);
     await sendMailToAdministrative({
         subject,
         content

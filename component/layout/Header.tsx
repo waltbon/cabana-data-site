@@ -2,11 +2,13 @@ import React from 'react';
 import i18n from '../../i18n';
 import { WithTranslation } from 'next-i18next';
 import Router from 'next/router';
+import Topbar from './Topbar';
 
 class Header extends React.Component<WithTranslation> {
     render() {
         return (
-            <header className="main-header main-header-overlay bb-fade-black-005" data-sticky-header="true">
+            <header className="main-header main-header-overlay" data-sticky-header="true">
+                <Topbar />
                 <div className="secondarybar-wrap bb-fade-black-005">
                     <div className="container secondarybar-container" ></div>
                 </div>
@@ -88,18 +90,21 @@ class Header extends React.Component<WithTranslation> {
                                             <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
                                                 {this.props.t('menu_home')}
                                             </span></span></a></li>
-                                            <li className="menu-item-has-children"><a href="/#services"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                {this.props.t('menu_services')}
-                                            </span></span></a>
-                                                <ul className="nav-item-children">
-                                                    <li><a href="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">Desarrollo de Software<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
-                                                    <li><a href="/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">E-Commerce<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
-                                                    <li><a href="/crm"><span className="link-icon" /><span className="link-txt"><span className="link-ext"></span><span className="txt">CRM<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></a></li>
-                                                </ul>
-                                            </li>
-                                            {/* <li className="is-active"><a href="/blog"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                {this.props.t('menu_blog')}
-                                            </span></span></a></li> */}
+
+                                            <li className="">
+                                                <a href="/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                Estrategias CRM
+                                            </span></span></a></li>
+
+                                            <li className="">
+                                                <a href="/software-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                Software a la medida
+                                            </span></span></a></li>
+
+                                            <li className="">
+                                                <a href="/software-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                E-Commerce
+                                            </span></span></a></li>
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
                                                 {this.props.t('menu_contact')}
                                             </span></span></a></li>

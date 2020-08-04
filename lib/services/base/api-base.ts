@@ -5,7 +5,6 @@ export const executePost = async <T, TResult>(url: string, data: T): Promise<API
         const result = await Axios.post<TResult>(url, data);
         return new OkResult(result.data);
     } catch (error) {
-        console.log("error", error)
         throw new BadRequestResult(error.data);
     }
 }

@@ -1,19 +1,26 @@
 import { NextPage } from 'next'
-import PageLayout from '../component/layout/PageLayout'
-import { ILayoutPageProps } from '../lib/types/landing-page-props.interface'
-import HeaderAlternative from '../component/layout/HeaderAlternative'
-import ContactForm from '../component/contact/ContactForm'
-import { ISEO } from '../lib/types/cms/models/common/seo.interface'
-import i18n from './../i18n';
+import PageLayout from '../../component/layout/PageLayout'
+import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface'
+import HeaderAlternative from '../../component/layout/HeaderAlternative'
+import ContactForm from '../../component/contact/ContactForm'
+import { ISEO } from '../../lib/types/cms/models/common/seo.interface'
+import i18n from '../../i18n';
 import { WithTranslation } from 'next-i18next'
+import Header from '../../component/layout/Header'
+import HomeHeader from '../../component/home/HomeHeader'
 
 interface Props extends ILayoutPageProps, WithTranslation { }
 
 const ContactUsPage: NextPage<Props> = ({ seo }) => {
     return (
-        <PageLayout url="/contact-us" seo={seo} hideMainHeader={true}>
-        <HeaderAlternative title='Contáctenos' titlebarBackgroundImage='/assets/img/misc/shapes.jpg' />
+        <PageLayout url="/contact-us" seo={seo} hideMainHeader={false}>
+
             <main className="content bg-gray" id="content">
+            <HomeHeader background={{
+                    alt: 'back',
+                    url: "/assets/img/home-slider/hs5.jpg"}} 
+                        title="Pongámonos en contacto" 
+                        subtitle="Queremos escuchar sus necesidades y ponernos en contacto lo más pronto posible." />
                 <section className="vc_row">
                     <div className="container">
                         <div className="row">
@@ -43,7 +50,6 @@ const ContactUsPage: NextPage<Props> = ({ seo }) => {
                                         <div className="contact-form contact-form-inputs-underlined contact-form-button-circle">
                                             <ContactForm ></ContactForm>
                                         </div>{/* /.contact-form*/}
-                        
                                     </div>{/* /.col-md-10 col-md-offset-1*/}
                                 </div>{/* /.row*/}
                             </div>{/* /.lqd-column col-md-12*/}

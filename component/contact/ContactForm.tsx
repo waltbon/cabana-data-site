@@ -91,14 +91,14 @@ export default class extends React.Component<Props, IState> {
 
     render() {
         return (
-            <>
+            <div className="contactform- contact-form-inputs-filled contact-form-button-block font-size-14">
                 <form noValidate onSubmit={this.onHandleSubmit} className={`${this.state.submitted ? 'hidden':''}`}>
                     <div className="row" >
                         <div className="col-sm-12 col-md-6">
                             <FormInput onChange={this.onHandleChange} name="firstname"
-                                value={this.state.data.firstname} placeholder="Nombre" label="Nombre" error={this.state.errors.firstname} />
+                                value={this.state.data.firstname} className="bg-gray text-dark" placeholder="Nombre" label="Nombre" error={this.state.errors.firstname} />
                         </div>
-                        <div className="col-sm-12 col-md-6">
+                        <div className="col-sm-6">
                             <FormInput onChange={this.onHandleChange} name="lastname"
                                 value={this.state.data.lastname} placeholder="Apellidos" label="Apellidos" error={this.state.errors.lastname} />
                         </div>
@@ -107,12 +107,12 @@ export default class extends React.Component<Props, IState> {
                                 value={this.state.data.email} placeholder="Correo electrónico" label="Correo electrónico" error={this.state.errors.email} />
                         </div>
                         <div className="col-md-12">
-                            <textarea className="px-4" cols={10} rows={4} name="message" aria-required="true"
+                            <textarea className="px-4 bg-gray text-dark" cols={10} rows={4} name="message" aria-required="true"
                                 onChange={this.onHandleChange}
-                                aria-invalid="false" placeholder="Mensaje" required defaultValue={""} />
+                                aria-invalid="false" placeholder="Cuéntenos aquí de su proyecto" required defaultValue={""} />
                         </div>
                         <div className="col-md-12">
-                            <button className="font-size-14 ltr-sp-2" type="submit" >Enviar</button>
+                            <button className="btn btn-success font-size-14 ltr-sp-2" type="submit" >Enviar</button>
                         </div>
                     </div>
                 </form>
@@ -123,7 +123,7 @@ export default class extends React.Component<Props, IState> {
                         <a href="/" className="">Ir a inicio</a>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }

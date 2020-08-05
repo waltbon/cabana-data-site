@@ -1,7 +1,7 @@
-import 'react-phone-input-2/lib/bootstrap.css'
 import App from 'next/app';
 import React from 'react';
 import i18nNext from './../i18n';
+import 'react-phone-input-2/lib/bootstrap.css'
 
 class CabanaDataSoftwareApp extends App {
     componentDidMount() {

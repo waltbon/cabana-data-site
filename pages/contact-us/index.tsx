@@ -1,13 +1,10 @@
 import { NextPage } from 'next'
 import PageLayout from '../../component/layout/PageLayout'
 import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface'
-import HeaderAlternative from '../../component/layout/HeaderAlternative'
 import ContactForm from '../../component/contact/ContactForm'
 import { ISEO } from '../../lib/types/cms/models/common/seo.interface'
 import i18n from '../../i18n';
 import { WithTranslation } from 'next-i18next'
-import Header from '../../component/layout/Header'
-import HomeHeader from '../../component/home/HomeHeader'
 
 interface Props extends ILayoutPageProps, WithTranslation { }
 
@@ -15,76 +12,34 @@ const ContactUsPage: NextPage<Props> = ({ seo }) => {
     return (
         <PageLayout url="/contact-us" seo={seo} hideMainHeader={false}>
 
-            <main className="content bg-gray" id="content">
-            <HomeHeader background={{
-                    alt: 'back',
-                    url: "/assets/img/home-slider/hs5.jpg"}} 
-                        title="Pongámonos en contacto" 
-                        subtitle="Queremos escuchar sus necesidades y ponernos en contacto lo más pronto posible." />
-                <section className="vc_row">
-                    <div className="container">
-                        <div className="row">
-                            <div className="lqd-column col-md-8 px-4 pt-45 pb-30 bg-white box-shadow-1 pull-up col-md-offset-2">
-                                <div className="row d-flex flex-wrap align-items-center">
-                                    <div className="lqd-column col-md-7 col-md-offset-1">
-                                        <header className="fancy-title">
-                                            <h2>Hablemos!</h2>
-                                            <p>Es el momento de crear soluciones de software potenciadas por lo actual y efectivo</p>
-                                        </header>{/* /.fancy-title*/}
-                                    </div>
-                                    <div className="lqd-column col-md-4 hidden-sm hidden-xs text-right">
-                                        <div className="iconbox text-right iconbox-xl" data-animate-icon="true" data-plugin-options="{&quot;resetOnHover&quot;:true,&quot;color&quot;:&quot;rgb(216, 219, 226)&quot;,&quot;hoverColor&quot;:&quot;rgb(0, 0, 0)&quot;}">
-                                            <div className="iconbox-icon-wrap">
-                                                <span className="iconbox-icon-container">
-                                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enableBackground="new 0 0 64 64" xmlSpace="preserve">
-                                                        <polygon strokeWidth={2} strokeLinejoin="bevel" strokeMiterlimit={10} points="1,30 63,1 23,41" />
-                                                        <polygon strokeWidth={2} strokeLinejoin="bevel" strokeMiterlimit={10} points="34,63 63,1 23,41" />
-                                                    </svg>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    <div className="lqd-column col-md-10 col-sm-12 col-md-offset-1">
-                                        <div className="contact-form contact-form-inputs-underlined contact-form-button-circle">
-                                            <ContactForm ></ContactForm>
-                                        </div>{/* /.contact-form*/}
-                                    </div>{/* /.col-md-10 col-md-offset-1*/}
-                                </div>{/* /.row*/}
-                            </div>{/* /.lqd-column col-md-12*/}
-                        </div>{/* /.row*/}
-                    </div>{/* /.container*/}
-                </section>
-                <section className="vc_row pt-90 pb-60">
-                    <div className="container">
-                        <div className="row">
-                            <div className="lqd-column col-md-10 col-md-offset-1">
-                                <div className="row">
-                                    <div className="lqd-column col-md-3 col-sm-8">
-                                        <h2 className="font-size-24 font-weight-bold"><small><i className="icon-liquid_map_pin mr-2 fa-1x" /></small> Curridabat</h2>
-                                        <p className="font-size-14">Detrás de Plaza Freses.</p>
-                                        <hr className="w-30 ml-0 border-color-primary" />
-                                        <p className="font-size-14">+506 8511-5245<br />info@cabanadata.com</p>
-                                    </div>{/* /.lqd-column col-md-3 col-sm-8*/}
-                                    <div className="lqd-column col-md-3 col-sm-8 col-md-offset-1">
-                                        <h2 className="font-size-24 font-weight-bold"><small><i className="icon-liquid_map_pin mr-2 fa-1x" /></small> Santa Ana</h2>
-                                        <p className="font-size-14">The Train Business Hub, Santa Ana</p>
-                                        <hr className="w-30 ml-0 border-color-primary" />
-                                        <p className="font-size-14">+506 8511-5245<br /> info@cabanadata.com</p>
-                                    </div>{/* /.lqd-column col-md-3 col-sm-8*/}
-                                    <div className="lqd-column col-md-3 col-sm-8 col-md-offset-1">
-                                        <h2 className="font-size-24 font-weight-bold"><small><i className="icon-liquid_map_pin mr-2 fa-1x" /></small> San José</h2>
-                                        <p className="font-size-14">San Francisco de 2 Ríos</p>
-                                        <hr className="w-30 ml-0 border-color-primary" />
-                                        <p className="font-size-14">+506 8511-5245<br /> info@cabanadata.com</p>
-                                    </div>{/* /.lqd-column col-md-3 col-sm-8*/}
-                                </div>{/* /.row*/}
-                            </div>{/* /.lqd-column col-md-10 col-md-offset-1*/}
-                        </div>{/* /.row*/}
-                    </div>{/* /.container*/}
-                </section>
-            </main>{/* /#content.content*/}
+            <section className="vc_row py-5 fullheight d-flex flex-wrap align-items-center bg-cover bg-center" style={{ backgroundImage: 'url(./assets/img/home-slider/hs5.jpg)' }}>
+                <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
+                <div className="container">
+                    <div className="row d-flex flex-wrap align-items-center">
+                        <div className="lqd-column col-md-7 col-xs-12 mb-7 mb-md-0" data-custom-animations="true" data-ca-options="{ &quot;triggerHandler&quot;:&quot;inview&quot;, &quot;animationTarget&quot;:&quot;all-childs&quot;, &quot;duration&quot;:&quot;1200&quot;, &quot;delay&quot;:&quot;150&quot;, &quot;easing&quot;:&quot;easeOutQuint&quot;, &quot;direction&quot;:&quot;forward&quot;, &quot;initValues&quot;:{&quot;translateY&quot;:60, &quot;opacity&quot;:0}, &quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;:1} }">
+                            <h1 className="text-white mt-0 mb-30" data-split-text="true" data-split-options="{&quot;type&quot;:&quot;lines&quot;}" data-fittext="true" data-fittext-options="{&quot;compressor&quot;: 0.75, &quot;maxFontSize&quot;: 52}">
+                              Contáctenos  </h1>
+                            <p className="font-size-20 lh-175 text-fade-white-07 pr-md-9 mr-md-9 mb-50">
+                                Queremos escucharlo para diseñarle una propuesta justo a la medida de su negocio y necesidades actuales.
+                            </p>
+                        </div>{/* /.col-md-7 */}
+                        <div className="lqd-column col-md-5 col-xs-12 px-md-4 text-center mt-180">
+                            <div className="lqd-column-inner bg-white border-radius-6 px-3 px-md-4 pt-40 pb-40">
+                                <header className="fancy-title">
+                                    <h2 className="mb-2 font-size-30 font-weight-light">Hablemos</h2>
+                                    <p className="mt-0">
+                                        Déjenos sus datos le contactaremos lo más pronto posible
+                                    </p>
+                                </header>{/* /.fancy-title */}
+                                <div className="contact-form contact-form-inputs-filled contact-form-button-block font-size-14">
+                                    <ContactForm />
+                                    <div className="contact-form-result hidden" />{/* /.contact-form-result */}
+                                </div>{/* /.contact-form */}
+                            </div>{/* /.lqd-column-inner */}
+                        </div>{/* /.lqd-column col-md-5 */}
+                    </div>{/* /.row */}
+                </div>{/* /.container */}
+            </section>
         </PageLayout>
     )
 }

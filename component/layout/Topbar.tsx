@@ -9,28 +9,29 @@ export default class extends React.Component {
                         <div className="col">
                             <div className="header-module">
                                 <p className="text-black">
-                                Tenemos estrategias para sus necesidades. <a href="/contact-us" className="text-primary">¡Queremos escucharlas!</a></p>
+                                Construimos estrategias para su negocio. <a href="/contact-us" className="text-primary"> Cuéntenos de su proyecto</a></p>
                             </div>
                         </div>{/* /.col */}
                         <div className="col text-right">
                             <div className="header-module">
-                                <a href="#" className="btn btn-naked font-size-14 text-black">
+                                <a href="/crm" className="btn btn-naked font-size-14 text-black">
                                     <span>
-                                        <span className="btn-txt">Servicios</span>
+                                        <span className="btn-txt">¿Porqué CRM es tan importante?</span>
                                     </span>
                                 </a>
                             </div>{/* /.header-module */}
-                            <div className="header-module">
-                                <a href="#" className="btn btn-naked font-size-14 text-black">
+                            {/* <div className="header-module">
+                                <a href="/blog" className="btn btn-naked font-size-14 text-black">
                                     <span>
                                         <span className="btn-txt">Blog</span>
                                     </span>
                                 </a>
-                            </div>{/* /.header-module */}
+                            </div> */}
   
                             <div className="header-module">
                                 <ul className="social-icon scheme-gray">
-                                    <li><a href="#"><i className="fa fa-facebook" /></a></li>
+                                    <li><a target="_blank" href="https://www.facebook.com/Cabana-Data-103290631106158"><i className="fa fa-facebook" /></a></li>
+                                    <li><a target="_blank" href=" https://wa.me/50685115245"><i className="fa fa-whatsapp" /></a></li>
                                 </ul>
                             </div>{/* /.header-module */}
                         </div>{/* /.col text-right */}

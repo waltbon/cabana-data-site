@@ -1,11 +1,15 @@
 import React from 'react';
-import { Heading } from 'theme-ui';
 import { IImage } from '../../lib/types/cms/models/common/image.interface';
 
 interface Props {
   title: string;
   subtitle: string;
   background: IImage;
+  c2a?: {
+    text: string;
+    url: string;
+    isScroll?: boolean
+  } 
 }
 
 export default class extends React.Component<Props> {
@@ -19,7 +23,13 @@ export default class extends React.Component<Props> {
               <div className="lqd-column col-md-7" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;all-childs&quot;,&quot;duration&quot;:&quot;1500&quot;,&quot;delay&quot;:&quot;220&quot;, &quot;startDelay&quot;: 200,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:80,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}">
                 <h1 className="h1 pr-md-7 mb-32 text-white" data-split-text="true" data-split-options="{type:lines}" data-fittext="true" data-fittext-options="{&quot;compressor&quot;: 0.5, &quot;maxFontSize&quot;: 54}">{this.props.title}</h1>
                 <p className="mb-40 font-size-18 lh-175 text-white pr-md-5">{this.props.subtitle}</p>
-                <a className="btn btn-solid round font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2" href="#about-us" data-localscroll="true" data-localscroll-options="{scrollTo:#about-us}"><span><span className="btn-txt btn-small">Empecemos</span></span></a>
+                {
+                  this.props.c2a && this.props.c2a.isScroll &&
+                    <a className="btn btn-solid round font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2" 
+                      href={this.props.c2a.url} 
+                      data-localscroll={this.props.c2a.isScroll.toString()} 
+                      data-localscroll-options={`{scrollTo:${this.props.c2a.url}}`}><span>
+                      <span className="btn-txt btn-small">{this.props.c2a.text}</span></span></a>                }
               </div>
             </div>
           </div>

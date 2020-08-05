@@ -31,83 +31,81 @@ const Page: NextPage<Props> = ({ t, crmPage }) => {
     const page = crmPage;
     return (
         <PageLayout url="/crm" seo={crmPage.seo}>
-            <main className="content" id="content">
-                <section className="vc_row pt-280 pb-110 bg-cover" data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}" data-row-bg={crmPage.mainBackground.url}>
-                    <span className="row-bg-loader" />
-                    <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="lqd-column col-md-8">
-                                <h5 className="text-white text-uppercase mb-2 pb-2">CRM (Customer Relationship Management)</h5>
-                                <h1 className="text-white  mb-4">{crmPage.headerTitle}</h1>
-                                <p className="font-size-20 lh-16 text-white pr-md-9 mr-md-9 mb-40">{crmPage.headerParagraph}</p>
-                                <a href="#" className="btn btn-solid round font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
-                                    <span>
-                                        <span className="btn-txt">{t('common_continue')}</span>
-                                        <span className="btn-icon">
-                                            <i className="fa fa-angle-right" />
-                                        </span>
+            <section className="vc_row pt-280 pb-110 bg-cover" data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}" data-row-bg={crmPage.mainBackground.url}>
+                <span className="row-bg-loader" />
+                <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
+                <div className="container">
+                    <div className="row">
+                        <div className="lqd-column col-md-8">
+                            <h5 className="text-white text-uppercase mb-2 pb-2">CRM (Customer Relationship Management)</h5>
+                            <h1 className="text-white  mb-4">{crmPage.headerTitle}</h1>
+                            <p className="font-size-20 lh-16 text-white pr-md-9 mr-md-9 mb-40">{crmPage.headerParagraph}</p>
+                            <a href="#" className="btn btn-solid round font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2">
+                                <span>
+                                    <span className="btn-txt">{t('common_continue')}</span>
+                                    <span className="btn-icon">
+                                        <i className="fa fa-angle-right" />
                                     </span>
-                                </a>
-                                <a href="/crm/from-scratch" className="btn btn-naked text-uppercase font-size-12 font-weight-bold ltr-sp-2 text-white ml-md-4">
-                                    <span>
-                                        <span className="btn-txt">{t('from_scratch_btn')}</span>
-                                    </span>
-                                </a>
-                            </div>{/* /.lqd-column col-md-8 */}
-                        </div>{/* /.row */}
-                    </div>{/* /.container */}
-                </section>
+                                </span>
+                            </a>
+                            <a href="/crm/from-scratch" className="btn btn-naked text-uppercase font-size-12 font-weight-bold ltr-sp-2 text-white ml-md-4">
+                                <span>
+                                    <span className="btn-txt">{t('from_scratch_btn')}</span>
+                                </span>
+                            </a>
+                        </div>{/* /.lqd-column col-md-8 */}
+                    </div>{/* /.row */}
+                </div>{/* /.container */}
+            </section>
 
-                <section id="about" className="vc_row pt-110 pb-75">
-                    <div className="container">
-                        <div className="row">
-                            <div className="lqd-column col-md-8 col-md-offset-2 mb-75">
-                                <header className="fancy-title text-center">
-                                    <span className="lb-cb-subtitle text-uppercase ltr-sp-2 pb-4">CRM <small> (Customer Relationship Management)</small></span>
-                                    <h2 className="pb-4">{crmPage.featuresTitle}</h2>
-                                    <div className="font-size-18 lh-16 px-6" dangerouslySetInnerHTML={{ __html: crmPage.featuresSubtitle }}></div>
-                                </header>
-                                <div className="row">
-                                    <div className="lqd-column col-sm-12 text-center">
-                                        <a href="/crm/from-scratch" className="btn btn-filled text-uppercase font-size-12 font-weight-bold ltr-sp-2">
-                                            <span>
-                                                <span className="btn-txt">
-                                                {t('from_scratch_btn')} </span> 
-                                                <i className="fa fa-arrow-right ml-sm-2"> </i>
-                                            </span>
-                                        </a>
-                                    </div>
+            <section id="about" className="vc_row pt-110 pb-75">
+                <div className="container">
+                    <div className="row">
+                        <div className="lqd-column col-md-8 col-md-offset-2 mb-75">
+                            <header className="fancy-title text-center">
+                                <span className="lb-cb-subtitle text-uppercase ltr-sp-2 pb-4">CRM <small> (Customer Relationship Management)</small></span>
+                                <h2 className="pb-4">{crmPage.featuresTitle}</h2>
+                                <div className="font-size-18 lh-16 px-6" dangerouslySetInnerHTML={{ __html: crmPage.featuresSubtitle }}></div>
+                            </header>
+                            <div className="row">
+                                <div className="lqd-column col-sm-12 text-center">
+                                    <a href="/crm/from-scratch" className="btn btn-filled text-uppercase font-size-12 font-weight-bold ltr-sp-2">
+                                        <span>
+                                            <span className="btn-txt">
+                                                {t('from_scratch_btn')} </span>
+                                            <i className="fa fa-arrow-right ml-sm-2"> </i>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section className="vc_row bg-light">
-                    <div className="container-fluid px-0">
-                        {
-                            Array.isArray(crmPage.pictureBlocks) && crmPage.pictureBlocks.map(picBlock => (
-                                <div className="row mx-0 d-md-flex flex-wrap align-items-stretch">
-                                    <div className="lqd-column col-lg-6 col-xs-12 visible-lg px-0 bg-cover" data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}" style={{ backgroundImage: `url(${picBlock.image.url})` }}>
-                                    </div>
-                                    <div className="lqd-column col-lg-6 col-xs-12 pt-7 pb-4 pb-lg-7 d-md-flex flex-wrap align-content-center">
-                                        <div className="row">
-                                            <div className="col-md-10 col-md-offset-1 pt-lg-6 pb-lg-5" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;all-childs&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;120&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:30,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}">
-                                                <header className="fancy-title">
-                                                    <h6 className="font-size-12 text-uppercase ltr-sp-1 text-primary">{picBlock.title}</h6>
-                                                    <h2 className="font-weight-bold text-uppercase ltr-sp-1">{picBlock.title}</h2>
-                                                    <i className="line w-5 circle border-color-primary" />
-                                                </header>
-                                                <p className="font-size-18 lh-185">A startup or start-up is started by individual founders or entrepreneurs to search for a repeatable and scalable business model. A startup or start-up is started by individual founders or entrepreneurs to search for a repeatable and scalable business model.</p>
-                                            </div>
+            <section className="vc_row bg-light">
+                <div className="container-fluid px-0">
+                    {
+                        Array.isArray(crmPage.pictureBlocks) && crmPage.pictureBlocks.map(picBlock => (
+                            <div className="row mx-0 d-md-flex flex-wrap align-items-stretch">
+                                <div className="lqd-column col-lg-6 col-xs-12 visible-lg px-0 bg-cover" data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}" style={{ backgroundImage: `url(${picBlock.image.url})` }}>
+                                </div>
+                                <div className="lqd-column col-lg-6 col-xs-12 pt-7 pb-4 pb-lg-7 d-md-flex flex-wrap align-content-center">
+                                    <div className="row">
+                                        <div className="col-md-10 col-md-offset-1 pt-lg-6 pb-lg-5" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;all-childs&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;120&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:30,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}">
+                                            <header className="fancy-title">
+                                                <h6 className="font-size-12 text-uppercase ltr-sp-1 text-primary">{picBlock.title}</h6>
+                                                <h2 className="font-weight-bold text-uppercase ltr-sp-1">{picBlock.title}</h2>
+                                                <i className="line w-5 circle border-color-primary" />
+                                            </header>
+                                            <p className="font-size-18 lh-185">A startup or start-up is started by individual founders or entrepreneurs to search for a repeatable and scalable business model. A startup or start-up is started by individual founders or entrepreneurs to search for a repeatable and scalable business model.</p>
                                         </div>
                                     </div>
-                                </div>))
-                        }
-                    </div>
-                </section>
-            </main>
+                                </div>
+                            </div>))
+                    }
+                </div>
+            </section>
         </PageLayout>
     )
 }

@@ -92,8 +92,8 @@ class Header extends React.Component<WithTranslation> {
                                             </span></span></a></li>
 
                                             <li className="">
-                                                <a href="/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                Estrategias CRM
+                                                <a href="/crm"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                CRM
                                             </span></span></a></li>
 
                                             <li className="">
@@ -102,7 +102,7 @@ class Header extends React.Component<WithTranslation> {
                                             </span></span></a></li>
 
                                             <li className="">
-                                                <a href="/software-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                <a href="/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
                                                 E-Commerce
                                             </span></span></a></li>
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">

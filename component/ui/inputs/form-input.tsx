@@ -19,7 +19,7 @@ const FormInput = ({
         <React.Fragment>
             {error && <small style={{color: '#f58982', fontSize: '14px'}}>{error}</small>}
             <input
-                className="lh-25 mb-30"
+                className="bg-gray text-dark"
                 id={name}
                 name={name}
                 type={type}
@@ -27,7 +27,8 @@ const FormInput = ({
                 onChange={onChange}
                 value={value}
                 required
-                style={error && { borderBottom: 'solid 1px #f58982' }}
+                style={error && { borderBottom: 'solid 1px #f58982' } || {
+                    color: '#a7a9b8'}}
             />
         </React.Fragment>
     )

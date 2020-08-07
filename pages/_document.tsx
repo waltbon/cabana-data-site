@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import PageLayout from '../component/layout/PageLayout';
 
-export default class PersonalSupervisorDocument extends Document<PageLayout> {
+export default class CabanaDataDocument extends Document<PageLayout> {
     static async getInitialProps(ctx) {
         const initialProps = await Document.getInitialProps(ctx);
         return { ...initialProps }

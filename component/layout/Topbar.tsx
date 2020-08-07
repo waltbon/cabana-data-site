@@ -1,4 +1,6 @@
 import React from 'react';
+import i18n from '../../i18n';
+import Router from 'next/router';
 
 export default class extends React.Component {
     render() {
@@ -9,7 +11,7 @@ export default class extends React.Component {
                         <div className="col">
                             <div className="header-module">
                                 <p className="text-black">
-                                Construimos estrategias para su negocio. <a href="/contact-us" className="text-primary"> Cuéntenos de su proyecto</a></p>
+                                    Construimos estrategias para su negocio. <a href="/contact-us" className="text-primary"> Cuéntenos de su proyecto</a></p>
                             </div>
                         </div>{/* /.col */}
                         <div className="col text-right">
@@ -19,7 +21,29 @@ export default class extends React.Component {
                                         <span className="btn-txt">¿Porqué CRM es tan importante?</span>
                                     </span>
                                 </a>
-                            </div>{/* /.header-module */}
+                            </div>
+
+                            <div className="header-module">
+                                <div className="ld-dropdown-menu">
+                                    <span className="ld-module-trigger collapsed" 
+                                        onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es', () => setTimeout(() =>  {location.href = Router.pathname}, 500))}
+                                        role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
+                                        <span className="ld-module-trigger-txt">
+                                            <img className="mr-2" width={20} src="http://opus.liquid-themes.com/wp-content/uploads/flags/united-states-of-america.svg" alt="en" title="English" />
+                                            <span>US</span>
+                                            <i className="fa fa-angle-down" />
+                                        </span>
+                                    </span>
+                                    <div className="ld-module-dropdown left collapse" id="header-dropdown-1" aria-expanded="false" role="tablist">
+                                        <div className="ld-dropdown-menu-content">
+                                            <ul>
+                                                <li><a href="/es" target="_blank">Español</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>{/* /.ld-module-dropdown */}
+                                </div>{/* /.ld-dropdown-menu */}
+                            </div>
+
                             {/* <div className="header-module">
                                 <a href="/blog" className="btn btn-naked font-size-14 text-black">
                                     <span>
@@ -27,7 +51,7 @@ export default class extends React.Component {
                                     </span>
                                 </a>
                             </div> */}
-  
+
                             <div className="header-module">
                                 <ul className="social-icon scheme-gray">
                                     <li><a target="_blank" href="https://www.facebook.com/Cabana-Data-103290631106158"><i className="fa fa-facebook" /></a></li>

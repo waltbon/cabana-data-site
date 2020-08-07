@@ -12,6 +12,13 @@ export default class CabanaDataDocument extends Document<PageLayout> {
         return (
             <Html>
                 <Head>
+                    { 
+                        isProduction &&
+                        <>
+                        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156293150-1"></script>
+                        <script id="mcjs" src="/assets/js/mlch.js"></script>
+                        </>
+                    }
                     <meta lang="es" />
                     <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap' rel='stylesheet'></link>
@@ -22,10 +29,6 @@ export default class CabanaDataDocument extends Document<PageLayout> {
                     <link rel="stylesheet" type="text/css" href="/assets/css/themes/cabanadata.css" />
                     <link rel='stylesheet' type='text/css' href='/assets/vendors/revolution/css/settings.css' />
                     <script async src="/assets/vendors/modernizr.min.js"></script>
-                    { 
-                        isProduction &&
-                        <script id="mcjs" src="/assets/js/mlch.js"></script>
-                    }
                 </Head>
                 <body>
                     <Main />

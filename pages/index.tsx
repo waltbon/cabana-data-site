@@ -8,7 +8,6 @@ import PageIntroBackground from '../component/home/PageIntroBackground';
 import HomeIntro from '../component/home/HomeIntro';
 import HomeOurSkills from '../component/home/HomeOurSkills';
 import HomeProcess from '../component/home/HomeProcess';
-import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
 import { WithTranslation } from 'next-i18next';
 import { getRequestLanguage } from '../lib/language';
 
@@ -17,7 +16,6 @@ type Props = ILayoutPageProps & IHomePage & WithTranslation
 const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials, softwareDevelopmentPage }) => {
   return (
     <PageLayout url="/" seo={homePage.seo}>
-
       <PageIntroBackground background={homePage.backgroundImage} 
         title={homePage.title} 
         subtitle={homePage.subtitle}

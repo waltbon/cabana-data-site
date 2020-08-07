@@ -16,4 +16,8 @@ class CabanaDataSoftwareApp extends App {
     }
 }
 
+// CabanaDataSoftwareApp.getInitialProps = async (appContext) => ({ 
+//     ...await CabanaDataSoftwareApp.getInitialProps(appContext) 
+// })
+
 export default i18nNext.appWithTranslation(CabanaDataSoftwareApp)

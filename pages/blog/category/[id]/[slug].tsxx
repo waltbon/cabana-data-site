@@ -87,7 +87,10 @@ CategoryPostPage.getInitialProps = async ({ query }): Promise<any> => {
     const cms = new DatoCMSService();
     const categoryId = query.id as string;
     const result = await cms.executeQuery({ query: POST_QUERY(categoryId) });
-    return result;
+    return {
+        ...result,
+        namespacesRequired: ['home', 'header', 'common'],
+    };
 }
 
 export default CategoryPostPage;

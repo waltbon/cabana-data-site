@@ -8,7 +8,13 @@ class Header extends React.Component<WithTranslation> {
     render() {
         return (
             <header className="main-header main-header-overlay" data-sticky-header="true">
-                <Topbar />
+                <Topbar 
+                    rightInvitationText={this.props.t('topbar_right_invitation_title')}
+                    rightInvitationC2AText={this.props.t('topbar_right_invitation_c2a_text')}
+                    rightInvitationC2AUrl="tel:50685115245"
+                    headerInvitationTitle={this.props.t('topbar_invitation_title')}
+                    headerInvitationC2aText={this.props.t('topbar_invitation_c2a')}
+                    headerInvitationC2aUrl="/contact-us" />
                 <div className="secondarybar-wrap bb-fade-black-005">
                     <div className="container secondarybar-container" ></div>
                 </div>
@@ -116,12 +122,10 @@ class Header extends React.Component<WithTranslation> {
                                         <div className="ld-dropdown-menu">
                                             <span className="ld-module-trigger collapsed" role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
                                                 <span className="ld-module-trigger-txt text-white text-small">
-                                                    {/* <button className="btn btn-icon" style={{backgroundColor: "#2D3252"}} type='button' onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es', () => setTimeout(() =>  {location.href = Router.pathname}, 500))}>
-                                                        <img src={`/assets/img/locales/${this.props.t('change_language_to')}.svg`} style={{marginRight: '10px'}} width="14px" />
-                                                    <small className="text-white">
+                                                    <a className="text-white" style={{backgroundColor: "#2D3252"}} onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es')}>
+                                                        <img src={`/assets/img/locales/${this.props.t('change_language_to')}.svg`} style={{marginRight: '10px'}} width="20px" />
                                                         {this.props.t('change_language_to_text')}
-                                                    </small>
-                                                    </button> */}
+                                                    </a>
                                                 </span>
                                             </span>
                                         </div>
@@ -135,4 +139,4 @@ class Header extends React.Component<WithTranslation> {
     }
 }
 
-export default i18n.withTranslation('header')(Header)
+export default i18n.withTranslation('header')(Header);

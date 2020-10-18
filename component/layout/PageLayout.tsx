@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import Head from 'next/head';
 import Meta from './Meta';
 import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface';
 
@@ -9,7 +8,7 @@ export default class PageLayout extends React.Component<ILayoutPageProps> {
     render() {
         const urlBase = process.env.API_BASE_URL;
         return (
-        <>
+            <>
                 <Meta
                     title={this.props.seo.title}
                     creator={this.props.author}

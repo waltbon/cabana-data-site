@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import PageLayout from '../component/layout/PageLayout';
 
 export default class CabanaDataDocument extends Document<PageLayout> {
-    static async getInitialProps(ctx) {
+    static async getInitialProps(ctx: any) {
         const initialProps = await Document.getInitialProps(ctx);
         return { ...initialProps }
     }

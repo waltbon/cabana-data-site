@@ -1,7 +1,7 @@
 import express from 'express';
 import next from 'next';
 import cors from 'cors';
-import nextI18NextMiddleware from 'next-i18next/middleware';
+import nextI18NextMiddleware from "next-i18next/middleware";
 import nextI18next from '../i18n';
 
 const port = process.env.PORT || 3000

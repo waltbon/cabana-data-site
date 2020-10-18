@@ -47,7 +47,7 @@ const thankYouPage: NextPage<Props> = ({t}) => {
 
 thankYouPage.getInitialProps = (): any => {
     return {
-        namespacesRequired: ['home', 'header', 'common'],
+        namespacesRequired: ['header', 'common'],
     }
 }
 

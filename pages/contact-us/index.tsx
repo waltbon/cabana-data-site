@@ -49,7 +49,8 @@ ContactUsPage.getInitialProps = async (): Promise<any> => {
         seo: {
             title: 'Cabana Data Software | Contátenos',
             description: 'Queremos poner a su disposición nuestros servicios con lo mejor y acertado para su negocio en cuanto a software a la medida',
-        } as ISEO
+        } as ISEO,
+        namespacesRequired: ['header', 'common']
     }
 }
 

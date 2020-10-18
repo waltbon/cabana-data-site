@@ -1,14 +1,26 @@
 import NextI18Next from 'next-i18next';
 import path from 'path';
+const { localeSubpaths } = require("./next.config").publicRuntimeConfig;
+const localePath = path.resolve('./public/static/locales');
 
-export default new NextI18Next({
+const localeSubpathVariations = {
+  none: {},
+  foreign: {
+    en: "en",
+  },
+  all: {
+    en: "en",
+    es: "",
+  },
+};
+
+
+const i18n = new NextI18Next({
   defaultLanguage: 'es',
   otherLanguages: ['en'],
-  browserLanguageDetection: true,
-  shallowRender: false,
-  // localePath: path.resolve('./public/static/locales'),
-  localeSubpaths: {
-    es: 'es',
-    en: 'en',
-  }
-});
+  localeSubpaths: localeSubpathVariations[localeSubpaths],
+  // localePath,
+  // defaultNS: 'common'
+})
+
+export default i18n;

@@ -1,5 +1,4 @@
 import { NextPage } from 'next'
-import i18n from './../i18n';
 import PageLayout from '../component/layout/PageLayout';
 import { ILayoutPageProps } from '../lib/types/landing-page-props.interface';
 import { getHomePageData } from '../lib/services/pages/home-page.service';
@@ -10,6 +9,7 @@ import HomeOurSkills from '../component/home/HomeOurSkills';
 import HomeProcess from '../component/home/HomeProcess';
 import { WithTranslation } from 'next-i18next';
 import { getRequestLanguage } from '../lib/language';
+import i18n from '../i18n';
 
 type Props = ILayoutPageProps & IHomePage & WithTranslation
 
@@ -20,10 +20,11 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
         title={homePage.title} 
         subtitle={homePage.subtitle}
         c2a={{
-          text: '¿Cómo brindamos soluciones?',
+          text: t('header_intro_c2a_text'),
           url: '#about-us',
           isScroll: true
         }}/>
+      <h1></h1>
       
       <HomeIntro services={homePage.services} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />
 
@@ -149,6 +150,7 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
 
 IndexPage.getInitialProps = async ({ req }): Promise<any> => {
   const lang = getRequestLanguage(req, i18n.i18n)
+  console.log("lang", lang)
   const data = await getHomePageData(lang);
   return {
     ...data,

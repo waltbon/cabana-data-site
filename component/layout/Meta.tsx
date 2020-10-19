@@ -10,9 +10,11 @@ interface Props {
     type?: 'article'|'website'
 }
 
-export default (props: Props) => (
+const Meta = (props: Props) => (
     <Head>
         <title>{props.title}</title>
+        <meta lang="es" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={props.description} />
         <meta property="og:type" content={props.type ? props.type : 'website' } />
         <meta name="og:title" property="og:title" content={props.title} />
@@ -29,3 +31,4 @@ export default (props: Props) => (
         <link rel="canonical" href="" />
     </Head>
 )
+export default Meta;

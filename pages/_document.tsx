@@ -19,8 +19,6 @@ export default class CabanaDataDocument extends Document<PageLayout> {
                         <script id="mcjs" src="/assets/js/mlch.js"></script>
                         </>
                     }
-                    <meta lang="es" />
-                    <meta name="viewport" content="width=device-width, initial-scale=1" />
                     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap' rel='stylesheet'></link>
                     <link rel="stylesheet" href="/assets/vendors/liquid-icon/liquid-icon.min.css" />
                     <link rel="stylesheet" href="/assets/vendors/font-awesome/css/font-awesome.min.css" />

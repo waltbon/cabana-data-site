@@ -10,17 +10,18 @@ const localeSubpathVariations = {
   },
   all: {
     en: "en",
-    es: "",
+    es: "es",
   },
 };
 
 
 const i18n = new NextI18Next({
-  defaultLanguage: 'es',
-  otherLanguages: ['en'],
+  defaultLanguage: 'en',
+  otherLanguages: ['es'],
   localeSubpaths: localeSubpathVariations[localeSubpaths],
-  // localePath,
-  // defaultNS: 'common'
+  localePath,
+  browserLanguageDetection: true,
+  defaultNS: 'common'
 })
 
 export default i18n;

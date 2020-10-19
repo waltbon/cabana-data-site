@@ -97,14 +97,14 @@ class Header extends React.Component<WithTranslation> {
                                                 {this.props.t('menu_home')}
                                             </span></span></a></li>
 
-                                            <li className="">
+                                            {/* <li className="">
                                                 <a href="/crm"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
                                                 CRM
-                                            </span></span></a></li>
+                                            </span></span></a></li> */}
 
                                             <li className="">
                                                 <a href="/software-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                Software a la medida
+                                                {this.props.t('menu_services_software_dev')}
                                             </span></span></a></li>
 
                                             <li className="">

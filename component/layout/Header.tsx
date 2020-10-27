@@ -57,7 +57,7 @@ class Header extends React.Component<WithTranslation> {
                                             </div>{/* /.iconbox-icon-wrap*/}
                                             <div className="contents">
                                                 <h3 className="mb-1 font-size-13">{this.props.t('menu_our_location')}</h3>
-                                                <p className="font-size-13 lh-185">Curridabat, Santa Ana. Costa Rica</p>
+                                                <p className="font-size-13 lh-185">Curridabat, Santa Ana. Costa Rica 🇨🇷</p>
                                             </div>
                                         </div>
                                     </div>
@@ -108,8 +108,8 @@ class Header extends React.Component<WithTranslation> {
                                             </span></span></a></li>
 
                                             <li className="">
-                                                <a href="/e-commerce"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                E-Commerce
+                                                <a href="/mobile-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                {this.props.t('menu_services_mobile_dev')}
                                             </span></span></a></li>
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
                                                 {this.props.t('menu_contact')}

@@ -6,7 +6,8 @@ export default class extends React.Component<{
     title: string;
     description1: string;
     description2: string;
-    services: IHomeService[]
+    services: IHomeService[],
+    contactUsNowText: string
 }> {
     render() {
         const columnOne = this.props.services.filter(s => s.column === 1);
@@ -28,7 +29,7 @@ export default class extends React.Component<{
                             <a className="btn btn-solid btn-secondary font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2 "
                                 href="/contact-us"><span>
                                     <span className="btn-txt btn-small">
-                                        <i className="fa fa-calendar"> </i> Agendemos una llamada</span></span></a>
+                                        {this.props.contactUsNowText}</span></span></a>
                                     <br/>
                         </div>
 

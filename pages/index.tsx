@@ -26,7 +26,7 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
         }}/>
       <h1></h1>
       
-      <HomeIntro services={homePage.services} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />
+      <HomeIntro contactUsNowText={t('contact_us_now')} services={homePage.services} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />
 
       <section className="vc_row pt-160 pb-160 mt-20 bg-cover" id="contact" style={{ backgroundImage: 'url(/assets/img/home-slider/experience.jpg)' }} data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}">
         <div className="container">

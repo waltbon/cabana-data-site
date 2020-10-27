@@ -3901,8 +3901,9 @@ figure + .ld-cart-product-details {
 .iconbox h3 {
   display: inline-block;
   margin: 0 0 0.7em;
-  font-size: 24px;
-  line-height: 1.5em;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2em;
 }
 .iconbox .iconbox-icon-container {
   display: flex;

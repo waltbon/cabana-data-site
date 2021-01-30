@@ -1,4 +1,4 @@
-import { IImage } from './image.interface';
+import { IImage } from '.';
 
 export interface ISEO {
     title: string;

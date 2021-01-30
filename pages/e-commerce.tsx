@@ -24,10 +24,10 @@ interface Props extends ILayoutPageProps, WithTranslation {
     }
 }
 
-const Page: NextPage<Props> = ({ ecommercePage }) => {
+const Page: NextPage<Props> = ({ ecommercePage, lang }) => {
     const data = ecommercePage;
     return (
-        <PageLayout url="/e-commerce" seo={ecommercePage.seo} >
+        <PageLayout url="/e-commerce" seo={ecommercePage.seo} lang={lang} >
             <HeaderAlternativeTransparent />
                 <section className="vc_row fullheight d-flex flex-wrap align-items-end mb-80" data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;:true}" data-slideshow-bg="true" data-slideshow-options="{&quot;delay&quot;:3000,&quot;effect&quot;:&quot;scale&quot;,&quot;imageArray&quot;:[&quot;/assets/img/services/e-commerce/ec1.jpg&quot;,&quot;/assets/img/services/e-commerce/ec2.jpg&quot;, &quot;/assets/img/services/e-commerce/uc4.jpg&quot;]}"><span className="row-bg-loader"><span className="row-bg-loader-inner" /></span>
                     <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
@@ -252,6 +252,7 @@ Page.getInitialProps = async ({req}): Promise<any> => {
     const result = await cms.executeQuery<any>({ query: QUERY(lang) });
     return {
         ...result,
+        lang,
         namespacesRequired: ['common', 'header', 'footer']
     };
 }

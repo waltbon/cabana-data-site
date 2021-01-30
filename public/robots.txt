@@ -1,0 +1,7 @@
+Sitemap: https://cabanadata.com/api/sitemap/en
+Sitemap: https://cabanadata.com/api/sitemap/es
+
+User-agent: *
+Allow: /*
+
+Disallow: /api/*

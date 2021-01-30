@@ -25,6 +25,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-phone-input-2": "^2.13.8",
+    "sitemap": "^6.3.5",
     "universal-cookie": "^4.0.4"
   },
   "devDependencies": {

@@ -22,9 +22,9 @@ export default class extends React.Component {
                                 <ul className="social-icon social-icon-md">
                                     <li><a target="_blank" href=" https://wa.me/50685115245"><i className="fa fa-whatsapp" /></a></li>
                                     <li><a target="_blank" href="https://t.me/waltbon"><i className="fa fa-telegram" /></a></li>
-                                    <li><a target="_blank" href="https://www.facebook.com/Cabana-Data-103290631106158"><i className="fa fa-facebook" /></a></li>
+                                    {/* <li><a target="_blank" href="https://www.facebook.com/Cabana-Data-103290631106158"><i className="fa fa-facebook" /></a></li> */}
                                     <li><a target="_blank" href="https://www.linkedin.com/company/cabana-data"><i className="fa fa-linkedin" /></a></li>
-                                    <li style={{ paddingRight: '14px' }}><a target="_blank" href="https://www.instagram.com/cabanadata/"><i className="fa fa-instagram" /></a></li>
+                                    {/* <li style={{ paddingRight: '14px' }}><a target="_blank" href="https://www.instagram.com/cabanadata/"><i className="fa fa-instagram" /></a></li> */}
                                 </ul>
                             </div>{/* /.col-md-3 col-xs-12*/}
                             {/* /.row*/}

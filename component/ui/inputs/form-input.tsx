@@ -22,6 +22,7 @@ const FormInput = ({
                 className="bg-gray text-dark"
                 id={name}
                 name={name}
+                autoComplete="off"
                 type={type}
                 placeholder={placeholder}
                 onChange={onChange}

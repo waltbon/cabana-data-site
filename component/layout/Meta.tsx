@@ -5,6 +5,7 @@ interface Props {
     description: string;
     creator?: string;
     imageUrl?: string;
+    lang: string;
     ogImageUrl?: string;
     url: string;
     type?: 'article'|'website'
@@ -13,7 +14,7 @@ interface Props {
 const Meta = (props: Props) => (
     <Head>
         <title>{props.title}</title>
-        <meta lang="es" />
+        <meta lang={props.lang||'en'} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content={props.description} />
         <meta property="og:type" content={props.type ? props.type : 'website' } />

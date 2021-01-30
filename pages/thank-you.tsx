@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
-import PageLayout from '../../component/layout/PageLayout';
-import i18n from './../../i18n';
+import PageLayout from '../component/layout/PageLayout';
+import i18n from '../i18n';
 import { WithTranslation } from 'next-i18next';
-import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface';
+import { ILayoutPageProps } from '../lib/types/landing-page-props.interface';
 
 interface Props extends ILayoutPageProps, WithTranslation { }
 

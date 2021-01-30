@@ -51,10 +51,10 @@ interface Props extends ILayoutPageProps, WithTranslation {
     }
 }
 
-const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
+const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
     const page = softwareDevelopmentPage;
     return (
-        <PageLayout url="/software-development" seo={softwareDevelopmentPage.seo}>
+        <PageLayout lang={lang} url="/software-development" seo={softwareDevelopmentPage.seo}>
             <section className="vc_row pt-280 d-flex flex-wrap align-items-center bg-cover bg-center pb-200" data-parallax="true" data-parallax-options="{ parallaxBG: true }" data-row-bg={page.background.url} style={{ background: 'linear-gradient(65deg, #2D3252 20%, rgba(137, 135, 226, 0.084) 100%)' }}><span className="row-bg-loader" />
                 <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
                 <div className="container">
@@ -75,10 +75,10 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
                             <h2 className="font-size-38 lh-13 mt-0 mb-30" data-split-text="true" data-split-options="{&quot;type&quot;:&quot;lines&quot;}" data-text-rotator="true">
                                 {page.tabsHeader} <span>{'['}</span>
                                 <span className="txt-rotate-keywords">
-                                    <span className="keyword active">oportunidades</span>
-                                    <span className="keyword">profesionales</span>
-                                    <span className="keyword">negocios</span>
-                                    <span className="keyword">productividad</span>
+                                    <span className="keyword active">ReactJS</span>
+                                    <span className="keyword">AWS</span>
+                                    <span className="keyword">Docker</span>
+                                    <span className="keyword">GitHub</span>
                                 </span>{/* /.txt-rotate-keywords */}
                                 <span>{']'}</span>
                             </h2>
@@ -197,8 +197,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
                     </div>
                     {/* /.row*/}
                 </div>
-                {/* /.container*/}
-                <div className="container-fluid px-0">
+                {/* <div className="container-fluid px-0">
                     <div className="row mx-0">
                         <div className="lqd-column col-md-12">
                             <div className="liquid-portfolio-list">
@@ -234,15 +233,10 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage }) => {
                                         })
                                     }
                                 </div>
-                                {/* /.row liquid-portfolio-list-row*/}
                             </div>
-                            {/* /.liquid-portfolio-list*/}
                         </div>
-                        {/* /.col-md-12*/}
                     </div>
-                    {/* /.row mx-0*/}
-                </div>
-                {/* /.container-fluid px-0*/}
+                </div> */}
             </section>
         </PageLayout>
     )
@@ -313,6 +307,7 @@ Page.getInitialProps = async ({ req }): Promise<any> => {
     const result = await cms.executeQuery<any>({ query: QUERY(lang) });
     return {
         ...result,
+        lang,
         namespacesRequired: ['common', 'header', 'footer']
     };
 }

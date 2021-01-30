@@ -334,11 +334,11 @@ export default class extends React.Component<Props, IState> {
                 {/* <div dangerouslySetInnerHTML={{__html: this.getCrmHtml()}}></div> */}
                 <form noValidate onSubmit={this.onHandleSubmit} className={`${this.state.submitted ? 'hidden':''}`}>
                     <div className="row" >
-                        <div className="col-sm-12 col-md-6">
+                        <div className="col-sm-12 col-md-12">
                             <FormInput onChange={this.onHandleChange} name="firstname"
                                 value={this.state.data.firstname} className="bg-gray text-dark" placeholder="Nombre" label="Nombre" error={this.state.errors.firstname} />
                         </div>
-                        <div className="col-sm-6">
+                        <div className="col-sm-12">
                             <FormInput onChange={this.onHandleChange} name="lastname"
                                 value={this.state.data.lastname} placeholder="Apellidos" label="Apellidos" error={this.state.errors.lastname} />
                         </div>

@@ -13,9 +13,9 @@ import i18n from '../i18n';
 
 type Props = ILayoutPageProps & IHomePage & WithTranslation
 
-const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials, softwareDevelopmentPage }) => {
+const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimonials, softwareDevelopmentPage }) => {
   return (
-    <PageLayout url="/" seo={homePage.seo}>
+    <PageLayout url="/" seo={homePage.seo} lang={lang}>
       <PageIntroBackground background={homePage.backgroundImage} 
         title={homePage.title} 
         subtitle={homePage.subtitle}
@@ -54,9 +54,9 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
         <div className="container">
           <div className="row">
             <div className="lqd-column col-md-8 col-md-offset-2 text-center">
-              <h2 className="text-uppercase text-white mt-20 pb-30">¿Porqué hacemos lo que hacemos?</h2>
+              <h2 className="text-uppercase text-white mt-20 pb-30">{t('why_us_title')}</h2>
               <p className="font-size-24 text-white px-md-7 mx-md-3 mb-20 pb-20">
-                Creemos que cada día es una oportunidad para crear estrategias ágiles y experiencias a nuestros clientes.
+                {t('why_us_subtitle')}
               </p>
             </div>{/* /.col-md-8 col-md-offset-2 */}
           </div>{/* /.row */}
@@ -68,8 +68,8 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
           <div className="row">
             <div className="lqd-column col-md-6 col-md-offset-3 mb-80">
               <header className="fancy-title mb-40 text-center">
-                <h2 className="mt-0">Nuestros Partners</h2>
-                <p className="font-size-18">Nos agrada trabjar de lado con compañías de tanto valor </p>
+                <h2 className="mt-0">{t('partners_title')}</h2>
+                <p className="font-size-18">{t('partners_subtitle')}</p>
               </header>
             </div>
           </div>
@@ -150,10 +150,10 @@ const IndexPage: NextPage<Props> = ({ t, homePage, allPartners, allTestimonials,
 
 IndexPage.getInitialProps = async ({ req }): Promise<any> => {
   const lang = getRequestLanguage(req, i18n.i18n)
-  console.log("lang", lang)
   const data = await getHomePageData(lang);
   return {
     ...data,
+    lang,
     namespacesRequired: ['home', 'header', 'common'],
   }
 }

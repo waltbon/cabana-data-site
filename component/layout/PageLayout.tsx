@@ -18,11 +18,11 @@ class PageLayout extends React.Component<ILayoutPageProps> {
                     imageUrl={this.props.seo.image ? this.props.seo.image.url : ''}
                     description={this.props.seo.description} />
                 <div id="wrap">
-                    <Header />
+                    <Header lang={this.props.lang} />
                     <main className="content" id="content">
                         {this.props.children}
                     </main>
-                    <Footer></Footer>
+                    <Footer/>
                 </div>
             </>)
     }

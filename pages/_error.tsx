@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import i18n from '../i18n';
 
 const Error: NextPage<any> = () => {
   return (
@@ -15,4 +14,4 @@ Error.getInitialProps = async () => {
     }
 }
 
-export default i18n.withTranslation('common')(Error);
+export default Error;

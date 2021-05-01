@@ -24,7 +24,6 @@ export class OkResult<T> extends APIResultBase<T> {
     constructor(public readonly data: T) {
         super(200);
     }
-    success: boolean;
 }
 
 export class BadRequestResult extends APIResultBase<any> {

@@ -3,6 +3,8 @@ import { IHomePage } from '../../types/cms/models/home.model';
 
 const HOMEPAGE_QUERY = (lang: string) => `query {
   homePage(locale: ${lang}) {
+    whyUsTitle,
+    whyUsDescription,
     seo {
       title,
       description,

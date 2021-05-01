@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavigationLink } from '../common';
 
 interface Props {
     headerInvitationTitle: string;
@@ -7,6 +8,7 @@ interface Props {
     rightInvitationText: string;
     rightInvitationC2AText: string;
     rightInvitationC2AUrl: string;
+    locale: string;
 }
 
 export default class extends React.Component<Props> {
@@ -24,13 +26,14 @@ export default class extends React.Component<Props> {
                         </div>{/* /.col */}
                         <div className="col text-right">
                             <div className="header-module">
-                                <a href="/crm" className="btn btn-naked font-size-14 text-black">
+                                <NavigationLink locale={this.props.locale} to="/contact-us">
                                     <span>
-                                        <span className="btn-txt"> 
+                                        <span className="btn-txt">
                                             {this.props.rightInvitationText}
-                                            <a href={this.props.rightInvitationC2AUrl}></a> {this.props.rightInvitationC2AText}</span>
+                                            {/* {this.props.rightInvitationC2AText} */}
+                                        </span>
                                     </span>
-                                </a>
+                                </NavigationLink>
                             </div>
 
 

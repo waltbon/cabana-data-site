@@ -1,9 +1,10 @@
 import App from 'next/app';
-import React from 'react';
-import i18nNext from './../i18n';
+import { appWithTranslation } from 'next-i18next';
 import 'react-phone-input-2/lib/bootstrap.css'
+import '../styles/scss/theme.scss';
+import '../styles/scss/themes/cabanadata.scss';
 
-class CDApp extends App {
+class CabanaDataApp extends App {
     componentDidMount() {
         require('../public/assets/js/theme.min.js');
     }
@@ -14,7 +15,7 @@ class CDApp extends App {
     }
 }
 
-CDApp.getInitialProps = async (appContext) => { 
+CabanaDataApp.getInitialProps = async (appContext) => { 
     const appProps = await App.getInitialProps(appContext);
     if (!(appProps as any).namespacesRequired) {
         (appProps as any).namespacesRequired = []
@@ -22,4 +23,4 @@ CDApp.getInitialProps = async (appContext) => {
     return {...appProps};
 }
 
-export default i18nNext.appWithTranslation(CDApp);
+export default appWithTranslation(CabanaDataApp);

@@ -5,9 +5,8 @@ import { IImage } from '../lib/types/cms/models/common/image.interface';
 import { DatoCMSService } from '../lib/services/cms/dato-cms.service';
 import { ISEO } from '../lib/types/cms/models/common/seo.interface';
 import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
-import i18n from '../i18n';
-import { WithTranslation } from 'next-i18next';
-import { getRequestLanguage } from '../lib/language';
+import { withTranslation, WithTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 interface Props extends ILayoutPageProps, WithTranslation {
     softwareDevelopmentPage: {
@@ -123,9 +122,9 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                                     </div>
                                 </div>
                             </div>
-                        </div>{/* /.lqd-column col-lg-5 col-lg-offset-1 */}
-                    </div>{/* /.row */}
-                </div>{/* /.container */}
+                        </div>
+                    </div>
+                </div>
             </section>
 
 
@@ -148,9 +147,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                             })
                         }
                     </div>
-                    {/* /.row*/}
                 </div>
-                {/* /.container*/}
             </section>
 
             <section className="vc_row pt-80 pb-80 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }" style={{ backgroundImage: 'url(/assets/img/misc/shapes.jpg)' }}>
@@ -160,9 +157,9 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                         <div className="lqd-column col-md-8 col-md-offset-2 text-center">
                             <h2 className="text-uppercase text-white mt-0 pb-10">{softwareDevelopmentPage.formTitle}</h2>
                             <p className="font-size-18 text-white px-md-7 mx-md-3 mb-50 pb-60">{softwareDevelopmentPage.formTitlebarSubtitle}</p>
-                        </div>{/* /.col-md-8 col-md-offset-2 */}
-                    </div>{/* /.row */}
-                </div>{/* /.container */}
+                        </div>
+                    </div>
+                </div>
             </section>
 
 
@@ -182,7 +179,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                 </div>
             </section>
 
-            <section className="vc_row pt-10 pb-70">
+            {/* <section className="vc_row pt-10 pb-70">
                 <div className="container">
                     <div className="row">
                         <div className="lqd-column col-md-6 col-md-offset-3 mb-15">
@@ -191,53 +188,10 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                                 <div className="font-size-18 lh-16 px-md-6" dangerouslySetInnerHTML={{ __html: page.processSubtitle }}>
                                 </div>
                             </header>
-                            {/* /.fancy-title*/}
                         </div>
-                        {/* /.col-md-6 col-md-offset-3*/}
                     </div>
-                    {/* /.row*/}
                 </div>
-                {/* <div className="container-fluid px-0">
-                    <div className="row mx-0">
-                        <div className="lqd-column col-md-12">
-                            <div className="liquid-portfolio-list">
-                                <div className="row liquid-portfolio-list-row" data-liquid-masonry="true" data-masonry-options="{ &quot;filtersID&quot;: &quot;#portfolio-1&quot; }" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;.ld-pf-item&quot;,&quot;animateTargetsWhenVisible&quot;:&quot;true&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;150&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:37,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}">
-                                    {
-                                        Array.isArray(page.process) && page.process.map(process => {
-                                            const imageUrl = `${process.image.url}?fit=crop&w=450&h=375`;
-                                            return (
-                                                <div className="lqd-column col-lg-3 col-sm-6 masonry-item px-0 architecture" key={process.id}>
-                                                    <div className="ld-pf-item ld-pf-light pf-details-inside pf-details-full pf-details-h-mid pf-details-v-end pf-hover-masktext mb-0">
-                                                        <div className="ld-pf-inner">
-                                                            <div className="ld-pf-image" data-blur="true" data-blur-options="{ &quot;hoverTarget&quot;: &quot;.ld-pf-item&quot;, &quot;hoverTargetRelation&quot;: &quot;closest&quot; }">
-                                                                <figure style={{ backgroundImage: `url("${imageUrl}")` }}>
-                                                                    <img src='#' alt={process.image.alt} />
-                                                                </figure>
-                                                            </div>
-                                                            <div className="ld-pf-bg">
-                                                                <div className="ld-pf-details" data-custom-animations="true" data-ca-options="{ &quot;triggerHandler&quot;: &quot;mouseenter&quot;, &quot;triggerTarget&quot;: &quot;.ld-pf-item&quot;, &quot;triggerRelation&quot;: &quot;closest&quot;, &quot;offTriggerHandler&quot;: &quot;mouseleave&quot;, &quot;animationTarget&quot;: &quot;.split-inner&quot;, &quot;startDelay&quot;: 80, &quot;duration&quot;: 650, &quot;delay&quot;: 150, &quot;initValues&quot;: { &quot;translateY&quot;: &quot;150%&quot; }, &quot;animations&quot;: { &quot;translateY&quot;: &quot;0&quot;, &quot;rotateX&quot;: 0 } }">
-                                                                    <div className="ld-pf-details-inner"></div>
-                                                                    <h3 className="ld-pf-title h4 text-uppercase" data-split-text="true" data-split-options="{ &quot;type&quot;: &quot;lines&quot; }">{process.title}</h3>
-                                                                    <div className="ld-pf-category size-sm">
-                                                                        <a className="text-uppercase ltr-sp-1" href="#" data-split-text="true" data-split-options="{ &quot;type&quot;: &quot;lines&quot; }">
-                                                                            {process.description}
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <a className="liquid-overlay-link" href="#" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
-            </section>
+            </section> */}
         </PageLayout>
     )
 }
@@ -301,15 +255,16 @@ const QUERY = (lang: string) => `query {
     }
 }`
 
-Page.getInitialProps = async ({ req }): Promise<any> => {
-    const lang = getRequestLanguage(req, i18n.i18n);
+export const getServerSideProps = async ({ locale: lang }) => {
     const cms = new DatoCMSService();
     const result = await cms.executeQuery<any>({ query: QUERY(lang) });
     return {
-        ...result,
-        lang,
-        namespacesRequired: ['common', 'header', 'footer']
+        props: {
+            ...result,
+            lang,
+            ...await serverSideTranslations(lang, ['common', 'header', 'footer'])
+        }
     };
 }
 
-export default i18n.withTranslation('common')(Page);
+export default withTranslation('common')(Page);

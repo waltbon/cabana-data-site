@@ -23,7 +23,7 @@ export const sendMail = async ({
             if (err) {
                 return rej(err);
             }
-            return res();
+            return res({});
         });
     });
 }

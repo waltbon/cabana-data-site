@@ -1,32 +1,33 @@
 import { NextPage } from 'next'
 import PageLayout from '../component/layout/PageLayout';
 import { ILayoutPageProps } from '../lib/types/landing-page-props.interface';
-import { getHomePageData } from '../lib/services/pages/home-page.service';
 import { IHomePage } from '../lib/types/cms/models/home.model';
 import PageIntroBackground from '../component/home/PageIntroBackground';
 import HomeIntro from '../component/home/HomeIntro';
 import HomeOurSkills from '../component/home/HomeOurSkills';
 import HomeProcess from '../component/home/HomeProcess';
 import { WithTranslation } from 'next-i18next';
-import { getRequestLanguage } from '../lib/language';
-import i18n from '../i18n';
+import { withTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { CapabilitiesQueries } from '../lib/services/pages';
+import { getHomePageData } from '../lib/services/pages/home-page.service';
 
 type Props = ILayoutPageProps & IHomePage & WithTranslation
 
-const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimonials, softwareDevelopmentPage }) => {
+const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimonials, capabilities }) => {
   return (
     <PageLayout url="/" seo={homePage.seo} lang={lang}>
-      <PageIntroBackground background={homePage.backgroundImage} 
-        title={homePage.title} 
+      <PageIntroBackground background={homePage.backgroundImage}
+        title={homePage.title}
         subtitle={homePage.subtitle}
         c2a={{
           text: t('header_intro_c2a_text'),
           url: '#about-us',
           isScroll: true
-        }}/>
+        }} />
       <h1></h1>
-      
-      <HomeIntro contactUsNowText={t('contact_us_now')} services={homePage.services} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />
+
+      <HomeIntro contactUsNowText={t('contact_us_now')} capabilities={capabilities} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />
 
       <section className="vc_row pt-160 pb-160 mt-20 bg-cover" id="contact" style={{ backgroundImage: 'url(/assets/img/home-slider/experience.jpg)' }} data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}">
         <div className="container">
@@ -50,17 +51,16 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
       <HomeOurSkills title={homePage.ourSkillsTitle} subtitle={homePage.ourSkillsSubtitle} skills={homePage.ourSkill} />
 
       <section className="vc_row pt-80 pb-180 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }" style={{ backgroundImage: 'url(/assets/img/home-slider/hs7.jpg)' }}>
-        {/* <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div> */}
         <div className="container">
           <div className="row">
             <div className="lqd-column col-md-8 col-md-offset-2 text-center">
-              <h2 className="text-uppercase text-white mt-20 pb-30">{t('why_us_title')}</h2>
+              <h2 className="text-uppercase text-white mt-20 pb-30">{homePage.whyUsTitle}</h2>
               <p className="font-size-24 text-white px-md-7 mx-md-3 mb-20 pb-20">
-                {t('why_us_subtitle')}
+                {homePage.whyUsDescription}
               </p>
-            </div>{/* /.col-md-8 col-md-offset-2 */}
-          </div>{/* /.row */}
-        </div>{/* /.container */}
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="vc_row pt-165 pb-80">
@@ -148,13 +148,22 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
     </PageLayout>)
 }
 
-IndexPage.getInitialProps = async ({ req }): Promise<any> => {
-  const lang = getRequestLanguage(req, i18n.i18n)
-  const data = await getHomePageData(lang);
-  return {
-    ...data,
+export const getServerSideProps = async ({ locale: lang }) => {
+  const proms = await Promise.all([
+    getHomePageData(lang),
+    CapabilitiesQueries.getCapabilities(lang)
+  ]);
+  const data = {
+    ...proms[0],
+    capabilities: proms[1],
     lang,
-    namespacesRequired: ['home', 'header', 'common'],
+  };
+  return {
+    props: {
+      ...data,
+      ...await serverSideTranslations(lang, ['home', 'header', 'common']),
+    }
   }
 }
-export default i18n.withTranslation('home')(IndexPage);
+
+export default withTranslation('home')(IndexPage);

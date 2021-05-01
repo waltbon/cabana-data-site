@@ -105,7 +105,7 @@
  $font-primary:		'Glacial Indifferenc', 'Open Sans', sans-serif;
  $font-size: 			16px;
  $line-height: 		30px;
- $font-color: 		#808291;
+ $font-color: 		#313131;
 
  [ COLORS ]
  $color-primary: #3ed2a7;
@@ -118,7 +118,7 @@
 /* 1.1. Base */
 :root {
   --color-font: #4f5053;
-  --color-primary: #267DF4;
+  --color-primary: #3e6070;
   --color-secondary: #90AA9D;
   --color-link: #255d83;
   --color-link-hover: #83b8ac;
@@ -326,7 +326,7 @@ cite:before {
 
 figcaption {
   margin: 1.3em auto;
-  color: #808291;
+  color: #313131;
   font-style: italic;
 }
 
@@ -6156,7 +6156,7 @@ input:focus ~ .liquid-cl-3:after, textarea:focus ~ .liquid-cl-3:after, .input-fo
   padding: 30px 0;
 }
 .pricing-table-colorful ul {
-  color: #808291;
+  color: #313131;
 }
 .pricing-table-colorful ul li {
   border-bottom: 1px solid #e7eaef;
@@ -9447,7 +9447,7 @@ svg + .liquid-lp-category {
   display: block;
   font-size: 13px;
   letter-spacing: 0.05em;
-  color: #808291;
+  color: #313131;
   font-weight: 400;
 }
 .fancy-box-offer h3 {
@@ -10347,7 +10347,7 @@ a.ui-button:active,
   top: -2.2em;
   left: 0;
   font-size: 1em;
-  color: #808291;
+  color: #313131;
 }
 
 /* Progressbar Sizes */

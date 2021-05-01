@@ -1,0 +1,158 @@
+body {
+	font-family: 'Roboto', sans-serif;	
+	font-size: 15px;
+	line-height: 1.6em;
+	letter-spacing: 0.02em;
+	color: #313131;
+}
+
+.h1, h1,
+.h2, h2,
+.h3, h3,
+.h4, h4,
+.h5, h5,
+.h6, h6 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #1d1f2e;
+}
+
+.h1,
+h1 {
+	font-size: 55px;
+	line-height: 1.111em;
+}
+
+.h2,
+h2 {
+	font-size: 36px;
+	line-height: 1.25em;
+}
+
+.h3,
+h3 {
+	font-size: 30px;
+	line-height: 1.25em;
+}
+
+.h4,
+h4 {
+	font-size: 22px;
+	line-height: 1.5em;
+}
+
+.h5,
+h5 {
+	font-size: 19px;
+	line-height: 1.5em;
+}
+
+.h6,
+h6 {
+	font-size: 17px;
+	line-height: 1.5em;
+}
+
+.main-nav {
+	
+	> li {
+		
+		> a {
+			font-family: 'Roboto', sans-serif;
+			font-weight: 500;
+			font-style: normal;
+			font-size: 13px;
+			letter-spacing: 0.1em;
+			color: rgba(#000, 0.75);
+			text-transform: uppercase;
+
+			.link-ext {
+				background: #F66747;
+			}
+		}
+		&.is-active > a,
+		&.current-menu-item > a,
+		&:hover > a,
+		> a:hover {
+			color: #F66747;
+		}
+	}
+}
+
+ul.nav.main-nav {
+	> li {		
+		> a {
+			color: rgb(230, 230, 230);
+			&:hover {
+				color: rgb(255, 255, 255);
+			}
+		}
+	}
+}
+
+.main-header--ligth {
+	background-color: transparent;
+}
+
+.mainbar-wrap {
+	background-color: #2D3252;
+}
+
+.mainbar-wrap--light {
+	background-color: transparent;
+}
+.main-nav {
+	font-family: 'Montserrat', sans-serif;
+
+	> li {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	
+		> a {
+			font-size: 15px;
+			line-height: 1.5em;
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			color: rgba(255, 255, 255, 0.842);
+		}
+		&.is-active > a,
+		&.current-menu-item > a,
+		&:hover > a,
+		> a:hover {
+			color: rgba(#fff, 0.85);
+		}
+	}
+}
+
+.main-header .is-stuck {
+	// background:#fff !important;
+}
+
+@media ( min-width: 1200px ) {
+	.main-header .is-stuck {
+		// background:#fff !important;
+	}
+
+	.mainbar-wrap.is-stuck .social-icon a,
+	.mainbar-wrap.is-stuck .header-module .ld-module-trigger,
+	.mainbar-wrap.is-stuck .main-nav > li > a,
+	.mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input {
+		color: #f6f6f6 !important;
+	}
+
+	.mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input {
+		border-color: #ebebeb !important;
+	}
+}
+
+.main-footer {
+	padding-top: 70px;
+	background-color: #30333A;
+	color: #92959B; }
+	.main-footer a:not(.btn) {
+	  color: rgba(255, 255, 255, 0.6); }
+	  .main-footer a:not(.btn):hover {
+		color: #fff; }
+
+
+	

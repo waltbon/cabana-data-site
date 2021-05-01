@@ -9,7 +9,7 @@ export default async (req, res) => {
     // Create each URL row
     smStream.write({ url: '/',  changefreq: 'weekly', priority: 0.9 })
     smStream.write({ url: '/software-development/',  changefreq: 'weekly',  priority: 0.8 })
-    smStream.write({ url: '/e-commerce/', changefreq: 'monthly',  priority: 0.7 })
+    // smStream.write({ url: '/e-commerce/', changefreq: 'monthly',  priority: 0.7 })
     // smStream.write({ url: '/qa/', changefreq: 'monthly',  priority: 0.5 })
     // smStream.write({ url: '/use-cases/central-baterias-hc', changefreq: 'monthly',  priority: 0.4 })
     smStream.write({ url: '/contact-us', priority: 0.6 })

@@ -29,7 +29,7 @@ export default class extends React.Component<Props> {
                       href={this.props.c2a.url} 
                       data-localscroll={this.props.c2a.isScroll.toString()} 
                       data-localscroll-options={`{scrollTo:${this.props.c2a.url}}`}><span>
-                      <span className="btn-txt btn-link">{this.props.c2a.text}</span></span></a>                }
+                      <span className="btn-txt btn-secondary">{this.props.c2a.text}</span></span></a>                }
               </div>
             </div>
           </div>

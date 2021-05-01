@@ -1,14 +1,19 @@
 import React from 'react';
-import i18n from '../../i18n';
-import { WithTranslation } from 'next-i18next';
-import Router from 'next/router';
+import { withTranslation, WithTranslation } from 'next-i18next';
+// import Router from 'next/router';
 import Topbar from './Topbar';
+import { TranslateLink } from '../common/TranslateLink';
+import { NavigationLink } from '../common';
 
-class Header extends React.Component<WithTranslation> {
+interface IProps extends WithTranslation {
+    lang?: string
+}
+class Header extends React.Component<IProps> {
     render() {
         return (
             <header className="main-header main-header-overlay" data-sticky-header="true">
-                <Topbar 
+                <Topbar
+                    locale={this.props.lang||'es'}
                     rightInvitationText={this.props.t('topbar_right_invitation_title')}
                     rightInvitationC2AText={this.props.t('topbar_right_invitation_c2a_text')}
                     rightInvitationC2AUrl="tel:50685115245"
@@ -24,9 +29,9 @@ class Header extends React.Component<WithTranslation> {
                             <div className="row secondarybar-row align-items-center">
                                 <div className="col-auto">
                                     <div className="header-module">
-                                        <a href="/">
+                                        <NavigationLink locale={this.props.i18n.language} to="/">
                                             <img src="/assets/img/logo/cabanadata/cd-ho-b.png" width="190px" alt="Cabana Data Software" />
-                                        </a>
+                                        </NavigationLink>
                                     </div>
                                 </div>
                                 <div className="col text-right">
@@ -40,7 +45,7 @@ class Header extends React.Component<WithTranslation> {
                                             <div className="contents">
                                                 <h3 className="mb-1 font-size-13">{this.props.t('menu_lets_talk_title')}</h3>
                                                 <p className="font-size-13 lh-185">
-                                                    <a href="/contact-us">{this.props.t('menu_lets_talk_text')}</a>
+                                                    <NavigationLink locale={this.props.i18n.language} to="/contact-us">{this.props.t('menu_lets_talk_text')}</NavigationLink>
                                                 </p>
                                             </div>{/* /.contents*/}
                                         </div>{/* /.iconbox*/}
@@ -73,13 +78,13 @@ class Header extends React.Component<WithTranslation> {
                             <div className="row mainbar-row align-items-lg-stretch">
                                 <div className="col-auto visible-when-stuck">
                                     <div className="navbar-header">
-                                        <a className="navbar-brand pt-20 pb-20" href="/" rel="home">
+                                        <NavigationLink className="navbar-brand pt-20 pb-20" to="/" locale={this.props.lang}>
                                             <span className="navbar-brand-inner">
                                                 <img className="logo-sticky" width="140px" src="/assets/img/logo/cabanadata/cd-ho-w.png" alt="Cabana Data Logo" />
                                                 <img className="mobile-logo-default" width="140px" src="/assets/img/logo/cabanadata/cd-ho-w.png" alt="Cabana Data Logo Mob" />
                                                 <img className="logo-default" width="140px" src="/assets/img/logo/cabanadata/cd-ho-w.png" alt="Cabana Data Logo Def" />
                                             </span>
-                                        </a>
+                                        </NavigationLink>
                                         <button className="navbar-toggle collapsed nav-trigger style-mobile" type="button" data-toggle="collapse" data-target="#main-header-collapse" aria-expanded="false" data-changeclassnames="{ &quot;html&quot;: &quot;mobile-nav-activated overflow-hidden&quot; }">
                                             <span className="sr-only">Toggle navigation</span>
                                             <span className="bars">
@@ -93,24 +98,25 @@ class Header extends React.Component<WithTranslation> {
                                 <div className="col">
                                     <div className="collapse navbar-collapse" id="main-header-collapse">
                                         <ul className="main-nav nav align-items-lg-stretch justify-content-lg-left" id="primary-nav" data-submenu-options="{ &quot;toggleType&quot;:&quot;fade&quot;, &quot;handler&quot;:&quot;mouse-in-out&quot; }" data-localscroll="true">
-                                            <li className="is-active"><a href="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                            <li className="is-active"><NavigationLink locale={this.props.i18n.language} to="/"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
                                                 {this.props.t('menu_home')}
-                                            </span></span></a></li>
+                                            </span></span></NavigationLink></li>
 
-                                            {/* <li className="">
-                                                <a href="/crm"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                CRM
-                                            </span></span></a></li> */}
 
-                                            <li className="">
-                                                <a href="/software-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                {this.props.t('menu_services_software_dev')}
-                                            </span></span></a></li>
+                                            <li className="menu-item-has-children"><a href=""><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">{this.props.t('menu_capabilities')}</span></span></a>
+                                                <ul className="nav-item-children">
+                                                    <li><NavigationLink locale={this.props.i18n.language} to="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">{this.props.t('menu_services_software_dev')}<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></NavigationLink></li>
+                                                    <li><NavigationLink locale={this.props.i18n.language} to="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">{this.props.t('menu_services_prototyping')}<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></NavigationLink></li>
+                                                </ul>
+                                            </li>
 
-                                            <li className="">
-                                                <a href="/mobile-development"><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
-                                                {this.props.t('menu_services_mobile_dev')}
-                                            </span></span></a></li>
+                                            <li className="is-active">
+                                                <NavigationLink locale={this.props.i18n.language} to="/software-development">
+                                                    <span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                        {this.props.t('menu_services')}
+                                                    </span></span>
+                                            </NavigationLink></li>
+
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
                                                 {this.props.t('menu_contact')}
                                             </span></span></a></li>
@@ -122,21 +128,18 @@ class Header extends React.Component<WithTranslation> {
                                         <div className="ld-dropdown-menu">
                                             <span className="ld-module-trigger collapsed" role="button" data-ld-toggle="true" data-toggle="collapse" data-target="#header-dropdown-1" aria-controls="header-dropdown-1" aria-expanded="false">
                                                 <span className="ld-module-trigger-txt text-white text-small">
-                                                    <a className="text-white" style={{backgroundColor: "#2D3252"}} onClick={() => i18n.i18n.changeLanguage(i18n.i18n.language === 'es' ? 'en' : 'es')}>
-                                                        <img src={`/assets/img/locales/${this.props.t('change_language_to')}.svg`} style={{marginRight: '10px'}} width="20px" />
-                                                        {this.props.t('change_language_to_text')}
-                                                    </a>
+                                                    <TranslateLink text={this.props.t('change_language_to_text')} nextLocale={this.props.t('change_language_to')} />
                                                 </span>
                                             </span>
                                         </div>
                                     </div>
-                                </div>{/* /.col*/}
-                            </div>{/* /.mainbar-row*/}
-                        </div>{/* /.mainbar*/}
-                    </div>{/* /.mainbar-container*/}
-                </div>{/* /.mainbar-wrap*/}
-            </header>)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header >)
     }
 }
 
-export default i18n.withTranslation('header')(Header);
+export default withTranslation('header')(Header);

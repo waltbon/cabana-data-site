@@ -1,31 +1,46 @@
-import React from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Meta from './Meta';
 import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface';
+import Script from 'next/script';
 
-class PageLayout extends React.Component<ILayoutPageProps> {
-    render() {
-        const urlBase = process.env.API_BASE_URL;
-        return (
-            <>
-                <Meta
-                    title={this.props.seo.title}
-                    lang={this.props.lang}
-                    creator={this.props.author}
-                    url={urlBase}
-                    type={this.props.type}
-                    imageUrl={this.props.seo.image ? this.props.seo.image.url : ''}
-                    description={this.props.seo.description} />
-                <div id="wrap">
-                    <Header lang={this.props.lang} />
-                    <main className="content" id="content">
-                        {this.props.children}
-                    </main>
-                    <Footer/>
-                </div>
-            </>)
-    }
+const PageLayout: FC<ILayoutPageProps> = (props: ILayoutPageProps, {}: any) => {
+    const urlBase = process.env.API_BASE_URL;
+
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        if (loaded) {
+            return;
+        }
+
+        setLoaded(true);
+        return () => {
+        }
+    }, [loaded]);
+    
+    
+    return (
+        <>
+            <Meta
+                title={props.seo.title}
+                lang={props.lang}
+                creator={props.author}
+                url={urlBase}
+                type={props.type}
+                imageUrl={props.seo.image ? props.seo.image.url : ''}
+                description={props.seo.description} />
+            <div id="wrap">
+                <Header lang={props.lang} />
+                <main className="content" id="content">
+                    {props.children}
+                </main>
+                <Footer />
+            </div>
+            <Script src='/assets/js/theme.min.js' strategy="afterInteractive" />
+        </>)
 }
+
 
 export default PageLayout;

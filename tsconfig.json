@@ -1,31 +1,36 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "lib": [
-        "dom",
-        "dom.iterable",
-        "esnext"
-      ],
-      "allowJs": true,
-      "skipLibCheck": true,
-      "strict": false,
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": true,
-      "esModuleInterop": true,
-      "module": "esnext",
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true,
-      "jsx": "preserve"
-    },
-    "exclude": [
-      "node_modules"
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
     ],
-    "include": [
-      "next-env.d.ts",
-      "**/*.ts",
-      "**/*.tsx"
-, "pages/use-cases/[slug].tsxx", "pages/mobile-development.tsxx", "pages/thank-you.tsxx", "pages/e-commerce.tsxx", "pages/crm/index.tsxx", "pages/blog/index.tsxx"    ]
-  }
-
-  
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "pages/use-cases/[slug].tsxx",
+    "pages/mobile-development.tsxx",
+    "pages/thank-you.tsxx",
+    "pages/e-commerce.tsxx",
+    "pages/crm/index.tsxx",
+    "pages/blog/index.tsxx"
+  ]
+}

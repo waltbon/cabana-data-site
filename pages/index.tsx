@@ -11,10 +11,12 @@ import { withTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CapabilitiesQueries } from '../lib/services/pages';
 import { getHomePageData } from '../lib/services/pages/home-page.service';
+import Script from 'next/script';
 
 type Props = ILayoutPageProps & IHomePage & WithTranslation
 
 const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimonials, capabilities }) => {
+  
   return (
     <PageLayout url="/" seo={homePage.seo} lang={lang}>
       <PageIntroBackground background={homePage.backgroundImage}

@@ -7,4 +7,5 @@ export interface ILayoutPageProps {
     url: string;
     type?: 'website'|'article';
     hideMainHeader?: boolean;
+    children: any;
 }

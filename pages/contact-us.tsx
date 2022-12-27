@@ -32,7 +32,7 @@ const ContactUsPage: NextPage<Props> = ({ lang, page, t }) => {
                             </p>
                         </div>
                         <div className="lqd-column col-md-8 col-xs-12 px-md-4 text-left mt-180">
-                            {/* <div className="lqd-column-inner bg-white border-radius-6 px-4 px-md-5 pt-40 pb-40">
+                            <div className="lqd-column-inner bg-white border-radius-6 px-4 px-md-5 pt-40 pb-40">
                                 <header className="fancy-title">
                                     <h2 className="mb-2 font-size-30 font-weight-light">{t('footer_title')}</h2>
                                     <p className="mt-0">
@@ -43,9 +43,7 @@ const ContactUsPage: NextPage<Props> = ({ lang, page, t }) => {
                                     <ContactForm />
                                     <div className="contact-form-result hidden" />
                                 </div>
-                            </div> */}
-
-                            <MondayContactForm />
+                            </div>
                         </div>
                     </div>
                 </div>

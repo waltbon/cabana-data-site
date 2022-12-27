@@ -5,22 +5,21 @@ import '../styles/scss/theme.scss';
 import '../styles/scss/themes/cabanadata.scss';
 
 class CabanaDataApp extends App {
-    componentDidMount() {
-        require('../public/assets/js/theme.min.js');
-    }
 
     render() {
         const { Component, pageProps } = this.props;
-        return (<Component {...pageProps} />)
+        return (<>
+            <Component {...pageProps} />
+        </>)
     }
 }
 
-CabanaDataApp.getInitialProps = async (appContext) => { 
+CabanaDataApp.getInitialProps = async (appContext) => {
     const appProps = await App.getInitialProps(appContext);
     if (!(appProps as any).namespacesRequired) {
         (appProps as any).namespacesRequired = []
-      }
-    return {...appProps};
+    }
+    return { ...appProps };
 }
 
 export default appWithTranslation(CabanaDataApp);

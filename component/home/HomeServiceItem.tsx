@@ -8,7 +8,7 @@ export default class extends React.Component<{
 }> {
     render() {
         return (
-            <div className="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-50 pb-40 iconbox-icon-animating">
+            <div className="iconbox text-left iconbox-round iconbox-lg iconbox-filled iconbox-filled iconbox-filled-hover iconbox-icon-image iconbox-shadow pt-16 pb-20 iconbox-icon-animating">
                 {/* // href={`/${this.props.slug}`} */}
                 <div className="iconbox-icon-wrap">
                     <i className={`fa ${this.props.imageSvg || 'fa-user'} fa-5x`} style={{

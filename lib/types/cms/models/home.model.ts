@@ -6,6 +6,7 @@ import { ICapabilityModel } from './capability.model';
 
 export interface IHomePage {
   homePage: {
+    whyUsImage: IImage;
     whyUsTitle: string;
     whyUsDescription: string;
     seo: ISEO;

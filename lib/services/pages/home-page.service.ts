@@ -5,6 +5,10 @@ const HOMEPAGE_QUERY = (lang: string) => `query {
   homePage(locale: ${lang}) {
     whyUsTitle,
     whyUsDescription,
+    whyUsImage {
+      url(imgixParams: {fm: jpg, q: 50, crop: bottom, fit: max }),
+      alt
+    },
     seo {
       title,
       description,

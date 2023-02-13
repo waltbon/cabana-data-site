@@ -23,14 +23,14 @@ class Header extends React.Component<IProps> {
                 <div className="secondarybar-wrap bb-fade-black-005">
                     <div className="container secondarybar-container" ></div>
                 </div>
-                <div className="secondarybar-wrap py-3">
+                <div className="secondarybar-wrap py-1">
                     <div className="container secondarybar-container">
                         <div className="secondarybar">
                             <div className="row secondarybar-row align-items-center">
                                 <div className="col-auto">
                                     <div className="header-module">
                                         <NavigationLink locale={this.props.i18n.language} to="/">
-                                            <img src="/assets/img/logo/cabanadata/cd-ho-b.png" width="190px" alt="Cabana Data Software" />
+                                            <img src="/assets/img/logo/cabanadata/cd-ho-b.png" width="190px" alt="Cabana Data" />
                                         </NavigationLink>
                                     </div>
                                 </div>
@@ -43,26 +43,26 @@ class Header extends React.Component<IProps> {
                                                 </span>
                                             </div>
                                             <div className="contents">
-                                                <h3 className="mb-1 font-size-13">{this.props.t('menu_lets_talk_title')}</h3>
+                                                <h3 className="mb-0 font-size-13">{this.props.t('menu_lets_talk_title')}</h3>
                                                 <p className="font-size-13 lh-185">
                                                     <NavigationLink locale={this.props.i18n.language} to="/contact-us">{this.props.t('menu_lets_talk_text')}</NavigationLink>
                                                 </p>
-                                            </div>{/* /.contents*/}
-                                        </div>{/* /.iconbox*/}
-                                    </div>{/* /.header-module*/}
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div className="header-module">
                                         <div className="ld-module-v-sep">
                                             <div className="ld-v-sep-inner"> </div>
-                                        </div>{/* /.ld-module-v-sep*/}
-                                    </div>{/* /.header-module*/}
+                                        </div>
+                                    </div>
                                     <div className="header-module">
                                         <div className="iconbox iconbox-side iconbox-md iconbox-heading-xs align-items-center">
                                             <div className="iconbox-icon-wrap">
                                                 <span className="iconbox-icon-container text-secondary"><i className="icon-ion-ios-pin"></i></span>
-                                            </div>{/* /.iconbox-icon-wrap*/}
+                                            </div>
                                             <div className="contents">
-                                                <h3 className="mb-1 font-size-13">{this.props.t('menu_our_location')}</h3>
-                                                <p className="font-size-13 lh-185">Curridabat, Santa Ana. Costa Rica 🇨🇷</p>
+                                                <h3 className="mb-0 font-size-13">{this.props.t('menu_our_location')}</h3>
+                                                <p className="font-size-13 lh-185">San José, Costa Rica 🇨🇷</p>
                                             </div>
                                         </div>
                                     </div>
@@ -112,7 +112,8 @@ class Header extends React.Component<IProps> {
 
                                             <li className="is-active">
                                                 <NavigationLink locale={this.props.i18n.language} to="/software-development">
-                                                    <span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">
+                                                    <span className="link-icon" />
+                                                    <span className="link-txt"><span className="link-ext" /><span className="txt">
                                                         {this.props.t('menu_services')}
                                                     </span></span>
                                             </NavigationLink></li>
@@ -120,6 +121,10 @@ class Header extends React.Component<IProps> {
                                             <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
                                                 {this.props.t('menu_contact')}
                                             </span></span></a></li>
+
+                                            <li className='hidden-lg'>
+                                                <TranslateLink hideFlag={false} text={this.props.t('change_language_to_text')} nextLocale={this.props.t('change_language_to')} />
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>

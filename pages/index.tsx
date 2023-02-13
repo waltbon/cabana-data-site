@@ -11,7 +11,6 @@ import { withTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CapabilitiesQueries } from '../lib/services/pages';
 import { getHomePageData } from '../lib/services/pages/home-page.service';
-import Script from 'next/script';
 
 type Props = ILayoutPageProps & IHomePage & WithTranslation
 
@@ -27,17 +26,16 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
           url: '#about-us',
           isScroll: true
         }} />
-      <h1></h1>
 
       <HomeIntro contactUsNowText={t('contact_us_now')} capabilities={capabilities} title={homePage.introTitle} description1={homePage.introDescription} description2={homePage.introDescriptionSecond} />
 
-      <section className="vc_row pt-160 pb-160 mt-20 bg-cover" id="contact" style={{ backgroundImage: 'url(/assets/img/home-slider/experience.jpg)' }} data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}">
+      <section className="vc_row pt-130 pb-130 mt-20 bg-cover" id="contact" style={{ backgroundImage: 'url(/assets/img/home-slider/experience.jpg)' }} data-parallax="true" data-parallax-options="{&quot;parallaxBG&quot;: true}">
         <div className="container">
           <div className="titlebar-overlay ld-overlay" style={{ background: 'linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)' }} />
           <div className="row d-flex flex-wrap align-items-center">
-            <div className="lqd-column col-md-8 pr-md-5">
+            <div className="lqd-column col-md-8">
               <div className="ld-fancy-heading">
-                <h2 className="text-white text-center text-md-left" data-fittext="true" data-fittext-options="{&quot;compressor&quot;:0.55,&quot;maxFontSize&quot;:&quot;44&quot;,&quot;minFontSize&quot;:&quot;35&quot;}" data-split-text="true" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;.split-inner&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;40&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:30,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}" data-split-options="{&quot;type&quot;:&quot;words&quot;}">
+                <h2 className="text-white text-center text-md-left" data-fittext="true" data-fittext-options="{&quot;compressor&quot;:0.55,&quot;maxFontSize&quot;:&quot;34&quot;,&quot;minFontSize&quot;:&quot;30&quot;}" data-split-text="true" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;.split-inner&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;40&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:30,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}" data-split-options="{&quot;type&quot;:&quot;words&quot;}">
                   <span className="ld-fh-txt">{homePage.quoteText}</span>
                   <small className="text-secondary"> {homePage.quoteBy}</small>
                 </h2>
@@ -52,12 +50,13 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
 
       <HomeOurSkills title={homePage.ourSkillsTitle} subtitle={homePage.ourSkillsSubtitle} skills={homePage.ourSkill} />
 
-      <section className="vc_row pt-80 pb-180 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }" style={{ backgroundImage: 'url(/assets/img/home-slider/hs7.jpg)' }}>
+      <section className="vc_row pt-80 pb-180 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }" 
+        style={{ backgroundImage: `url('${homePage.whyUsImage.url}')` }}>
         <div className="container">
           <div className="row">
             <div className="lqd-column col-md-8 col-md-offset-2 text-center">
-              <h2 className="text-uppercase text-white mt-20 pb-30">{homePage.whyUsTitle}</h2>
-              <p className="font-size-24 text-white px-md-7 mx-md-3 mb-20 pb-20">
+              <h2 className="h1 text-white mt-20 pb-10">{homePage.whyUsTitle}</h2>  
+              <p className="font-size-30 lh-11 text-white px-md-7 mx-md-3 mb-20 pb-20">
                 {homePage.whyUsDescription}
               </p>
             </div>

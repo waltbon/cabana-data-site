@@ -8,11 +8,11 @@ export default class extends React.Component<{
 }> {
     render() {
         return (
-            <section className="vc_row pt-100 pb-40" id="process" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;.lqd-column&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;150&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:43,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}">
+            <section className="vc_row pt-80 pb-40" id="process" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;.lqd-column&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;150&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:43,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateY&quot;:0,&quot;opacity&quot;:1}}">
                 <div className="container">
                     <div className="row">
-                        <div className="lqd-column col-md-6 col-md-offset-3 mb-20">
-                            <header className="fancy-title mb-40 text-center">
+                        <div className="lqd-column col-md-6 col-md-offset-3 mb-10">
+                            <header className="fancy-title mb-10 text-center">
                                 <h2 className="mt-0">
                                     {this.props.title}
                                 </h2>

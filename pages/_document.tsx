@@ -28,7 +28,7 @@ export default class CabanaDataDocument extends Document {
                     <link rel='stylesheet' type='text/css' href='/assets/vendors/revolution/css/settings.css' />
 
                     {/* Start of HubSpot Embed Code */}
-                    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/23653432.js"></script>
+                    {/* <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/23653432.js"></script> */}
                     {/* End of HubSpot Embed Code */}
                 </Head>
                 <body>

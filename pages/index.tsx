@@ -50,8 +50,10 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
 
       <HomeOurSkills title={homePage.ourSkillsTitle} subtitle={homePage.ourSkillsSubtitle} skills={homePage.ourSkill} />
 
+      {/* Team Motivation */}
       <section className="vc_row pt-80 pb-120 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }"
         style={{ backgroundImage: `url('${homePage.whyUsImage.url}')` }}>
+        <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 50%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
         <div className="container">
           <div className="row">
             <div className="lqd-column col-md-8 col-md-offset-2 text-center">
@@ -69,8 +71,8 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
         <div className="container">
           <div className="row">
             <div className="lqd-column col-md-8 col-md-offset-2 text-center">
-              <h6 className="mb-0 pb-0 font-size-12 font-weight-bold ltr-sp-2 text-uppercase opacity-07">{t('partners_subtitle')}</h6>
-              <h2 className="h2 font-weight-bold mt-3 mb-6">{t('partners_title')}</h2>
+              <h6 className="mb-0 pb-0 font-size-12 font-weight-bold ltr-sp-2 text-uppercase opacity-07">{homePage.partnersSubtitle}</h6>
+              <h2 className="h2 font-weight-bold mt-3 mb-6">{homePage.partnersTitle}</h2>
             </div>
           </div>
           <div className="row">
@@ -95,9 +97,15 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
         </div>
       </section>
 
-      <section className="vc_row pt-190 pb-150 mt-60 bg-cover" style={{ backgroundImage: `url(${homePage.partnersImage.url})` }}>
+      <section className="vc_row pt-100 pb-100 mt-60 bg-cover" style={{ backgroundImage: `url(${homePage.testimonialsImage.url})` }}>
         <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
         <div className="container">
+          <div className="row">
+            <div className="lqd-column col-md-8 col-md-offset-2 text-center text-white">
+              <h6 className="mb-0 pb-0 font-size-12 font-weight-bold ltr-sp-2 text-uppercase text-white opacity-07">{homePage.testimonialsSubtitle}</h6>
+              <h2 className="text-white h2 font-weight-bold mt-3 mb-6">{homePage.testimonialsTitle}</h2>
+            </div>
+          </div>
           <div className="row">
             <div className="lqd-column col-md-10">
               <div className="carousel-container carousel-nav-left px-md-5 mx-md-12">
@@ -123,13 +131,15 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
                             <div className="col-xs-12">
                               <div className="testimonial testimonial-lg testimonial-details-sm text-left testimonials-quote-only mb-10">
                                 <div className="testimonial-quote">
-                                  <blockquote className="font-size-19 lh-2 text-fade-white-08">
+                                  <blockquote className="font-size-19 lh-15 text-fade-white-08">
                                     <p className="text-white">
                                       {testimonial.testimonial}
                                     </p>
                                   </blockquote>
-                                  <h6 className="mt-30 font-size-16 text-white">
-                                    {testimonial.name}
+                                  <h6 className="mt-30 font-size-16 text-white font-weight-bold">
+                                    <span className='font-size-26'>
+                                      {testimonial.name}
+                                    </span>
                                     <br />{testimonial.organization}
                                   </h6>
                                 </div>

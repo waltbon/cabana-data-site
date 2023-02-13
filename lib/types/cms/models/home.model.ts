@@ -10,11 +10,15 @@ export interface IHomePage {
     whyUsTitle: string;
     whyUsSubtitle: string;
     whyUsDescription: string;
+    testimonialsTitle: string;
+    testimonialsSubtitle: string;
+    testimonialsImage: IImage;
+    partnersTitle: string;
+    partnersSubtitle: string;
     seo: ISEO;
     title: string;
     subtitle: string;
     backgroundImage: IImage;
-    partnersImage: IImage;
     introTitle: string;
     introDescription: string;
     introDescriptionSecond: string;

@@ -10,6 +10,17 @@ const HOMEPAGE_QUERY = (lang: string) => `query {
       url(imgixParams: {fm: jpg, q: 50, crop: bottom, fit: max }),
       alt
     },
+
+    partnersTitle,
+    partnersSubtitle,
+
+    testimonialsTitle,
+    testimonialsSubtitle,
+    testimonialsImage {
+      url(imgixParams: {fm: jpg, q: 50, fit: crop, w: 2160, h: 1200}),
+      alt
+    },
+
     seo {
       title,
       description,
@@ -20,10 +31,6 @@ const HOMEPAGE_QUERY = (lang: string) => `query {
     title,
     subtitle,
     backgroundImage {
-      url(imgixParams: {fm: jpg, q: 50, fit: crop, w: 2160, h: 1200}),
-      alt
-    },
-    partnersImage {
       url(imgixParams: {fm: jpg, q: 50, fit: crop, w: 2160, h: 1200}),
       alt
     },

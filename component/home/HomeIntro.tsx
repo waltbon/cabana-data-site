@@ -23,7 +23,7 @@ export default class extends React.Component<{
                                 <img src="/assets/img/logo/cabanadata/cd-ho-b.png" width="170px" style={{ marginBottom: '20px', marginTop: '40px' }} />
                                 <h6 className="text-uppercase lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>
                                 </h6>
-                                <h1 className="lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}><strong>{this.props.title}</strong></h1>
+                                <h2 className="lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}><strong>{this.props.title}</strong></h2>
                             </header>
                             <p className="font-size-18 lh-15 mb-4 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description1}</p>
                             <p className="font-size-18 lh-15 mb-55 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description2}</p>

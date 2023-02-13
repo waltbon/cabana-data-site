@@ -13,10 +13,10 @@ export default class extends React.Component<{
                     <div className="row">
                         <div className="lqd-column col-md-6 col-md-offset-3 mb-10">
                             <header className="fancy-title mb-10 text-center">
-                                <h2 className="mt-0">
+                            <h6 className="mb-3 font-size-12 font-weight-bold ltr-sp-2 text-uppercase opacity-04">{this.props.subtitle}</h6>
+                                <h2 className="mt-0 font-weight-bold">
                                     {this.props.title}
                                 </h2>
-                                <p className="font-size-18">{this.props.subtitle}</p>
                             </header>
                         </div>{/* /.lqd-column col-md-6 col-md-offset-6*/}
                     </div>{/* /.row*/}

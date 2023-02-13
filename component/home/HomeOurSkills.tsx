@@ -14,7 +14,7 @@ export default class extends React.Component<{
                         <div className="lqd-column col-xs-12 mb-40">
                             <header className="fancy-title text-center mb-6">
                                 <h6 className="mb-3 font-size-12 font-weight-bold ltr-sp-2 text-uppercase opacity-04">{this.props.subtitle}</h6>
-                                <h2 className="font-size-40">{this.props.title}</h2>
+                                <h2 className="font-size-40 font-weight-bold">{this.props.title}</h2>
                             </header>
                         </div>
 

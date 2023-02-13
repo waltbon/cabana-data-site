@@ -10,9 +10,5 @@ export const NavigationLink = ({ to, children, locale,
         }
     }, []);
 
-    return (
-        <React.Fragment>
-            <a className={className} style={{ cursor: 'pointer' }} href={url}>{children}</a>
-        </React.Fragment>
-    )
+    return <a className={className} style={{ cursor: 'pointer' }} href={url}>{children}</a>
 }

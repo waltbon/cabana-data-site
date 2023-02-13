@@ -8,6 +8,7 @@ export interface IHomePage {
   homePage: {
     whyUsImage: IImage;
     whyUsTitle: string;
+    whyUsSubtitle: string;
     whyUsDescription: string;
     seo: ISEO;
     title: string;

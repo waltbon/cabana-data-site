@@ -15,7 +15,7 @@ import { getHomePageData } from '../lib/services/pages/home-page.service';
 type Props = ILayoutPageProps & IHomePage & WithTranslation
 
 const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimonials, capabilities }) => {
-  
+
   return (
     <PageLayout url="/" seo={homePage.seo} lang={lang}>
       <PageIntroBackground background={homePage.backgroundImage}
@@ -50,13 +50,14 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
 
       <HomeOurSkills title={homePage.ourSkillsTitle} subtitle={homePage.ourSkillsSubtitle} skills={homePage.ourSkill} />
 
-      <section className="vc_row pt-80 pb-180 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }" 
+      <section className="vc_row pt-80 pb-120 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }"
         style={{ backgroundImage: `url('${homePage.whyUsImage.url}')` }}>
         <div className="container">
           <div className="row">
             <div className="lqd-column col-md-8 col-md-offset-2 text-center">
-              <h2 className="h1 text-white mt-20 pb-10">{homePage.whyUsTitle}</h2>  
-              <p className="font-size-30 lh-11 text-white px-md-7 mx-md-3 mb-20 pb-20">
+              <h6 className="mb-3 font-size-12 text-white ltr-sp-2 text-uppercase opacity-07">{homePage.whyUsSubtitle}</h6>
+              <h2 className="h2 font-weight-bold text-white  mt-20 pb-10">{homePage.whyUsTitle}</h2>
+              <p className="font-size-22 font-weight-light lh-15 text-white px-md-4 mx-md-3">
                 {homePage.whyUsDescription}
               </p>
             </div>
@@ -67,11 +68,9 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
       <section className="vc_row pt-165 pb-80">
         <div className="container">
           <div className="row">
-            <div className="lqd-column col-md-6 col-md-offset-3 mb-80">
-              <header className="fancy-title mb-40 text-center">
-                <h2 className="mt-0">{t('partners_title')}</h2>
-                <p className="font-size-18">{t('partners_subtitle')}</p>
-              </header>
+            <div className="lqd-column col-md-8 col-md-offset-2 text-center">
+              <h6 className="mb-0 pb-0 font-size-12 font-weight-bold ltr-sp-2 text-uppercase opacity-07">{t('partners_subtitle')}</h6>
+              <h2 className="h2 font-weight-bold mt-3 mb-6">{t('partners_title')}</h2>
             </div>
           </div>
           <div className="row">

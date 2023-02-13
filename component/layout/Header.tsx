@@ -43,9 +43,9 @@ class Header extends React.Component<IProps> {
                                                 </span>
                                             </div>
                                             <div className="contents">
-                                                <h3 className="mb-0 font-size-13">{this.props.t('menu_lets_talk_title')}</h3>
-                                                <p className="font-size-13 lh-185">
-                                                    <NavigationLink locale={this.props.i18n.language} to="/contact-us">{this.props.t('menu_lets_talk_text')}</NavigationLink>
+                                                <h3 className="mb-0 pb-0 font-weight-semibold font-size-13">{this.props.t('menu_lets_talk_title')}</h3>
+                                                <p className="font-size-13 lh-185 py-0 my-0">
+                                                    <NavigationLink className='py-0 my-0' locale={this.props.i18n.language} to="/contact-us">{this.props.t('menu_lets_talk_text')}</NavigationLink>
                                                 </p>
                                             </div>
                                         </div>

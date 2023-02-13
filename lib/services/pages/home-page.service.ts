@@ -4,6 +4,7 @@ import { IHomePage } from '../../types/cms/models/home.model';
 const HOMEPAGE_QUERY = (lang: string) => `query {
   homePage(locale: ${lang}) {
     whyUsTitle,
+    whyUsSubtitle,
     whyUsDescription,
     whyUsImage {
       url(imgixParams: {fm: jpg, q: 50, crop: bottom, fit: max }),

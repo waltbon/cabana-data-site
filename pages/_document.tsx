@@ -20,12 +20,10 @@ export default class CabanaDataDocument extends Document {
                         </>
                     }
                     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap' rel='stylesheet'></link>
-                    <link rel="stylesheet" href="/assets/vendors/liquid-icon/liquid-icon.min.css" />
+                    {/* <link rel="stylesheet" href="/assets/vendors/liquid-icon/liquid-icon.min.css" /> */}
                     <link rel="stylesheet" href="/assets/vendors/font-awesome/css/font-awesome.min.css" />
                     <link rel="stylesheet" href="/assets/css/theme-vendors.min.css" />
-                    {/* <link rel="stylesheet" type="text/css" href="/assets/css/theme.css" /> */}
-                    {/* <link rel="stylesheet" type="text/css" href="/assets/css/themes/cabanadata.css" /> */}
-                    <link rel='stylesheet' type='text/css' href='/assets/vendors/revolution/css/settings.css' />
+                    {/* <link rel='stylesheet' type='text/css' href='/assets/vendors/revolution/css/settings.css' /> */}
 
                     {/* Start of HubSpot Embed Code */}
                     {/* <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/23653432.js"></script> */}

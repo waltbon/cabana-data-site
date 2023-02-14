@@ -1,12 +1,12 @@
 import React from 'react';
 import HomeServiceItem from './HomeServiceItem';
-import { IHomeService } from '../../lib/types/cms/models/home.model';
 import { ICapabilityModel } from '../../lib/types/cms/models';
 
 export default class extends React.Component<{
     title: string;
     description1: string;
     description2: string;
+    subtitle: string;
     // services: IHomeService[],
     capabilities: ICapabilityModel[],
     contactUsNowText: string
@@ -18,14 +18,15 @@ export default class extends React.Component<{
             <section className="vc_row pt-90 pb-90 bg-no-repeat" id="about-us" style={{ backgroundImage: 'url(/assets/img/misc/bg-77.svg)', backgroundPosition: '10% 20%' }}>
                 <div className="container">
                     <div className="row d-flex flex-wrap align-items-center">
-                        <div className="lqd-column col-md-5 mb-30 ca-initvalues-applied lqd-animations-done" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;, &quot;animationTarget&quot;:&quot;all-childs&quot;, &quot;duration&quot;:&quot;1600&quot;, &quot;delay&quot;:&quot;160&quot;, &quot;easing&quot;:&quot;easeOutQuint&quot;, &quot;direction&quot;:&quot;forward&quot;, &quot;initValues&quot;:{&quot;translateY&quot;:30, &quot;opacity&quot;:0}, &quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;:1}}">
+                        <div className="lqd-column col-md-5 mb-20 ca-initvalues-applied lqd-animations-done" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;, &quot;animationTarget&quot;:&quot;all-childs&quot;, &quot;duration&quot;:&quot;1600&quot;, &quot;delay&quot;:&quot;160&quot;, &quot;easing&quot;:&quot;easeOutQuint&quot;, &quot;direction&quot;:&quot;forward&quot;, &quot;initValues&quot;:{&quot;translateY&quot;:30, &quot;opacity&quot;:0}, &quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;:1}}">
                             <header className="fancy-title pr-md-4">
                                 <img src="/assets/img/logo/cabanadata/cd-ho-b.png" width="170px" style={{ marginBottom: '20px', marginTop: '40px' }} />
-                                <h6 className="text-uppercase lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>
+                                <h6 className="text-uppercase text-secondary font-size-12 font-weight-bold ltr-sp-2 text-uppercase opacity-07 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>
+                                    {this.props.subtitle}
                                 </h6>
-                                <h2 className="lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}><strong>{this.props.title}</strong></h2>
+                                <h2 className="h1 my-0 py-0 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}><strong>{this.props.title}</strong></h2>
                             </header>
-                            <p className="font-size-18 lh-15 mb-4 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description1}</p>
+                            <p className="font-size-18 lh-15 pt-0 mt-0 mb-4 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description1}</p>
                             <p className="font-size-18 lh-15 mb-55 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description2}</p>
 
                             <a className="btn btn-solid btn-primary font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2 "

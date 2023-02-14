@@ -29,7 +29,7 @@
     "pages/use-cases/[slug].tsxx",
     "pages/mobile-development.tsxx",
     "pages/thank-you.tsxx",
-    "pages/e-commerce.tsxx",
+    "pages/careers.tsx",
     "pages/crm/index.tsxx",
     "pages/blog/index.tsxx"
   ]

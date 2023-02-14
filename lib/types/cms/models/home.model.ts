@@ -22,6 +22,7 @@ export interface IHomePage {
     introTitle: string;
     introDescription: string;
     introDescriptionSecond: string;
+    introSubtitle: string;
     quoteText: string;
     quoteBy: string;
     processTitle: string;

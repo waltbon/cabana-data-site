@@ -1,10 +1,10 @@
 import { NextPage } from 'next';
-import PageLayout from '../component/layout/PageLayout';
-import { ILayoutPageProps } from '../lib/types/landing-page-props.interface';
-import { IImage } from '../lib/types/cms/models/common/image.interface';
-import { DatoCMSService } from '../lib/services/cms/dato-cms.service';
-import { ISEO } from '../lib/types/cms/models/common/seo.interface';
-import SoftwareDevelopmentForm from '../component/forms/SoftwareDevelopmentForm';
+import PageLayout from '../../component/layout/PageLayout';
+import { ILayoutPageProps } from '../../lib/types/landing-page-props.interface';
+import { IImage } from '../../lib/types/cms/models/common/image.interface';
+import { DatoCMSService } from '../../lib/services/cms/dato-cms.service';
+import { ISEO } from '../../lib/types/cms/models/common/seo.interface';
+import SoftwareDevelopmentForm from '../../component/forms/SoftwareDevelopmentForm';
 import { withTranslation, WithTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 

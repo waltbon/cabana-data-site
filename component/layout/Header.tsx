@@ -105,8 +105,7 @@ class Header extends React.Component<IProps> {
 
                                             <li className="menu-item-has-children"><a href=""><span className="link-icon" /><span className="link-txt"><span className="link-ext" /><span className="txt">{this.props.t('menu_services')}</span></span></a>
                                                 <ul className="nav-item-children">
-                                                    <li><NavigationLink locale={this.props.i18n.language} to="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">{this.props.t('menu_services_software_dev')}<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></NavigationLink></li>
-                                                    <li><NavigationLink locale={this.props.i18n.language} to="/software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">{this.props.t('menu_services_prototyping')}<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></NavigationLink></li>
+                                                    <li><NavigationLink locale={this.props.i18n.language} to="/services/custom-software-development"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">{this.props.t('menu_services_custom_web_development')}<span className="submenu-expander"><i className="fa fa-angle-down" /></span></span></span></NavigationLink></li>
                                                 </ul>
                                             </li>
 

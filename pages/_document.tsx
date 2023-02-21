@@ -16,7 +16,7 @@ export default class CabanaDataDocument extends Document {
                         <>
                             <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156293150-1"></script>
                             <script id="mcjs" src="/assets/js/mlch.js"></script>
-                            <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/23653432.js"></script>
+                            {/* <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/23653432.js"></script> */}
                         </>
                     }
                     <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap' rel='stylesheet'></link>

@@ -1,6 +1,8 @@
 import React from 'react';
 import FormInput from '../ui/inputs/form-input';
 import { executePost } from '../../lib/services/base/api-base';
+import { WithTranslation, withTranslation } from 'next-i18next';
+import { NavigationLink, TranslateLink } from '../common';
 
 interface IState {
     submitted: boolean,
@@ -24,11 +26,9 @@ interface IState {
     }
 };
 
-interface Props {
-    // onFormSubmmited: Function
-}
+interface Props extends WithTranslation {}
 
-export default class extends React.Component<Props, IState> {
+class ContactForm extends React.Component<Props, IState> {
     constructor(props) {
         super(props);
         this.state = {
@@ -100,59 +100,68 @@ export default class extends React.Component<Props, IState> {
 
     render() {
         return (
-            <div className="contactform- contact-form-inputs-filled contact-form-button-block">
-                {/* <div dangerouslySetInnerHTML={{__html: this.getCrmHtml()}}></div> */}
-                <form noValidate onSubmit={this.onHandleSubmit} className={`${this.state.submitted ? 'hidden' : ''}`}>
+            <>
+                <form noValidate onSubmit={this.onHandleSubmit} className={`contact-form ${this.state.submitted ? 'hidden' : ''}`}>
                     <div className="row" >
-                        <div className="col-sm-12 col-md-6">
+                        <div className="col-sm-12 col-md-12">
+                            <label htmlFor="firstname">{this.props.t('contact_form_fullname')}</label>
                             <FormInput onChange={this.onHandleChange} name="firstname"
-                                value={this.state.data.firstname} className="bg-gray text-dark" placeholder="Nombre" label="Nombre" error={this.state.errors.firstname} />
-                        </div>
-                        <div className="col-sm-12 col-md-6">
-                            <FormInput onChange={this.onHandleChange} name="lastname"
-                                value={this.state.data.lastname} placeholder="Apellidos" label="Apellidos" error={this.state.errors.lastname} />
+                                value={this.state.data.firstname} placeholder={this.props.t('contact_form_fullname')} label="Nombre" error={this.state.errors.firstname} />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
+                            <label htmlFor="firstname">{this.props.t('contact_form_email')}</label>
                             <FormInput onChange={this.onHandleChange} name="email"
-                                value={this.state.data.email} placeholder="Correo electrónico" label="Correo electrónico" error={this.state.errors.email} />
+                                value={this.state.data.email} placeholder={this.props.t('contact_form_email')} label="Correo electrónico" error={this.state.errors.email} />
                         </div>
                         <div className="col-sm-12 col-md-6">
+                        <label htmlFor="firstname">{this.props.t('contact_form_phone')}</label>
                             <FormInput onChange={this.onHandleChange} name="phone"
-                                value={this.state.data.phone} placeholder="Número de teléfono" label="Número de teléfono" error={this.state.errors.phone} />
+                                value={this.state.data.phone} placeholder={this.props.t('contact_form_phone')} label="Número de teléfono" error={this.state.errors.phone} />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
+                            <label htmlFor="company">{this.props.t('contact_form_company')}</label>
                             <FormInput onChange={this.onHandleChange} name="company"
-                                value={this.state.data.company} placeholder="Nombre de la compañía" label="Compañía" error={this.state.errors.company} />
+                                value={this.state.data.company} placeholder={this.props.t('contact_form_company')} label="Compañía" error={this.state.errors.company} />
                         </div>
                         <div className="col-sm-12 col-md-6">
+                            <label htmlFor="website">{this.props.t('contact_form_website')}</label>
                             <FormInput onChange={this.onHandleChange} name="website"
-                                value={this.state.data.website} placeholder="Sitio web" label="Sitio web" error={this.state.errors.website} />
+                                value={this.state.data.website} placeholder={this.props.t('contact_form_website')} label="Sitio web" error={this.state.errors.website} />
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-sm-12 ">
+                            <label htmlFor="message">{this.props.t('contact_form_message')}</label>
                             <textarea className="px-4 bg-gray text-dark" cols={10} rows={4} name="message" aria-required="true"
                                 onChange={this.onHandleChange}
-                                aria-invalid="false" placeholder="Cuéntenos aquí de su proyecto" required defaultValue={""} />
+                                aria-invalid="false" placeholder={this.props.t('contact_form_message_placeholder')} required defaultValue={""} />
                         </div>
 
                         <div className="col-md-12">
-                            <button className="btn btn-success font-size-14 ltr-sp-2" type="submit" >Enviar</button>
+                            <button type="submit">{this.props.t('contact_form_send_button')}</button>
                         </div>
                     </div>
                 </form>
                 <div className="row" hidden={!this.state.submitted}>
                     <div className="col-sm-12">
-                        <h4>Listo {this.state.data.firstname}!</h4>
-                        <p className="pb-4">Hemos recibido tu solicitud, nos pondremos en contacto con usted lo más pronto posible</p>
-                        <a href="/" className="">Ir a inicio</a>
+                        <h4>
+                            {this.props.t('contact_form_sent_title')}
+                        </h4>
+                        <p className="pb-4">
+                            {this.props.t('contact_form_sent_message')}
+                        </p>
+                        <NavigationLink locale={this.props.i18n.language} to="/">
+                            {this.props.t('contact_form_go_home_button')}
+                        </NavigationLink>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }
+
+export default withTranslation('contact')(ContactForm)

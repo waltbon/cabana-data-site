@@ -20,6 +20,10 @@
 .contact-form {
 	margin-bottom: 2em;
 
+	.row div {
+		padding: 0 4px !important;
+	}
+
 	p {
 		margin-bottom: 0;
 		position: relative;
@@ -32,21 +36,21 @@
 	@include inputs {
 		display: flex;
 		width: 100%;
-		height: 50px;
-		padding-left: 2em;
-		padding-right: 2em;
+		height: 42px;
+		padding-left: 1em;
+		padding-right: 1em;
 		margin-bottom: 20px;
 		position: relative;
 		border: 1px solid #d5d6de;
-		border-radius: 0;
+		border-radius: 4px;
 		background: none;
 		align-items: center;
-		color: #b7b9c4;
+		color: #3a3a3a !important;
 		-webkit-transition: all 0.3s;
 						transition: all 0.3s;
 		
 		@include placeholder {
-			color: inherit;
+			color: #b2b2b2 !important;
 		}
 		&:focus {
 			outline: none;
@@ -63,9 +67,9 @@
 	button[type=submit] {
 		display: inline-flex;
 		width: auto;
-		height: 50px;
+		height: 40px;
 		margin-bottom: 0;
-		padding: 0 2.8em;
+		padding: 0 2em;
 		border: 1px solid var(--color-primary);
 		background-color: var(--color-primary);
 		align-items: center;
@@ -216,7 +220,7 @@
 		~ label,
 		~ input,
 		~ textarea {
-			text-indent: 2em;
+			text-indent: 1em;
 		}
 		~ label {
 
@@ -229,8 +233,7 @@
 .contact-form-inputs-filled {
 
 	@include inputs {
-		border: none;
-		background-color: #fff;
+		background-color: #f9f9f9;
 	}
 }
 

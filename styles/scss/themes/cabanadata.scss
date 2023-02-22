@@ -61,8 +61,8 @@ h6 {
 			font-family: 'Roboto', sans-serif;
 			font-weight: 500;
 			font-style: normal;
-			font-size: 13px;
-			letter-spacing: 0.1em;
+			font-size: 14px;
+			letter-spacing: 0.2em;
 			color: rgba(#000, 0.75);
 			text-transform: uppercase;
 
@@ -140,6 +140,9 @@ ul.nav.main-nav {
 	.mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input {
 		color: #f6f6f6 !important;
 	}
+	.mainbar-wrap.is-stuck .main-nav > li > .link-icon-main {
+		color: #091247 !important;
+	}
 
 	.mainbar-wrap.is-stuck .ld-module-search-visible-form .ld-search-form input {
 		border-color: #ebebeb !important;
@@ -157,3 +160,26 @@ ul.nav.main-nav {
 
 
 	
+.link-icon-main {
+	background-color: #eff1ff;
+	color: #091247 !important;
+	border-radius: 2px;
+	padding: 0 12px
+}
+.link-icon-main:hover {
+	background-color: #fff !important;
+	color: #091247 !important;
+}
+
+.contact-form .row .form-control input,
+.contact-form select,
+.contact-form textarea,
+.contact-form .ui-selectmenu-button {
+	border-color: rgba(#727272, 0.2);
+	font-size: 15px;
+	color: #575757;
+
+	&:focus {
+		color: #fff;
+	}
+}

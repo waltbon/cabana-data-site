@@ -26,7 +26,7 @@ export default class extends React.Component<{
                                 </h6>
                                 <h2 className="h1 my-0 py-0 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}><strong>{this.props.title}</strong></h2>
                             </header>
-                            <p className="font-size-18 lh-15 pt-0 mt-0 mb-4 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description1}</p>
+                            <h1 className="font-size-18 lh-15 pt-0 mt-0 mb-4 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description1}</h1>
                             <p className="font-size-18 lh-15 mb-55 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>{this.props.description2}</p>
 
                             <a className="btn btn-solid btn-primary font-size-12 font-weight-bold ltr-sp-2 text-uppercase px-2 "

@@ -1,3 +1,13 @@
 {
-    
+    "contact_form_fullname": "Full name",
+    "contact_form_email": "Email",
+    "contact_form_phone": "Phone number",
+    "contact_form_company": "Company name",
+    "contact_form_website": "Website",
+    "contact_form_message": "Describe your inquiry",
+    "contact_form_message_placeholder": "Give us a brief description of your inquiry",
+    "contact_form_send_button": "Send request",
+    "contact_form_sent_title": "Message received",
+    "contact_form_sent_message": "Thank you {fullname},e have received your request, our team will contact you as soon as possible",
+    "contact_form_go_home_button": "Go to home page"
 }

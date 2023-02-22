@@ -19,7 +19,7 @@ const FormInput = ({
         <React.Fragment>
             {error && <small style={{color: '#f58982', fontSize: '14px'}}>{error}</small>}
             <input
-                className="bg-gray text-dark"
+                className={className}
                 id={name}
                 name={name}
                 autoComplete="off"

@@ -1,6 +1,5 @@
 import React from 'react';
 import { withTranslation, WithTranslation } from 'next-i18next';
-// import Router from 'next/router';
 import Topbar from './Topbar';
 import { TranslateLink } from '../common/TranslateLink';
 import { NavigationLink } from '../common';
@@ -113,9 +112,9 @@ class Header extends React.Component<IProps> {
                                                 {this.props.t('menu_work_with_us')}
                                             </span></span></a></li>
 
-                                            <li><a href="/contact-us"><span className="link-icon"></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
+                                            <li><NavigationLink locale={this.props.i18n.language} to="/contact-us" className='link-icon-main'><span className=""></span><span className="link-txt"><span className="link-ext"></span><span className="txt">
                                                 {this.props.t('menu_contact')}
-                                            </span></span></a></li>
+                                            </span></span></NavigationLink></li>
 
                                             <li className='hidden-lg'>
                                                 <TranslateLink hideFlag={false} text={this.props.t('change_language_to_text')} nextLocale={this.props.t('change_language_to')} />

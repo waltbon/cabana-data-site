@@ -6,6 +6,7 @@ export class ContactHubspotDto {
     email: string;
     firstname: string;
     lastname: string;
+    fullname?: string;
     phone: string;
     company: string;
 }

@@ -7,8 +7,7 @@ import { NavigationLink, TranslateLink } from '../common';
 interface IState {
     submitted: boolean,
     data: {
-        firstname: string;
-        lastname: string;
+        fullname: string;
         email: string;
         message: string;
         company: string;
@@ -16,8 +15,7 @@ interface IState {
         phone: string;
     },
     errors: {
-        firstname: string;
-        lastname: string;
+        fullname: string;
         email: string;
         message: string;
         company: string;
@@ -34,8 +32,7 @@ class ContactForm extends React.Component<Props, IState> {
         this.state = {
             submitted: false,
             data: {
-                firstname: '',
-                lastname: '',
+                fullname: '',
                 email: '',
                 message: '',
                 company: '',
@@ -81,16 +78,20 @@ class ContactForm extends React.Component<Props, IState> {
         const { data } = this.state;
         const errors = {} as any;
 
-        if (!data.firstname) {
-            errors.firstname = 'Nombre requerido';
-        }
-
-        if (!data.lastname) {
-            errors.lastname = 'Apellido es requerido';
+        if (!data.fullname) {
+            errors.fullname = 'Name is required';
         }
 
         if (!data.email) {
-            errors.email = 'El correo electrónico es requerido';
+            errors.email = 'Email is required';
+        }
+
+        if (!data.company) {
+            errors.company = 'Company name is required';
+        }
+
+        if (!data.message) {
+            errors.message = 'Message is required';
         }
 
         this.setState({
@@ -104,9 +105,9 @@ class ContactForm extends React.Component<Props, IState> {
                 <form noValidate onSubmit={this.onHandleSubmit} className={`contact-form ${this.state.submitted ? 'hidden' : ''}`}>
                     <div className="row" >
                         <div className="col-sm-12 col-md-12">
-                            <label htmlFor="firstname">{this.props.t('contact_form_fullname')}</label>
-                            <FormInput onChange={this.onHandleChange} name="firstname"
-                                value={this.state.data.firstname} placeholder={this.props.t('contact_form_fullname')} label="Nombre" error={this.state.errors.firstname} />
+                            <label htmlFor="fullname">{this.props.t('contact_form_fullname')}</label>
+                            <FormInput onChange={this.onHandleChange} name="fullname"
+                                value={this.state.data.fullname} placeholder={this.props.t('contact_form_fullname')} label="Nombre" error={this.state.errors.fullname} />
                         </div>
                     </div>
                     <div className="row">
@@ -136,7 +137,7 @@ class ContactForm extends React.Component<Props, IState> {
                     <div className="row">
                         <div className="col-sm-12 ">
                             <label htmlFor="message">{this.props.t('contact_form_message')}</label>
-                            <textarea className="px-4 bg-gray text-dark" cols={10} rows={4} name="message" aria-required="true"
+                            <textarea className="" cols={10} rows={4} name="message" aria-required="true"
                                 onChange={this.onHandleChange}
                                 aria-invalid="false" placeholder={this.props.t('contact_form_message_placeholder')} required defaultValue={""} />
                         </div>
@@ -152,7 +153,9 @@ class ContactForm extends React.Component<Props, IState> {
                             {this.props.t('contact_form_sent_title')}
                         </h4>
                         <p className="pb-4">
-                            {this.props.t('contact_form_sent_message')}
+                            {this.props.t('contact_form_sent_message', {
+                                fullname: this.state.data.fullname,
+                            })}
                         </p>
                         <NavigationLink locale={this.props.i18n.language} to="/">
                             {this.props.t('contact_form_go_home_button')}

@@ -12,6 +12,6 @@
     "contact_form_message_placeholder": "Denos una descripción breve de su solicitud",
     "contact_form_send_button": "Enviar solicitud",
     "contact_form_sent_title": "Mensaje recibido",
-    "contact_form_sent_message": "Gracias {fullname}, hemos recibido su solicitud y pronto nos pondremos en contacto con usted",
+    "contact_form_sent_message": "Gracias {{fullname}}, hemos recibido su solicitud y pronto nos pondremos en contacto con usted",
     "contact_form_go_home_button": "Ir a página de inicio"
 }

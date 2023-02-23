@@ -5,8 +5,7 @@ import { sendMailToAdministrative } from '../../server/helpers/mail-sender'
 
 interface IContactFormDto {
     email: string;
-    firstname: string;
-    lastname: string;
+    fullname: string;
     company: string;
     phone: string;
     city?: string;
@@ -15,7 +14,12 @@ interface IContactFormDto {
 
 export default async (req, res) => {
     if (req.method === 'POST') {
-        await sendToHubspotCRM(req.body);
+        await sendEmail(req.body);
+        try {
+            await sendToHubspotCRM(req.body);
+        } catch (error) {
+            
+        }
         res.status(200).json({
             success: true
         });
@@ -28,7 +32,14 @@ export default async (req, res) => {
 const sendToHubspotCRM = async (data: IContactFormDto) => {
     const hubspotCli = generateHubspotCli();
     const contactService = new ContactHubspotService(hubspotCli);
-    const contact = await contactService.create(data);
+    const nameSplitted = data.fullname.split(' ');
+    const firstname = nameSplitted[0];
+    const lastname = nameSplitted.length > 1 ? nameSplitted[1] : '';
+    const contact = await contactService.create({
+        ...data,
+        firstname,
+        lastname,
+    });
 
     const companyService = new CompanyHubspotService(hubspotCli);
     const company = await companyService.create({
@@ -40,13 +51,11 @@ const sendToHubspotCRM = async (data: IContactFormDto) => {
 
 }
 
-async function doPostOLD_VERSION(body) {
+const sendEmail = async (body) => {
     const {
-        firstname,
-        lastname
+        fullname,
     } = body;
 
-    const fullname = `${firstname} ${lastname}`.trim();
     const subject = 'Website contact form - ' + fullname;
     const content = JSON.stringify(body);
     await sendMailToAdministrative({

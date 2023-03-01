@@ -22,12 +22,11 @@ export default async (req, res) => {
     const sitemapOutput = (await streamToPromise(smStream)).toString();
 
     // Change headers
-    res.writeHead(200, {
-      'Content-Type': 'application/xml'
-    });
+    res.setHeader('Content-Type', 'application/xml');
 
     // Display output to user
-    res.end(sitemapOutput);
+    res.write(sitemapOutput);
+    res.end();
   } catch(e) {
     console.log(e)
     res.send(JSON.stringify(e))

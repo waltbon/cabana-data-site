@@ -44,7 +44,6 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
                 </h2>
               </div>
             </div>
-            {/* <div className="lqd-column col-md-4 text-center"><img src="/assets/img/logo/cabanadata/cd-ho-w.png" /></div> */}
           </div>
         </div>
       </section>

@@ -29,7 +29,7 @@ const PageLayout: FC<ILayoutPageProps> = (props: ILayoutPageProps, {}: any) => {
                 creator={props.author}
                 url={urlBase}
                 type={props.type}
-                imageUrl={props.seo.image ? props.seo.image.url : ''}
+                imageUrl={props.seo.image ? props.seo.image.url : '/img/logo/cabanadata/logo-rounded.png'}
                 description={props.seo.description} />
             <div id="wrap">
                 <Header lang={props.lang} />

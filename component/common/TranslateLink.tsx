@@ -20,7 +20,7 @@ export const TranslateLink = ({ hideFlag = false, text, nextLocale }) => {
                     {text}
                     {
                         !hideFlag &&
-                        <img src={`/assets/img/locales/${nextLocale}.svg`} style={{ marginLeft: '10px' }} width="20px" />
+                        <img alt='Language' src={`/assets/img/locales/${nextLocale}.svg`} style={{ marginLeft: '10px' }} width="20px" />
                     }
                 </span>
             </span>

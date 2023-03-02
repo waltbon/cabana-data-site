@@ -11,6 +11,7 @@ export default class CabanaDataDocument extends Document {
         return (
             <Html>
                 <Head>
+                    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
                     {
                         isProduction &&
                         <>

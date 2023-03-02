@@ -20,7 +20,7 @@ export default class extends React.Component<{
                     <div className="row d-flex flex-wrap align-items-center">
                         <div className="lqd-column col-md-5 mb-20 ca-initvalues-applied lqd-animations-done" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;, &quot;animationTarget&quot;:&quot;all-childs&quot;, &quot;duration&quot;:&quot;1600&quot;, &quot;delay&quot;:&quot;160&quot;, &quot;easing&quot;:&quot;easeOutQuint&quot;, &quot;direction&quot;:&quot;forward&quot;, &quot;initValues&quot;:{&quot;translateY&quot;:30, &quot;opacity&quot;:0}, &quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;:1}}">
                             <header className="fancy-title pr-md-4">
-                                <img src="/assets/img/logo/cabanadata/cd-ho-b.png" width="170px" style={{ marginBottom: '20px', marginTop: '40px' }} />
+                                <img alt='Cabana Data' src="/assets/img/logo/cabanadata/cd-ho-b.png" width="170px" style={{ marginBottom: '20px', marginTop: '40px' }} />
                                 <h6 className="text-uppercase text-secondary font-size-12 font-weight-bold ltr-sp-2 text-uppercase opacity-07 lqd-unit-animation-done" style={{ transform: 'translateY(0px)', opacity: 1 }}>
                                     {this.props.subtitle}
                                 </h6>

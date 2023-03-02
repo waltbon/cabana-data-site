@@ -50,15 +50,15 @@ interface Props extends ILayoutPageProps, WithTranslation {
     }
 }
 
-const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
+const Page: NextPage<Props> = ({ softwareDevelopmentPage, lang }) => {
     const page = softwareDevelopmentPage;
     return (
-        <PageLayout lang={lang} url="/software-development" seo={softwareDevelopmentPage.seo}>
+        <PageLayout lang={lang} url="/custom-software-development" seo={page.seo}>
             <section className="vc_row pt-280 d-flex flex-wrap align-items-center bg-cover bg-center pb-200" data-parallax="true" data-parallax-options="{ parallaxBG: true }" data-row-bg={page.background.url} style={{ background: 'linear-gradient(65deg, #2D3252 20%, rgba(137, 135, 226, 0.084) 100%)' }}><span className="row-bg-loader" />
                 <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
                 <div className="container">
                     <div className="row">
-                        <div className="lqd-column col-md-7" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;all-childs&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;150&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:91, &quot;opacity&quot;: 0},&quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;: 1}}">
+                        <div className="lqd-column col-md-8" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;all-childs&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;150&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;forward&quot;,&quot;initValues&quot;:{&quot;translateY&quot;:91, &quot;opacity&quot;: 0},&quot;animations&quot;:{&quot;translateY&quot;:0, &quot;opacity&quot;: 1}}">
                             <h5 className="text-white text-uppercase mb-2 pb-2">{page.headerSubtitle}</h5>
                             <h2 className="text-white mask-text font-weight-bold mt-2 pr-md-7" data-fittext="true" data-fittext-options="{ &quot;compressor&quot;:0.5,&quot;maxFontSize&quot;: 55,&quot;minFontSize&quot;: 36 }" data-split-text="true" data-split-options="{&quot;type&quot;:&quot;lines&quot;}">{page.headerTitle}</h2>
                             <p className="text-white font-size-20">{page.headerDescription}</p>
@@ -71,15 +71,8 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                 <div className="container">
                     <div className="row">
                         <div className="lqd-column col-lg-6">
-                            <h2 className="font-size-38 lh-13 mt-0 mb-30" data-split-text="true" data-split-options="{&quot;type&quot;:&quot;lines&quot;}" data-text-rotator="true">
-                                {page.tabsHeader} <span>{'['}</span>
-                                <span className="txt-rotate-keywords">
-                                    <span className="keyword active">ReactJS</span>
-                                    <span className="keyword">AWS</span>
-                                    <span className="keyword">Docker</span>
-                                    <span className="keyword">GitHub</span>
-                                </span>{/* /.txt-rotate-keywords */}
-                                <span>{']'}</span>
+                            <h2 className="font-size-38 lh-13 mt-0 mb-30">
+                                {page.tabsHeader}
                             </h2>
                             <div className="accordion accordion-md accordion-title-underlined accordion-expander-left accordion-active-color-primary" id="vc_accordion_5c77a7f9d2896" role="tablist">
                                 {
@@ -87,7 +80,7 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                                         const isFirst = page.tabsInfo.indexOf(ti) === 0;
                                         return (<div key={ti.id} className={`accordion-item panel ${isFirst ? 'active' : ''}`}>
                                             <div key={ti.id} className="accordion-heading" role="tab" id={`heading_${ti.id}`}>
-                                                <h4 className="accordion-title font-size-17 lh-15">
+                                                <h4 className="accordion-title font-size-20 font-weight-bold">
                                                     <a data-toggle="collapse" data-parent="#vc_accordion_5c77a7f9d2896" href={`#${ti.id}`} aria-expanded="true" aria-controls={ti.id}>
                                                         {ti.title}
                                                         <span className="accordion-expander">
@@ -130,6 +123,14 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
 
             <section className="vc_row pt-100 pb-60">
                 <div className="container">
+                    <div className="row">
+                        <div className="col-md-12 text-center">
+                            <h2 className="font-size-38 mt-0 mb-2">
+                                {page.processTitle}
+                            </h2>
+                            <div className='font-size-18 mb-6' dangerouslySetInnerHTML={{ __html: page.processSubtitle }}></div>
+                        </div>
+                    </div>
                     <div className="row" data-custom-animations="true" data-ca-options="{&quot;triggerHandler&quot;:&quot;inview&quot;,&quot;animationTarget&quot;:&quot;.lqd-column&quot;,&quot;duration&quot;:&quot;1200&quot;,&quot;delay&quot;:&quot;200&quot;,&quot;easing&quot;:&quot;easeOutQuint&quot;,&quot;direction&quot;:&quot;backward&quot;,&quot;initValues&quot;:{&quot;translateX&quot;:35,&quot;translateY&quot;:35,&quot;opacity&quot;:0},&quot;animations&quot;:{&quot;translateX&quot;:0,&quot;translateY&quot;:0,&quot;opacity&quot;:1}}">
                         {
                             Array.isArray(page.intro) && page.intro.map(key => {
@@ -137,8 +138,8 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                                     <div className="lqd-column col-md-4" key={key.id}>
                                         <div className="iconbox iconbox-side iconbox-sm iconbox-heading-sm" data-plugin-options="{&quot;color&quot;: &quot;#dd6a9d&quot;}">
                                             <div className="iconbox-icon-wrap"><span className="iconbox-icon-container"><i className={key.iconClass} /></span></div>
-                                            <div className="contents">
-                                                <h3>{key.title}</h3>
+                                            <div className="contents text-center">
+                                                <h3 className='font-weight-bold'>{key.title}</h3>
                                                 <p>{key.description}</p>
                                             </div>
                                         </div>
@@ -150,12 +151,12 @@ const Page: NextPage<Props> = ({ seo, softwareDevelopmentPage, lang }) => {
                 </div>
             </section>
 
-            <section className="vc_row pt-80 pb-80 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }" style={{ backgroundImage: 'url(/assets/img/misc/shapes.jpg)' }}>
-                <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 0%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
+            <section className="vc_row pt-60 pb-40 bg-cover" data-parallax="true" data-parallax-options="{ parallaxBG: true }" style={{ backgroundImage: `url(${page.background.url})` }}>
+                <div className="titlebar-overlay ld-overlay" style={{ background: `linear-gradient(65deg, #2D3252 40%, rgba(137, 135, 226, 0.084) 100%)` }}></div>
                 <div className="container">
                     <div className="row">
                         <div className="lqd-column col-md-8 col-md-offset-2 text-center">
-                            <h2 className="text-uppercase text-white mt-0 pb-10">{softwareDevelopmentPage.formTitle}</h2>
+                            <h2 className="font-weight-bold text-white mt-0 mb-2 pb-0">{softwareDevelopmentPage.formTitle}</h2>
                             <p className="font-size-18 text-white px-md-7 mx-md-3 mb-50 pb-60">{softwareDevelopmentPage.formTitlebarSubtitle}</p>
                         </div>
                     </div>

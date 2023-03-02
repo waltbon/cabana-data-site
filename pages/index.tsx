@@ -121,7 +121,7 @@ const IndexPage: NextPage<Props> = ({ t, homePage, lang, allPartners, allTestimo
                               <div className="testimonial testimonial-lg testimonial-details-sm text-right testimonials-details-only">
                                 <div className="testimonial-details">
                                   <figure className="avatar w-100">
-                                    <img src={testimonial.picture.url} alt={testimonial.picture.alt} />
+                                    <img src={testimonial.picture.url} alt={testimonial.name} />
                                   </figure>
                                 </div>
                               </div>

@@ -15,11 +15,7 @@ interface IContactFormDto {
 export default async (req, res) => {
     if (req.method === 'POST') {
         await sendEmail(req.body);
-        try {
-            await sendToHubspotCRM(req.body);
-        } catch (error) {
-            
-        }
+
         res.status(200).json({
             success: true
         });
@@ -29,27 +25,6 @@ export default async (req, res) => {
     return res.status(404);
 }
 
-const sendToHubspotCRM = async (data: IContactFormDto) => {
-    const hubspotCli = generateHubspotCli();
-    const contactService = new ContactHubspotService(hubspotCli);
-    const nameSplitted = data.fullname.split(' ');
-    const firstname = nameSplitted[0];
-    const lastname = nameSplitted.length > 1 ? nameSplitted[1] : '';
-    const contact = await contactService.create({
-        ...data,
-        firstname,
-        lastname,
-    });
-
-    const companyService = new CompanyHubspotService(hubspotCli);
-    const company = await companyService.create({
-        domain: data.website || data.company,
-        name: data.company,
-    });
-
-    await companyService.addContact(company, contact);
-
-}
 
 const sendEmail = async (body) => {
     const {

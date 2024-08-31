@@ -1,4 +1,5 @@
-import * as Mailgun from 'mailgun-js';
+import Mailgun from 'mailgun.js';
+import FormData from 'form-data';
 
 export const sendMail = async ({
     to,
@@ -7,24 +8,20 @@ export const sendMail = async ({
 }) => {
     const domain = process.env.MAILGUN_DOMAIN;
     const from = process.env.NO_REPLY_EMAIL;
-    const apiKey = process.env.MAILGUN_PRIVATE_KEY;
-    const mailgun = Mailgun({
-        apiKey, domain
+    const key = process.env.MAILGUN_PRIVATE_KEY as string;
+    const mailgun = new Mailgun(FormData);
+
+    const mg = mailgun.client({
+        key,
+        username: 'wbonillacr@gmail.com'
     });
 
-    return new Promise((res, rej) => {
-        mailgun.messages().send({
-            from,
-            to,
-            subject,
-            text: content,
-            html: content,
-        }, (err, result) => {
-            if (err) {
-                return rej(err);
-            }
-            return res({});
-        });
+    await mg.messages.create(domain, {
+        from,
+        to,
+        subject,
+        text: content,
+        html: content,
     });
 }
 
